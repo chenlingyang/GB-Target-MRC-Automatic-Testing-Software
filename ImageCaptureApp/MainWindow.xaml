@@ -1,0 +1,84 @@
+<Window x:Class="ImageCaptureApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:ImageCaptureApp.Controls"
+        Title="图像采集卡上位机软件" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="Window_KeyDown">
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="ApplicationCommands.Save"/>
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 菜单栏 -->
+        <Menu Grid.Row="0">
+            <MenuItem Header="文件(_F)">
+                <MenuItem Header="保存图像(_S)" Click="MenuSave_Click" InputGestureText="Ctrl+S"/>
+                <Separator/>
+                <MenuItem Header="退出(_X)" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="视图(_V)">
+                <MenuItem Header="放大(_Z)" Click="MenuZoomIn_Click" InputGestureText="Ctrl++"/>
+                <MenuItem Header="缩小(_O)" Click="MenuZoomOut_Click" InputGestureText="Ctrl+-"/>
+                <MenuItem Header="重置视图(_R)" Click="MenuResetView_Click" InputGestureText="Ctrl+0"/>
+            </MenuItem>
+            <MenuItem Header="处理(_P)">
+                <MenuItem Header="灰度化(_G)" Click="MenuGrayscale_Click" IsCheckable="True" x:Name="MenuGrayscale"/>
+            </MenuItem>
+            <MenuItem Header="帮助(_H)">
+                <MenuItem Header="关于(_A)" Click="MenuAbout_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- 工具栏 -->
+        <ToolBar Grid.Row="1">
+            <Button Content="开始采集" Click="BtnStart_Click" x:Name="BtnStart" Padding="10,5"/>
+            <Button Content="停止采集" Click="BtnStop_Click" x:Name="BtnStop" Padding="10,5" IsEnabled="False"/>
+            <Separator/>
+            <Button Content="保存" Click="BtnSave_Click" Padding="10,5"/>
+            <Separator/>
+            <Button Content="灰度化" Click="BtnGrayscale_Click" x:Name="BtnGrayscale" Padding="10,5"/>
+            <Separator/>
+            <Button Content="放大" Click="BtnZoomIn_Click" Padding="10,5"/>
+            <Button Content="缩小" Click="BtnZoomOut_Click" Padding="10,5"/>
+            <Button Content="重置" Click="BtnReset_Click" Padding="10,5"/>
+            <!-- 批量采集区域 -->
+         <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBox x:Name="TxtBatchCount" Text="100" Width="60" Margin="1" ToolTip="采集张数" FontSize="16"/>
+            <TextBlock Text="张" VerticalAlignment="Center"/>
+            <TextBox x:Name="TxtSaveFolder" Text="C:\Captures" Width="200" Margin="5" IsReadOnly="True"/>
+            <Button x:Name="BtnSelectFolder" Content="浏览..." Click="BtnSelectFolder_Click" Width="60" Margin="2"/>
+            <Button x:Name="BtnBatchCapture" Content="批量采集" Click="BtnBatchCapture_Click" Width="80" Margin="2"/>
+            <TextBlock x:Name="TxtBatchProgress" Text="就绪" VerticalAlignment="Center" Margin="5"/>
+            </StackPanel>
+        </ToolBar>
+
+        <!-- 图像显示区域 -->
+        <controls:ImageDisplayControl x:Name="ImageDisplay" Grid.Row="2" Margin="1" RenderTransformOrigin="0.5,0.5"/>
+
+        <!-- 状态栏 -->
+        <StatusBar Grid.Row="3">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusResolution" Text="分辨率: --"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="StatusFrameRate" Text="帧率: --"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="StatusZoom" Text="缩放: 100%"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="StatusInfo" Text="就绪"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

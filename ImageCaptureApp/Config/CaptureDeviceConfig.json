@@ -1,0 +1,23 @@
+{
+  "DeviceSettings": {
+    "DeviceIndex": 0,
+    "DeviceName": "默认采集卡",
+    "API": "DirectShow",
+    "Resolution": {
+      "Width": 1280,
+      "Height": 720
+    },
+    "FrameRate": 30,
+    "AutoStart": false
+  },
+  "DisplaySettings": {
+    "DefaultZoom": 1.0,
+    "MinZoom": 0.1,
+    "MaxZoom": 10.0
+  },
+  "StorageSettings": {
+    "DefaultFormat": "PNG",
+    "DefaultSavePath": "",
+    "AutoSave": false
+  }
+}
