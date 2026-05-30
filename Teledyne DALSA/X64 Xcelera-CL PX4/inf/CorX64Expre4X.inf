@@ -1,0 +1,85 @@
+; CorX64Expre4x.inf
+;
+; Installation inf for the X64 Xcelera-CL PX4 board.
+;
+; (c) Copyright 2007-2012 Teledyne DALSA Inc.
+;
+
+[Version]
+Signature="$Windows NT$"
+Provider=%Dalsa%
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+class=Image
+DriverVer=08/14/2014, 1.50.01.0712
+PnpLockDown=0 
+DriverPackageDisplayName=%Dalsa.PackageDesc%
+Catalogfile=CorX64Expre4x.cat
+
+[DestinationDirs]
+DefaultDestDir   = 11
+CorX64Expre4x.Sys   = 12   ; drivers
+
+
+[Manufacturer]
+%Dalsa%   = DalsaMfg,NTamd64
+
+; To support Win2000, and it will also support XP and later (32-bit OS)
+[DalsaMfg]
+%Dalsa.DeviceDesc% = CorX64Expre4x, PCI\VEN_11EC&DEV_2500&CC_058000
+
+; For XP and later (64-bit OS)
+[DalsaMfg.NTamd64]
+%Dalsa.DeviceDesc% = CorX64Expre4x, PCI\VEN_11EC&DEV_2500&CC_058000
+
+[CorX64Expre4x]
+CopyFiles=CorX64Expre4x.Sys
+AddReg=CorX64Expre4x.AddRegs
+DelReg=CorX64Expre4x.DelRegs
+DelFiles = CorX64Expre4x.Sys
+
+;
+; File sections
+;
+
+[CorX64Expre4x.Sys]
+CorX64Expre4x.sys         
+
+[CorX64Expre4x.AddRegs]
+HKLM,System\CurrentControlSet\Services\CorX64Expre4x,ErrorControl,0x00010001,0
+HKLM,System\CurrentControlSet\Services\CorX64Expre4x,Start,0x00010001,0
+HKLM,System\CurrentControlSet\Services\CorX64Expre4x,Type,0x00010001,0
+
+[CorX64Expre4x.DelRegs]
+
+;
+; Service Installation
+;
+
+[CorX64Expre4x.Services]
+AddService = CorX64Expre4x, 0x00000002, CorX64Expre4x_Service_Inst
+
+[CorX64Expre4x_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Coreco Drivers
+ServiceBinary  = %12%\CorX64Expre4x.sys
+
+;
+; Source file information
+;
+
+[SourceDisksNames]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+CorX64Expre4x.sys       = 1      ; all files on Disk 1
+
+
+[Strings]
+
+DiskId = "Teledyne DALSA X64 Xcelera-CL PX4 Installation DISK"
+Dalsa.DeviceDesc = "X64 Xcelera-CL PX4 Board"
+Dalsa.PackageDesc = "X64 Xcelera-CL PX4 Device Driver"
+Dalsa = "Teledyne DALSA"
+

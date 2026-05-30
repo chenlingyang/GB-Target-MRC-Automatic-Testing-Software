@@ -1,0 +1,61 @@
+[General]
+Camera Name=Composite Sync, RGB, Progressive, (PAL) 
+Company Name=JAI
+Model Name=CV-M90P
+
+[Signal Description]
+Channel=1
+Frame=2
+Interface=1
+Scan=1
+Signal=1
+Video=8
+Pixel Depth=8
+Video Standard=4
+Field Order=1
+Coupling=1
+
+[Signal Timings]
+Horizontal Active=768
+Horizontal Sync=69
+Vertical Active=288
+Vertical Sync=3
+Horizontal Front Porch=22
+Horizontal Back Porch=85
+Vertical Front Porch=2
+Vertical Back Porch=20
+Horizontal Front Invalid=0
+Horizontal Back Invalid=0
+Vertical Front Invalid=0
+Vertical Back Invalid=0
+
+[Pixel Clock]
+Pixel Clock Source=1
+Pixel Clock Frequency Internal=14750000
+Pixel Clock Frequency 1:1=14750000
+Pixel Clock Frequency External=14750000
+
+[Synchronization Signals]
+Synchronization Source=2
+Horizontal Sync Polarity=1
+Vertical Sync Polarity=1
+
+[Control Signals]
+Frame Integrate Method=0
+Frame Integrate Polarity=1
+Time Integrate Method=0
+Time Integrate Polarity=1
+Camera Trigger Method=0
+Camera Trigger Polarity=1
+Camera Trigger Duration=0
+Trigger/Exposure Signal=1
+Camera Reset Method=0
+Camera Reset Polarity=1
+Camera Reset Duration=0
+Line Integrate Method=0
+Line Integrate Polarity=1
+Line Integrate Delay=0
+Line Trigger Method=0
+Line Trigger Polarity=1
+Line Trigger Delay=0
+Line Trigger Duration=0

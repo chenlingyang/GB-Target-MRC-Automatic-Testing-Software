@@ -1,0 +1,84 @@
+﻿/* 
+   Custom stylesheet for the Sapera LT HTML help-related pages
+*/
+
+
+
+
+/* Override default styles */
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 10pt;
+   margin: 10px;
+   padding-top: 65px;
+}
+
+h2 {
+   color: #0078d7;
+}
+
+h3 {
+   color: black;
+   margin-top: 30pt;
+   margin-bottom: 20pt;
+}
+
+h4,h5,h6 {
+   font-weight:bold;
+}
+
+p {
+   text-align: justify;
+}
+
+/* Override bootstrap theme */
+
+.panel-heading {
+   padding: 5px;
+}
+
+.navbar-toggle {
+   float: left;
+   margin-left: 10px;
+   margin-right: 0;
+}
+
+a.carousel-control {
+   color: blue;
+}
+
+
+/* Define custom styles */
+
+.my-container {
+   max-width: 700px;
+}
+
+.my-spacer{
+   padding-top: 60px;
+}
+
+.my-nav {
+   max-width: 250px;
+   float: right;
+   padding: 5px;
+   margin: 0 0 10px 20px;
+}
+
+   .my-nav > ul {
+      padding-left: 15px;
+   }
+
+      .my-nav > ul > li {
+         margin-top: 5px;
+      }
+
+   .my-nav > a {
+      text-decoration: none;
+   }
+
+.my-thumbnail {
+   text-align: center;
+   font-style: italic;
+}

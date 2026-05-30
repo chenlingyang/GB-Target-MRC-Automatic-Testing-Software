@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RegisterDescription xmlns="http://www.genicam.org/GenApi/Version_1_0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0 http://www.genicam.org/GenApi/GenApiSchema_Version_1_0.xsd"
+   ModelName="HostNodes"
+   VendorName="DALSA" 
+   MajorVersion="1"
+   MinorVersion="0"
+   SubMinorVersion="1"
+   ProductGuid="5B637AA5-B3F2-428f-AA26-E613FD6A8A5B"
+   VersionGuid="55D01621-1C47-417e-959D-CB5445C3B0F3"
+   StandardNameSpace="None"
+   SchemaMajorVersion="1"
+   SchemaMinorVersion="0"
+   SchemaSubMinorVersion="1"
+   ToolTip="Sapera Internal Nodes">
+      
+   <Category Name="Root">
+      <pFeature>SaperaHostFeatures</pFeature>
+   </Category>
+   <Category Name="SaperaHostFeatures">
+      <ToolTip>Sapera Host Specific Nodes</ToolTip>
+      <DisplayName>USB3 Vision Host Controls</DisplayName>
+      <pFeature>systemTransferStopDetectionMethod</pFeature>
+      <pFeature>systemTransferStopTime</pFeature>
+      <!--<pFeature>CommandAcknowledgeTimeout</pFeature>
+      <pFeature>CommandRetryCount</pFeature>
+      <pFeature>CommandAcknowledgeTimeoutDefault</pFeature>
+      <pFeature>CommandRetryCountDefault</pFeature>-->
+   </Category>
+   <Port Name="SaperaPort" MergePriority="+1" />
+   <Integer Name="CommandAcknowledgeTimeout" MergePriority="+1">
+      <ToolTip>Command Acknowledge Timeout in ms</ToolTip>
+      <Description>Specifies the command acknowledgment timeout value (in ms) of a message sent to a device.</Description>
+      <DisplayName>Command Timeout</DisplayName>
+      <Streamable>Yes</Streamable>
+      <pValue>CommandAcknowledgeTimeoutReg</pValue>
+      <Min>10</Min>
+      <Max>120000</Max>
+      <Inc>1</Inc>
+      <Representation>Linear</Representation>
+   </Integer>
+   <IntReg Name="CommandAcknowledgeTimeoutReg" MergePriority="+1">
+      <Address>0xEB00020C</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+   <Integer Name="CommandAcknowledgeTimeoutDefault" MergePriority="+1">
+      <DisplayName>Command Acknowledge Timeout Default Value</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>200</Value>
+   </Integer>
+   <Integer Name="CommandRetryCount" MergePriority="+1">
+      <ToolTip>Command Retry Count</ToolTip>
+      <Description>Specifies the number of retries for a command sent to a device.</Description>
+      <DisplayName>Command Retry Count</DisplayName>
+      <Streamable>Yes</Streamable>
+      <pValue>CommandRetryCountReg</pValue>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Inc>1</Inc>
+      <Representation>Linear</Representation>
+   </Integer>
+   <IntReg Name="CommandRetryCountReg" MergePriority="+1">
+      <Address>0xEB000210</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+  </IntReg>
+   <Integer Name="CommandRetryCountDefault" MergePriority="+1">
+      <DisplayName>Command Retry Count Default Value</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>3</Value>
+   </Integer>
+   <!-- Must not be a feature -->
+   <Float Name="ExposureTime" MergePriority="-1">
+      <Value>200000</Value>      
+   </Float>
+   <Enumeration Name="systemTransferStopDetectionMethod" MergePriority="+1">
+      <ToolTip>System TransferStop Detection Method</ToolTip>
+      <Description>Specifies the transfer stop detection method at the Sapera application level. A transfer is consider stopped if no data arrives from the device, following a call to the SapTransfer.Freeze function, for a specified period of time. This time period can be set automatically or manually, based on the System TransferStop Time feature. The transfer must be considered stop before a new acquisition can be started (in addition, any SapTransfer.Wait conditions must also be met before starting a new acquisition).</Description>
+      <DisplayName>System TransferStop Detection Method</DisplayName>
+      <Visibility>Guru</Visibility>
+      <Streamable>Yes</Streamable>
+      <EnumEntry Name="Automatic">
+         <ToolTip>Automatic Transfer Stop Detection</ToolTip>
+         <Description>The transfer stop time is calculated as: (current Exposure Time feature value) + 10000 μs. </Description>
+         <DisplayName>Automatic</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="Manual">
+         <ToolTip>Manual Transfer Stop Detection</ToolTip>
+         <Description>The transfer stop time is specified by the System TransferStop Time feature.  Manual mode can be used if the exposure time is pulse controlled by the trigger width, to ensure that the transfer stop time exceeds the maximum expected exposure time.</Description>
+         <DisplayName>Manual</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <pValue>transferStopDetectionMethod_reg</pValue>
+   </Enumeration>
+   <IntReg Name="transferStopDetectionMethod_reg" MergePriority="+1">
+      <Address>0xEB000300</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+   <IntSwissKnife Name="transferStopDetectionMethod_isLocked" MergePriority="+1">
+      <pVariable Name="D_MODE">transferStopDetectionMethod_reg</pVariable>
+      <pVariable Name="F_STREAMING">sapFeatureStreaming</pVariable>
+      <Formula>D_MODE &amp;&amp; (F_STREAMING = 0)</Formula>
+   </IntSwissKnife>
+   <Float Name="systemTransferStopTime" MergePriority="+1">
+      <ToolTip>The maximum time a transfer can be idel before considered inactive</ToolTip>
+      <Description>When the System TransferStop Detection Method is set to Manual, the System TransferStop Time sets the time, in μs, a transfer can be inactive before it is considered stopped.</Description>
+      <DisplayName>System TransferStop Time</DisplayName>
+      <Visibility>Guru</Visibility>
+      <pIsLocked>transferStopDetectionMethod_isLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>systemTransferStopTime_value</pValue>
+      <Min>100</Min>
+      <Max>1000000000</Max>
+      <Unit>us</Unit>
+   </Float>
+   <Converter Name="systemTransferStopTime_value" MergePriority="+1">
+      <FormulaTo>FROM</FormulaTo>
+      <FormulaFrom>TO</FormulaFrom>
+      <pValue>transferStopDetectionTime_reg</pValue>
+   </Converter>
+   <IntReg Name="transferStopDetectionTime_reg" MergePriority="+1">
+      <Address>0xEB000304</Address>
+      <Length>8</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <pInvalidator>ExposureTime</pInvalidator>
+      <pInvalidator>systemTransferStopDetectionMethod</pInvalidator>
+      <pInvalidator>sapFeatureStreaming</pInvalidator>
+      <Sign>Signed</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+
+   <Integer Name="sapFeatureStreaming" MergePriority="+1">
+      <Value>0</Value>
+   </Integer>
+                
+</RegisterDescription>

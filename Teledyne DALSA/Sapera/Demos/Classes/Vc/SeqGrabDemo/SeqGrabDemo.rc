@@ -1,0 +1,259 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SeqGrabDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SEQGRABDEMO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 652
+        BOTTOMMARGIN, 432
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_HIGH_FRAME_RATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEQGRABDEMO_DIALOG DIALOGEX 0, 0, 657, 434
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Sapera Sequential Grab Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider1",IDC_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_TOP | WS_BORDER | WS_TABSTOP,168,111,486,20
+    PUSHBUTTON      "&Record",IDC_RECORD,54,85,48,21
+    PUSHBUTTON      "&Play",IDC_PLAY,108,86,48,21
+    PUSHBUTTON      "&Stop",IDC_STOP,108,110,48,21
+    PUSHBUTTON      "&Pause",IDC_PAUSE,54,110,48,21
+    GROUPBOX        "Buffer",IDC_STATIC,168,73,269,30
+    EDITTEXT        IDC_ACTIVE,213,84,39,12,ES_CENTER | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+    GROUPBOX        "Record Controls",IDC_STATIC,49,73,114,65
+    EDITTEXT        IDC_AVAILABLE,263,84,39,12,ES_CENTER | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+    LTEXT           "/",IDC_STATIC,255,86,8,8
+    LTEXT           "Displayed",IDC_STATIC,175,86,36,8
+    GROUPBOX        "Recording Statistics",IDC_STATIC,360,6,294,66
+    EDITTEXT        IDC_LIVE_FRAME_RATE,442,24,61,12,ES_CENTER | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Live Frame Rate/sec",IDC_STATIC,370,26,68,8
+    LTEXT           "Min time/frame (ms)",IDC_STATIC,370,50,62,8
+    LTEXT           "Max time/frame (ms)",IDC_STATIC,522,50,64,8
+    EDITTEXT        IDC_MIN_TIME,442,48,61,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_MAX_TIME,588,48,61,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    GROUPBOX        "General Options",IDC_STATIC,204,6,150,66
+    GROUPBOX        "File Options",IDC_STATIC,49,6,149,66
+    PUSHBUTTON      "&Buffer",IDC_BUFFER_OPTIONS,282,18,66,48
+    PUSHBUTTON      "&Load Acq Config",IDC_LOAD_ACQ_CONFIG,210,18,66,21
+    PUSHBUTTON      "&Load Sequence",IDC_FILE_LOAD,54,18,66,21
+    PUSHBUTTON      "&Save Sequence",IDC_FILE_SAVE,123,18,66,21
+    PUSHBUTTON      "&Load Current",IDC_FILE_LOAD_CURRENT,54,45,66,21
+    PUSHBUTTON      "&Save Current",IDC_FILE_SAVE_CURRENT,123,45,66,21
+    PUSHBUTTON      "&High Frame Rate",IDC_HIGH_FRAME_RATE,210,45,66,21
+    EDITTEXT        IDC_MESSAGE,442,77,210,25,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         IDB_BANNER,IDC_BANNER,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,43,366,WS_EX_ACCEPTFILES | WS_EX_STATICEDGE
+    EDITTEXT        IDC_BUFFER_FRAME_RATE,588,24,61,12,ES_CENTER | NOT WS_TABSTOP
+    LTEXT           "Buffer Frame Rate",IDC_STATIC,522,26,58,8
+    CONTROL         "",IDC_VIEW_WND,"Static",SS_BLACKRECT,48,144,606,288
+    LTEXT           "Counter stamp",IDC_STATIC,320,86,46,8
+    EDITTEXT        IDC_BUFFER_COUNTERSTAMP,369,84,63,12,ES_CENTER | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Sapera Sequential Grab Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Sapera Sequential Grab Demo Version 8.60",IDC_STATIC,40,10,143,8,SS_NOPREFIX
+    LTEXT           "Copyright (c) Teledyne Digital Imaging Inc. 2001-2020",IDC_STATIC,40,25,188,8
+    DEFPUSHBUTTON   "OK",IDOK,196,7,32,14,WS_GROUP
+END
+
+IDD_HIGH_FRAME_RATE DIALOGEX 0, 0, 232, 68
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "High Frame Rate Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,174,8,50,14
+    LTEXT           "Number of frames per callback ",IDC_STATIC,8,15,99,8
+    EDITTEXT        IDC_FRAMES_PER_CALLBACK,110,11,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_FRAMES_PER_CALLBACK,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,150,11,10,14
+    LTEXT           "Number of frames on board",IDC_STATIC,8,41,86,8
+    EDITTEXT        IDC_NFRAMES_ONBOARD,110,37,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_NFRAMES_ONBOARD,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,150,37,10,14
+    PUSHBUTTON      "Cancel",IDCANCEL,174,25,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\SeqGrabDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,60,0,0
+ PRODUCTVERSION 8,60,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Teledyne Digital Imaging Inc."
+            VALUE "FileDescription", "Sapera Sequential Grab Demo"
+            VALUE "FileVersion", "8.60"
+            VALUE "InternalName", "SeqGrabDemo"
+            VALUE "LegalCopyright", "Copyright (c) Teledyne Digital Imaging Inc. 2001-2020"
+            VALUE "OriginalFilename", "SeqGrabDemo.exe"
+            VALUE "ProductName", "Sapera LT"
+            VALUE "ProductVersion", "8.60"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BANNER              BITMAP                  "res\\DalsaBanner.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About SeqGrabDemo..."
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SeqGrabDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

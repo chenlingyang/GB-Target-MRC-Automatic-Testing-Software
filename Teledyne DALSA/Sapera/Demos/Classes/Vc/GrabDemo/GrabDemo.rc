@@ -1,0 +1,221 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\GrabDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GrabDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 217, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Grab Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Sapera Grab Demo Version 8.60",IDC_STATIC,40,10,133,8,SS_NOPREFIX
+    LTEXT           "Copyright (c) Teledyne Digital Imaging Inc. 1997-2020",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_GRABDEMO_DIALOG DIALOGEX 0, 0, 466, 311
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Sapera Grab Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&New",IDC_FILE_NEW,54,60,55,15
+    PUSHBUTTON      "&Load",IDC_FILE_LOAD,54,79,55,15
+    PUSHBUTTON      "&Save",IDC_FILE_SAVE,54,97,55,15
+    PUSHBUTTON      "&General",IDC_GENERAL_OPTIONS,54,157,54,15
+    PUSHBUTTON      "&Area Scan",IDC_AREA_SCAN_OPTIONS,54,193,54,15
+    PUSHBUTTON      "&Line Scan",IDC_LINE_SCAN_OPTIONS,54,211,54,15
+    PUSHBUTTON      "&Composite",IDC_COMPOSITE_OPTIONS,54,175,54,15
+    PUSHBUTTON      "&Load Config",IDC_LOAD_ACQ_CONFIG,54,139,54,15
+    PUSHBUTTON      "&Exit",IDC_EXIT,407,6,36,35
+    PUSHBUTTON      "&Snap",IDC_SNAP,63,18,85,15
+    PUSHBUTTON      "&Grab",IDC_GRAB,177,18,85,15
+    PUSHBUTTON      "&Freeze",IDC_FREEZE,291,18,85,15
+    PUSHBUTTON      "&Buffer",IDC_BUFFER_OPTIONS,54,265,55,15
+    CONTROL         "",IDC_VIEW_WND,"Static",SS_BLACKRECT,127,65,336,244
+    PUSHBUTTON      "&View",IDC_VIEW_OPTIONS,54,283,55,15
+    GROUPBOX        "Acquisition Control",IDC_STATIC,48,6,345,36
+    GROUPBOX        "General Options",IDC_STATIC,48,253,72,54
+    GROUPBOX        "File Control",IDC_STATIC,48,48,72,72
+    GROUPBOX        "Acquisition Options",IDC_STATIC,48,126,72,120
+    LTEXT           "",IDC_STATUS,127,50,317,10,SS_CENTERIMAGE | SS_SUNKEN
+    CONTROL         IDB_BANNER,IDC_BANNER,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,43,311,WS_EX_ACCEPTFILES | WS_EX_STATICEDGE
+    PUSHBUTTON      "&Image Filter",IDC_IMAGE_FILTER_OPTIONS,54,229,54,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,60,0,0
+ PRODUCTVERSION 8,60,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Teledyne Digital Imaging Inc."
+            VALUE "FileDescription", "Sapera Grab Demo"
+            VALUE "FileVersion", "8.60"
+            VALUE "InternalName", "GrabDemo"
+            VALUE "LegalCopyright", "Copyright (c) Teledyne Digital Imaging Inc. 1997-2020"
+            VALUE "OriginalFilename", "GrabDemo.exe"
+            VALUE "ProductName", "Sapera LT"
+            VALUE "ProductVersion", "8.60"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_GRABDEMO_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 463
+        BOTTOMMARGIN, 309
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BANNER              BITMAP                  "res\\DalsaBanner.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About Grab Demo..."
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\GrabDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

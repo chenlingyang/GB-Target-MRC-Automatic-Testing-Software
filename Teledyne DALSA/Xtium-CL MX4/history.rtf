@@ -1,0 +1,419 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fnil\fcharset0 Arial;}{\f3\fmodern\fprq1\fcharset0 Courier New;}{\f4\froman\fprq2\fcharset0 Times New Roman;}{\f5\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\nowidctlpar\qc\cf1\b\f0\fs48 Xtium-CL MX4 Driver \par
+\fs20 for\fs48\par
+Sapera LT Imaging Library \par
+\fs20 for\fs48\par
+Windows 7 / 8 / 10 (32/64)\par
+\fs40 Version History\par
+Teledyne DALSA\par
+\pard\nowidctlpar\par
+\cf0\fs28 Version 1.20.00.0234\par
+\b0 Teledyne DALSA Inc., May 11th, 2018\fs20\par
+\cf1\b\fs32\par
+\pard\nowidctlpar\lang4105 Hardware Supported\cf0\par
+\pard\nowidctlpar\fi-360\li720\tx1080\b0\f1\fs24\'b7\tab\f0 Xtium-CL MX4\par
+\pard\nowidctlpar\fi-720\li720\tx1080\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows 7/8/10 32/64 bit\par
+\f1\'b7\tab\f0 Compliant with Camera Link specifications 2.0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Supports 1 Base/Medium/Full/80-bit Camera Link configuration or\line 2 independent Base Camera Link cameras\par
+{\pntext\f5\'B7\tab}PoCL on both cables\par
+\pard\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 8, 10 and 12 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port (up to 921600 baud) accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 RS-422 dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger inputs \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe outputs \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Bayer Decoding\par
+{\pntext\f5\'B7\tab}Flat Field/Line Correction\par
+\pard\nowidctlpar\fi-360\li720\tx1440\par
+\pard\nowidctlpar\b\fs20\par
+\cf1\fs32 New Features\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf0\b0\fs24 New capability: CORACQ_CAP_SHAFT_ENCODER_REVERSE_COUNT_MAX. Previous driver was limited to a maximum count of 255. This has been increased to 65535.\cf2\par
+\cf0{\pntext\f5\'B7\tab}New parameter: CORACQ_PRM_SHAFT_ENCODER_REVERSE_COUNT: permits reading and resetting the shaft encoder reverse count.\cf2\par
+\cf0{\pntext\f5\'B7\tab}Increased the maximum FFC gain for pixels > 8 bits from 2x to 8x.\cf2\par
+\cf0{\pntext\f5\'B7\tab}Added support for CORACQ_PRM_EXT_TRIGGER_IGNORE_DELAY.\cf2\par
+\cf0{\pntext\f5\'B7\tab}Increase horizontal flipping maximum line size from 16 kBytes to 64 kBytes.\cf2\par
+{\pntext\f5\'B7\tab}New capability and parameter: CORACQ_CAP_META_DATA and CORACQ_PRM_META_DATA. Supported location is: CORACQ_VAL_META_DATA_PER_LINE_RIGHT\par
+{\pntext\f5\'B7\tab}Support for up to 4 mono planes. \par
+{\pntext\f5\'B7\tab}Support for 2-channels, 2-taps, 14-bits monochrome.\par
+{\pntext\f5\'B7\tab}Suppport for no roll-over when grabbing variable frame length images with external trigger set to rising/falling edge detection.\par
+{\pntext\f5\'B7\tab}Support for 2T of 14B/16B.\par
+{\pntext\f5\'B7\tab}Internal Line Trigger, Shaft Encoder Before and After Multiple/Drop can now be sent through board sync.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\cf0 Horizontal flipping when output format is RGB888.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720 Windows 10 drivers are now signed with the Microsoft Windows Hardware Compatibility Publisher certificate.\cf2\par
+\cf0{\pntext\f5\'B7\tab}Added support for flash parts from multiple vendors.\cf2\par
+\cf0\f2{\pntext\f5\'B7\tab}Increase horizontal flipping maximum line size from 16 kBytes to 64 kBytes.\cf2\f0\par
+{\pntext\f5\'B7\tab}New capability and parameter: CORACQ_CAP_META_DATA and CORACQ_PRM_META_DATA. Supported location is: CORACQ_VAL_META_DATA_PER_LINE_RIGHT\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf0\fs20\par
+\cf1\b\fs32{\pntext\f5\'B7\tab}Fixes\cf0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\fs24 On some boards, if serial port was opened with no camera connected, a flood of events could occur.\f1\tab\cf0\f0\par
+{\pntext\f5\'B7\tab}BSOD would occur on systems where the PCIe bridge generates PnP events 'Remove/Add Device' following a reset of the board.\par
+{\pntext\f5\'B7\tab}DMA engine could stay in an invalid state necessitating a reset of the board when application is abrutly terminated (such as with Windows Task Manager) while grabbing.\par
+{\pntext\f5\'B7\tab}Possible crash when coming back from Windows 8/10 Hybrid Shutdown if board shares it's interrupt with another device.\par
+{\pntext\f5\'B7\tab}Application controlling 2 Xfers (multiple cameras), when disconnecting an Xfer, application would stop receiving Xfer events for the other active Xfer.\par
+{\pntext\f5\'B7\tab}On Abort command, if the number of on-board buffers ready to be transfered to host buffers are not transfered within 1 second, the error No EOT would occur and would prevent starting a grab.\par
+{\pntext\f5\'B7\tab}Snap of free-running linescan camera could take up to 2 frame time to acquire.\par
+{\pntext\f5\'B7\tab}Possible BSOD when resetting the board. Error returned by system makes reference to PCIe Completion Timeout.\par
+\lang1033\f2{\pntext\f5\'B7\tab}Memory Controller calibration failure.\par
+\pard\nowidctlpar\fi-720\li720\tx1440\lang4105\f0\par
+\pard\nowidctlpar\sl240\slmult0\cf1\b\fs32 Backward Compatibility\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\f1\fs24\'b7\tab\f0 Compatible with Sapera LT version 7.30 and later. \par
+\f1\'b7\tab\f0 SaperaLT 7.40 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\fs20 CORACQ_PRM_TIME_STAMP\par
+{\pntext\f5\'B7\tab}CORACQ_CAP_TIME_STAMP_BASE\par
+{\pntext\f5\'B7\tab}CORACQ_PRM_TIME_STAMP_BASE\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_1_PRESENT, CORACQ_VAL_PIXEL_CLK_2_PRESENT\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_3_PRESENT, CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\cf2\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\f1\fs24\'b7\tab\f0 SaperaLT 7.50 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_80BITS_PACKED (CamExpert)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}CORACQ_VAL_VIDEO_BICOLOR (Software Conversion)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}White Balance Gain on RGB pixels that are not the result of a Bayer conversion (Classes)\cf2\f0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\fs24  \f1\'b7\tab\f0 SaperaLT 8.00 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_FULL_PACKED (CamExpert)\cf2\f0\fs24\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\li720\sl240\slmult0\tx1080\par
+{\pntext\f5\'B7\tab}\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf1\b\fs32 Notes\par
+\cf0\b0\fs20{\pntext\f5\'B7\tab}\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\f1\fs24\'b7\tab\f0 Horizontal flipping is supported for lines sent to host up to 64 kBytes.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720 In Area Scan mode, maximum crop height is 65535.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 Historically on X64/Xcelera series, the \b CORACQ_VAL_PIXEL_CLK_PRESENT \b0 status flag represents the Pixel Clock on the Base Camera Link cable.\line In order give a better status to client, in 7.40 this status flag has been renamed \b CORACQ_VAL_PIXEL_CLK_1_PRESENT\b0 . \line Also, we have added the following: \b CORACQ_VAL_PIXEL_CLK_2_PRESENT\b0 , \b CORACQ_VAL_PIXEL_CLK_3_PRESENT \b0 and \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\b0 . \line When one wants to check for the clock present before grabbing, the \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT \b0\line status flag MUST be used as it indicates that the front-end is ready to acquire images.\par
+{\pntext\f5\'B7\tab}Buffer Time Stamping has been improved with the addition of the new parameters: \b CORACQ_PRM_TIME_STAMP \b0 and \b CORACQ_PRM_TIME_STAMP_BASE. \b0\line The parameter \b CORXFER_PRM_COUNTER_STAMP_TIME_BASE \b0 is no longer supported. The new parameter \b CORACQ_PRM_TIME_STAMP \b0 permits reading the time stamp, \line resetting the time stamp while the \b CORACQ_PRM_TIME_STAMP_BASE \b0 permits saving in the CCF file the time base.\par
+{\pntext\f5\'B7\tab}Board Sync control has been simplified by the addition of 2 new parameters: \b CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\b0  and \b CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\b0 . \line These 2 parameters specify the source signal to send to one of the 2 board sync I/Os. The External Frame/Line Trigger source does not specify anymore the board sync as a destination \line (what was called \lquote Pulse to Board Sync\rquote  and \ldblquote To Board Sync\rquote ) in X64/Xcelera series.\par
+{\pntext\f5\'B7\tab}The order in which the Shaft Encoder drop/multiply operations are performed can now be specified using the new parameter: \b CORACQ_PRM_SHAFT_ENCODER_ORDER\b0 .\par
+{\pntext\f5\'B7\tab}When doing Bi-Color and Bayer conversion using the 80-bit configuration, if the number of camera pixels is not a multiple of 20 bytes, the last pixel of each resulting lines will not have proper pixel value based on the mirror image technique.\par
+{\pntext\f5\'B7\tab}FFC/FLC can be done on lines up to:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sa200\sl276\slmult1 64 kBytes: Full and 80-bit configuration\par
+{\pntext\f5\'B7\tab}16 kBytes: Dual configuration\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 FFC/FLC with cluster replacement is not supported for 8 taps/10 bits configuration.\par
+{\pntext\f5\'B7\tab}FFC/FLC maximum gain for 8 taps/10 bits is 2x.\par
+{\pntext\f5\'B7\tab}In 80-bits packed RGB, crop width must be a multiple of 8 pixels.\par
+{\pntext\f5\'B7\tab}In 80-bits packed RGB with 12-bits/pixel, maximum horizontal active allowed is 8192.\ul\b\fs32\par
+\pard\nowidctlpar\cf1\lang1033\ulnone\par
+=============================================\par
+\cf0\fs28\par
+Version 1.11.00.0161\par
+\b0 Teledyne DALSA Inc., January 13th, 2017\par
+\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Hardware Supported\cf0\par
+\pard\nowidctlpar\fi-360\li720\tx1080\b0\f1\fs24\'b7\tab\f0 Xtium-CL MX4\par
+\pard\nowidctlpar\fi-720\li720\tx1080\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows 7/8/10 32/64 bit\par
+\f1\'b7\tab\f0 Compliant with Camera Link specifications 2.0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Supports 1 Base/Medium/Full/80-bit Camera Link configuration or\line 2 independent Base Camera Link cameras\par
+{\pntext\f5\'B7\tab}PoCL on both cables\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 8, 10 and 12 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port (up to 921600 baud) accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 RS-422 dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger inputs \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe outputs \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Bayer Decoding\par
+{\pntext\f5\'B7\tab}Flat Field/Line Correction\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\b\fs20\par
+\cf1\fs32{\pntext\f5\'B7\tab}New Features\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf0\b0\f2\fs24 Added support for CORXFER_PRM_BUFFER_TIMESTAMP_MODULE to be set to CORXFER_VAL_BUFFER_TIMESTAMP_MODULE_ACQ with following events available: CORACQ_VAL_EVENT_TYPE_START_OF_FRAME and CORACQ_VAL_EVENT_TYPE_EXTERNAL_TRIGGER\cf2\f0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf0\fs20\par
+\cf1\b\fs32{\pntext\f5\'B7\tab}Fixes\cf0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\cf2\b0\f1\fs24\'b7\tab\cf0\f0 Extra Xfer 'n' lines event generated when starting a grab.\cf2\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\cf0 Shaft Encoder selection for the 2nd camera was not independent: it was following the selection of the 1st camera.\cf2\par
+\cf0{\pntext\f5\'B7\tab}External Line Trigger detection when used with dual camera was not independent: They would either be both rising or falling edge.\cf2\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720 Support for PCIe Maximum Read Request > 1K. 2K and 4K would crash PC.\par
+{\pntext\f5\'B7\tab}Possible training issue at cold boot in some PCs.\par
+\cf0{\pntext\f5\'B7\tab}In Area Scan mode, if 2 image buffers did not fit in on-board memory, no errors were reported and part of the image that exceeded the on-board memory would be invalid in host memory. Driver will now treat this condition similar to linescan mode and will use 2 smaller on-board buffers. \cf2\par
+\cf0\f2{\pntext\f5\'B7\tab}Integrated auto-calibration of the General Input Level Switch point for better accuracy.\par
+{\pntext\f5\'B7\tab}CorDeviceManager v3.73 fixes crash that would occur on W10 64-bit when clicking the "Browse..." button used to get a firmware CBF file.\par
+{\pntext\f5\'B7\tab}Strobe output of Camera #2 (dual camera) was programming the physical Strobe #1 instead of physical Strobe #2.\par
+{\pntext\f5\'B7\tab}Fix feeding of free buffers in HW queue in dual camera when there is more than 1024 host buffers for either or both cameras.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\f0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1440\cf0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\sl240\slmult0\cf1\b\fs32 Backward Compatibility\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\f1\fs24\'b7\tab\f0 Compatible with Sapera LT version 7.30 and later. \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 SaperaLT 7.40 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\fs20 CORACQ_PRM_TIME_STAMP\par
+{\pntext\f5\'B7\tab}CORACQ_CAP_TIME_STAMP_BASE\par
+{\pntext\f5\'B7\tab}CORACQ_PRM_TIME_STAMP_BASE\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_1_PRESENT, CORACQ_VAL_PIXEL_CLK_2_PRESENT\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_3_PRESENT, CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\cf2\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\f1\fs24\'b7\tab\f0 SaperaLT 7.50 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_80BITS_PACKED (CamExpert)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}CORACQ_VAL_VIDEO_BICOLOR (Software Conversion)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}White Balance Gain on RGB pixels that are not the result of a Bayer conversion (Classes)\cf2\f0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\fs24  \f1\'b7\tab\f0 SaperaLT 8.00 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_FULL_PACKED (CamExpert)\cf2\f0\fs24\par
+\pard\nowidctlpar\li720\sl240\slmult0\tx1080\par
+\par
+\pard\nowidctlpar\cf1\b\fs32 Notes\par
+\cf0\b0\fs20\par
+\pard\nowidctlpar\fi-360\li720\f1\fs24\'b7\tab\f0 Horizontal flipping is supported for lines up to 16 kBytes.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720 Horizontal flipping is not supported if output format is RGB888.\par
+{\pntext\f5\'B7\tab}In Area Scan mode, maximum crop height is 65535.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 Historically on X64/Xcelera series, the \b CORACQ_VAL_PIXEL_CLK_PRESENT \b0 status flag represents the Pixel Clock on the Base Camera Link cable.\line In order give a better status to client, in 7.40 this status flag has been renamed \b CORACQ_VAL_PIXEL_CLK_1_PRESENT\b0 . \line Also, we have added the following: \b CORACQ_VAL_PIXEL_CLK_2_PRESENT\b0 , \b CORACQ_VAL_PIXEL_CLK_3_PRESENT \b0 and \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\b0 . \line When one wants to check for the clock present before grabbing, the \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT \b0\line status flag MUST be used as it indicates that the front-end is ready to acquire images.\par
+{\pntext\f5\'B7\tab}Buffer Time Stamping has been improved with the addition of the new parameters: \b CORACQ_PRM_TIME_STAMP \b0 and \b CORACQ_PRM_TIME_STAMP_BASE. \b0\line The parameter \b CORXFER_PRM_COUNTER_STAMP_TIME_BASE \b0 is no longer supported. The new parameter \b CORACQ_PRM_TIME_STAMP \b0 permits reading the time stamp, \line resetting the time stamp while the \b CORACQ_PRM_TIME_STAMP_BASE \b0 permits saving in the CCF file the time base.\par
+{\pntext\f5\'B7\tab}Board Sync control has been simplified by the addition of 2 new parameters: \b CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\b0  and \b CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\b0 . \line These 2 parameters specify the source signal to send to one of the 2 board sync I/Os. The External Frame/Line Trigger source does not specify anymore the board sync as a destination \line (what was called \lquote Pulse to Board Sync\rquote  and \ldblquote To Board Sync\rquote ) in X64/Xcelera series.\par
+{\pntext\f5\'B7\tab}The order in which the Shaft Encoder drop/multiply operations are performed can now be specified using the new parameter: \b CORACQ_PRM_SHAFT_ENCODER_ORDER\b0 .\par
+{\pntext\f5\'B7\tab}When doing Bi-Color and Bayer conversion using the 80-bit configuration, if the number of camera pixels is not a multiple of 20 bytes, the last pixel of each resulting lines will not have proper pixel value based on the mirror image technique.\par
+{\pntext\f5\'B7\tab}FFC/FLC can be done on lines up to:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sa200\sl276\slmult1 64 kBytes: Full and 80-bit configuration\par
+{\pntext\f5\'B7\tab}16 kBytes: Dual configuration\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 FFC/FLC with cluster replacement is not supported for 8 taps/10 bits configuration.\par
+{\pntext\f5\'B7\tab}In 80-bits packed RGB, crop width must be a multiple of 8 pixels.\par
+{\pntext\f5\'B7\tab}In 80-bits packed RGB with 12-bits/pixel, maximum horizontal active allowed is 14563.\par
+\pard\nowidctlpar\cf1\b\fs32 =============================================\par
+\cf0\fs28\par
+Version 1.10.00.0125\par
+\b0 Teledyne DALSA Inc., January 29th, 2016\fs20\par
+\cf1\b\fs40\par
+\fs32 Hardware Supported\cf0\par
+\pard\nowidctlpar\fi-360\li720\tx1080\b0\f1\fs24\'b7\tab\f0 Xtium-CL MX4\par
+\pard\nowidctlpar\fi-720\li720\tx1080\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows 7/8/10 32/64 bit\par
+\f1\'b7\tab\f0 Compliant with Camera Link specifications 2.0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Supports 1 Base/Medium/Full/80-bit Camera Link configuration or\line 2 independent Base Camera Link cameras\par
+{\pntext\f5\'B7\tab}PoCL on both cables\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 8, 10 and 12 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port (up to 921600 baud) accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 RS-422 dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger inputs \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe outputs \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Bayer Decoding\par
+{\pntext\f5\'B7\tab}Flat Field/Line Correction\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\b\fs20\par
+\cf1\fs32{\pntext\f5\'B7\tab}New Features\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\f1\fs24\'b7\tab\f0 Support for Xfer events  CORXFER_VAL_EVENT_TYPE_END_OF_NLINES and CORXFER_VAL_EVENT_TYPE_END_OF_LINE. \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720 Increased internal line trigger base period from 2 usec down to 20 nsec\par
+{\pntext\f5\'B7\tab}Acquisition of Full RGB/Y TDALSA P4 video format. Note: n\cf0 o LUT, cropping and horizontal flip available in this configuration.\cf2\par
+{\pntext\f5\'B7\tab}12-bit RGB 80-bit configuration for TDALSA P4 video format.\par
+{\pntext\f5\'B7\tab}Dual channel cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx720 Monochrome 8, 10, 12 bits per pixel, up to 4 taps per channel in the Base, Medium and Full configuration.\par
+{\pntext\f5\'B7\tab}RGB 8 bits per pixel, Medium configuration.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720 Flat Field/Line Correction of 8, 10, 12 and 14 bits/pixel monochrome images. Gain and Offset bit depth follows the pixel depth.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx720 Support for 2 methods of pixel replacement:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1440\sl240\slmult0\tx720 a) Using neighborhood pixels\par
+{\pntext\f5\'B7\tab}b) Using 3x2 kernel along with camera bad cluster map (SaperaLT 8.20 needed for full support of cluster replacement). \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx720 Sets of FFC/FLC (SaperaLT 8.20 needed)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf0\f2 CorManGetNonVolatileUserData and CorManSetNonVolatileUserData (SaperaLT 8.20)\cf2\f0\par
+\cf0\f2{\pntext\f5\'B7\tab}8 general outputs on Rev A2 of the board.\cf2\f0\par
+\cf0\f2{\pntext\f5\'B7\tab}Re-direction of External Trigger/Line Trigger and/or Shaft Encoder A/B to any CC control signals (CamExpert 8.20 needed).\cf2\f0\par
+\cf0\f2{\pntext\f5\'B7\tab}Limiting of camera line trigger using the parameter CORACQ_PRM_LINE_TRIGGER_AUTO_DELAY. \cf2\f0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf0\fs20\par
+\cf1\b\fs32{\pntext\f5\'B7\tab}Fixes\cf0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\cf2\b0\f1\fs24\'b7\tab\cf0\f0 When acquiring 'n' frames per trigger while using CC signal, CC signal would only be sent once per trigger instead of 'n' times.\cf2\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\f1\'b7\tab\f2 When grabbing variable frame length images, if the line trigger stops \f0 before the end of the variable frame length signal, the end of frame event would not be generated.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720 Added missing selection of RS-422 as an input level for Externel Trigger. Note that selecting TTL input level could be used without any problems.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1080\cf0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\sl240\slmult0\cf1\b\fs32 Backward Compatibility\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\f1\fs24\'b7\tab\f0 Compatible with Sapera LT version 7.30 and later. \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 SaperaLT 7.40 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\fs20 CORACQ_PRM_TIME_STAMP\par
+{\pntext\f5\'B7\tab}CORACQ_CAP_TIME_STAMP_BASE\par
+{\pntext\f5\'B7\tab}CORACQ_PRM_TIME_STAMP_BASE\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_1_PRESENT, CORACQ_VAL_PIXEL_CLK_2_PRESENT\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_3_PRESENT, CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\cf2\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\f1\fs24\'b7\tab\f0 SaperaLT 7.50 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_80BITS_PACKED (CamExpert)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}CORACQ_VAL_VIDEO_BICOLOR (Software Conversion)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}White Balance Gain on RGB pixels that are not the result of a Bayer conversion (Classes)\cf2\f0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\fs24  \f1\'b7\tab\f0 SaperaLT 8.00 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_FULL_PACKED (CamExpert)\cf2\f0\fs24\par
+\pard\nowidctlpar\li720\sl240\slmult0\tx1080\par
+\par
+\pard\nowidctlpar\cf1\b\fs32 Notes\par
+\cf0\b0\fs20\par
+\pard\nowidctlpar\fi-360\li720\f1\fs24\'b7\tab\f0 Horizontal flipping is supported for lines up to 16 kBytes.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 Historically on X64/Xcelera series, the \b CORACQ_VAL_PIXEL_CLK_PRESENT \b0 status flag represents the Pixel Clock on the Base Camera Link cable.\line In order give a better status to client, in 7.40 this status flag has been renamed \b CORACQ_VAL_PIXEL_CLK_1_PRESENT\b0 . \line Also, we have added the following: \b CORACQ_VAL_PIXEL_CLK_2_PRESENT\b0 , \b CORACQ_VAL_PIXEL_CLK_3_PRESENT \b0 and \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\b0 . \line When one wants to check for the clock present before grabbing, the \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT \b0\line status flag MUST be used as it indicates that the front-end is ready to acquire images.\par
+{\pntext\f5\'B7\tab}Buffer Time Stamping has been improved with the addition of the new parameters: \b CORACQ_PRM_TIME_STAMP \b0 and \b CORACQ_PRM_TIME_STAMP_BASE. \b0\line The parameter \b CORXFER_PRM_COUNTER_STAMP_TIME_BASE \b0 is no longer supported. The new parameter \b CORACQ_PRM_TIME_STAMP \b0 permits reading the time stamp, \line resetting the time stamp while the \b CORACQ_PRM_TIME_STAMP_BASE \b0 permits saving in the CCF file the time base.\par
+{\pntext\f5\'B7\tab}Board Sync control has been simplified by the addition of 2 new parameters: \b CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\b0  and \b CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\b0 . \line These 2 parameters specify the source signal to send to one of the 2 board sync I/Os. The External Frame/Line Trigger source does not specify anymore the board sync as a destination \line (what was called \lquote Pulse to Board Sync\rquote  and \ldblquote To Board Sync\rquote ) in X64/Xcelera series.\par
+{\pntext\f5\'B7\tab}The order in which the Shaft Encoder drop/multiply operations are performed can now be specified using the new parameter: \b CORACQ_PRM_SHAFT_ENCODER_ORDER\b0 .\par
+{\pntext\f5\'B7\tab}When doing Bi-Color and Bayer conversion using the 80-bit configuration, if the number of camera pixels is not a multiple of 20 bytes, the last pixel of each resulting lines will not have proper pixel value based on the mirror image technique.\par
+{\pntext\f5\'B7\tab}If grabbing variable frame length images with the 80-bit configuration, if the number of bytes per lines is not a multiple of 20, user will need to set the horizontal active to the closest multiple of 20 bytes not exceeding the camera line width.\par
+{\pntext\f5\'B7\tab}FFC/FLC can be done on lines up to:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sa200\sl276\slmult1 64 kBytes: Full and 80-bit configuration\par
+{\pntext\f5\'B7\tab}16 kBytes: Dual configuration\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 FFC/FLC with cluster replacement is not supported for 8 taps/10 bits configuration.\par
+\pard\nowidctlpar\f4\line\f0\par
+\cf1\b\fs32 =============================================\par
+\cf0\fs28\par
+Version 1.01.00.0051\par
+\b0 Teledyne DALSA Inc., June 15th, 2015\fs20\par
+\pard\nowidctlpar\par
+\b\fs32\par
+\cf1 Hardware Supported\cf0\par
+\pard\nowidctlpar\fi-360\li720\tx1080\b0\f1\fs24\'b7\tab\f0 Xtium-CL MX4 Full\par
+\pard\nowidctlpar\fi-720\li720\tx1080\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows XP/7/8 32/64 bit\par
+\f1\'b7\tab\f0 Compliant with Camera Link specifications 2.0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Supports 1 Medium/Full/80-bit Camera Link configuration or\line 2 independent Base Camera Link cameras\par
+{\pntext\f5\'B7\tab}PoCL on both cables\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 8, 10 and 12 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port (up to 921600 baud) accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 RS-422 dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger inputs \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe outputs \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Bayer Decoding\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\b\fs20\par
+\cf1\fs32{\pntext\f5\'B7\tab}New Features\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-630\li720\sl240\slmult0\tx720\cf2\b0\fs24\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf0\fs20\par
+\cf1\b\fs32{\pntext\f5\'B7\tab}Fixes\cf0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\b0\fs24 When initializaing Base #2 it would disable Base #1 shaft encoder.\b\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1080\b0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\sl240\slmult0\cf1\b\fs32 Backward Compatibility\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\f1\fs24\'b7\tab\f0 Compatible with Sapera LT version 7.30 and later. \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 SaperaLT 7.40 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\fs20 CORACQ_PRM_TIME_STAMP\par
+{\pntext\f5\'B7\tab}CORACQ_CAP_TIME_STAMP_BASE\par
+{\pntext\f5\'B7\tab}CORACQ_PRM_TIME_STAMP_BASE\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_1_PRESENT, CORACQ_VAL_PIXEL_CLK_2_PRESENT\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_3_PRESENT, CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\cf2\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\f1\fs24\'b7\tab\f0 SaperaLT 7.50 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_80BITS_PACKED (CamExpert)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}CORACQ_VAL_VIDEO_BICOLOR (Software Conversion)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}White Balance Gain on RGB pixels that are not the result of a Bayer conversion (Classes)\cf2\f0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\fs24  \f1\'b7\tab\f0 SaperaLT 8.00 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_FULL_PACKED (CamExpert)\cf2\f0\fs24\par
+\pard\nowidctlpar\li720\sl240\slmult0\tx1080\par
+\par
+\pard\nowidctlpar\cf1\b\fs32 Notes\par
+\cf0\b0\fs20\par
+\pard\nowidctlpar\fi-360\li720\f1\fs24\'b7\tab\f0 Horizontal flipping is supported for lines up to 16 kBytes.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 Historically on X64/Xcelera series, the \b CORACQ_VAL_PIXEL_CLK_PRESENT \b0 status flag represents the Pixel Clock on the Base Camera Link cable.\line In order give a better status to client, in 7.40 this status flag has been renamed \b CORACQ_VAL_PIXEL_CLK_1_PRESENT\b0 . \line Also, we have added the following: \b CORACQ_VAL_PIXEL_CLK_2_PRESENT\b0 , \b CORACQ_VAL_PIXEL_CLK_3_PRESENT \b0 and \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\b0 . \line When one wants to check for the clock present before grabbing, the \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT \b0\line status flag MUST be used as it indicates that the front-end is ready to acquire images.\par
+{\pntext\f5\'B7\tab}Buffer Time Stamping has been improved with the addition of the new parameters: \b CORACQ_PRM_TIME_STAMP \b0 and \b CORACQ_PRM_TIME_STAMP_BASE. \b0\line The parameter \b CORXFER_PRM_COUNTER_STAMP_TIME_BASE \b0 is no longer supported. The new parameter \b CORACQ_PRM_TIME_STAMP \b0 permits reading the time stamp, \line resetting the time stamp while the \b CORACQ_PRM_TIME_STAMP_BASE \b0 permits saving in the CCF file the time base.\par
+{\pntext\f5\'B7\tab}Board Sync control has been simplified by the addition of 2 new parameters: \b CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\b0  and \b CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\b0 . \line These 2 parameters specify the source signal to send to one of the 2 board sync I/Os. The External Frame/Line Trigger source does not specify anymore the board sync as a destination \line (what was called \lquote Pulse to Board Sync\rquote  and \ldblquote To Board Sync\rquote ) in X64/Xcelera series.\par
+{\pntext\f5\'B7\tab}The order in which the Shaft Encoder drop/multiply operations are performed can now be specified using the new parameter: \b CORACQ_PRM_SHAFT_ENCODER_ORDER\b0 .\par
+{\pntext\f5\'B7\tab}When doing Bi-Color and Bayer conversion using the 80-bit configuration, if the number of camera pixels is not a multiple of 20 bytes, the last pixel of each resulting lines will not have proper pixel value based on the mirror image technique.\par
+{\pntext\f5\'B7\tab}If grabbing variable frame length images with the 80-bit configuration, if the number of bytes per lines is not a multiple of 20, user will need to set the horizontal active to the closest multiple of 20 bytes not exceeding the camera line width.\par
+{\pntext\f5\'B7\tab}In "Dual Bayer" configuration, if there are frame losts when acquiring from a bayer camera, when stopping the grab the 'End of Transfer' event might not be generated for one or both of the inputs.\par
+{\pntext\f5\'B7\tab}3 taps/10 bits Bayer camera must have an horizontal active of 24 pixels.\par
+{\pntext\f5\'B7\tab}When host buffers are RGB888, the horizontal active must be a multiple of 8 pixels.\par
+{\pntext\f5\'B7\tab}If the board cannot be reset in the PC. Use the alternate method by setting the registry key "ResetMethod" to 1.\par
+\pard\nowidctlpar\sa200\sl240\slmult1\i\fs16\tab [HKEY_LOCAL_MACHINE\\SOFTWARE\\Teledyne DALSA\\Xtium-CL MX4 Device Driver]\par
+\tab "ResetMethod"=dword:00000001\par
+\pard\nowidctlpar\i0\f4\fs24\line\cf1\b\f0\fs32 =============================================\par
+\cf0\b0\f4\fs24\line\b\f0\fs28 Version 1.00.00.0029\par
+\b0 Teledyne DALSA Inc., April 30th, 2015\fs20\par
+\tab\tab\tab\tab\par
+\par
+\cf1\b\fs32 Hardware Supported\cf0\par
+\pard\nowidctlpar\fi-360\li720\tx1080\b0\f1\fs24\'b7\tab\f0 Xtium-CL MX4 Full\par
+\pard\nowidctlpar\fi-720\li720\tx1080\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows XP/7/8 32/64 bit\par
+\f1\'b7\tab\f0 Compliant with Camera Link specifications 2.0\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Supports 1 Medium/Full/80-bit Camera Link configuration or\line 2 independent Base Camera Link cameras\par
+{\pntext\f5\'B7\tab}PoCL on both cables\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 8, 10 and 12 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port (up to 921600 baud) accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 RS-422 dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger inputs \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe outputs \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Bayer Decoding\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\b\fs20\par
+\cf1\fs32{\pntext\f5\'B7\tab}New Features\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-630\li720\sl240\slmult0\tx720\cf2\b0\fs24\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf0\fs20\par
+\cf1\b\fs32{\pntext\f5\'B7\tab}Fixes\cf0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1080\b0\fs24\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li720\tx1440\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\sl240\slmult0\cf1\b\fs32 Backward Compatibility\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\b0\f1\fs24\'b7\tab\f0 Compatible with Sapera LT version 7.30 and later. \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 SaperaLT 7.40 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\fs20 CORACQ_PRM_TIME_STAMP\par
+{\pntext\f5\'B7\tab}CORACQ_CAP_TIME_STAMP_BASE\par
+{\pntext\f5\'B7\tab}CORACQ_PRM_TIME_STAMP_BASE\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE_STR\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_CAP_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_PRM_SHAFT_ENCODER_ORDER\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_1_PRESENT, CORACQ_VAL_PIXEL_CLK_2_PRESENT\cf2\par
+\cf0{\pntext\f5\'B7\tab}CORACQ_VAL_PIXEL_CLK_3_PRESENT, CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\cf2\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\f1\fs24\'b7\tab\f0 SaperaLT 7.50 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_80BITS_PACKED (CamExpert)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}CORACQ_VAL_VIDEO_BICOLOR (Software Conversion)\cf2\f0\par
+\cf0\f3{\pntext\f5\'B7\tab}White Balance Gain on RGB pixels that are not the result of a Bayer conversion (Classes)\cf2\f0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\fs24  \f1\'b7\tab\f0 SaperaLT 8.00 and later required for support for following features:\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1080\sl240\slmult0\tx1080\cf0\f3\fs20 CORACQ_VAL_CAMLINK_CONFIGURATION_FULL_PACKED (CamExpert)\cf2\f0\fs24\par
+\pard\nowidctlpar\li720\sl240\slmult0\tx1080\par
+\par
+\pard\nowidctlpar\cf1\b\fs32 Notes\par
+\cf0\b0\fs20\par
+\pard\nowidctlpar\fi-360\li720\f1\fs24\'b7\tab\f0 Horizontal flipping is supported for lines up to 16 kBytes.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 Historically on X64/Xcelera series, the \b CORACQ_VAL_PIXEL_CLK_PRESENT \b0 status flag represents the Pixel Clock on the Base Camera Link cable.\line In order give a better status to client, in 7.40 this status flag has been renamed \b CORACQ_VAL_PIXEL_CLK_1_PRESENT\b0 . \line Also, we have added the following: \b CORACQ_VAL_PIXEL_CLK_2_PRESENT\b0 , \b CORACQ_VAL_PIXEL_CLK_3_PRESENT \b0 and \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT\b0 . \line When one wants to check for the clock present before grabbing, the \b CORACQ_VAL_PIXEL_CLK_ALL_PRESENT \b0\line status flag MUST be used as it indicates that the front-end is ready to acquire images.\par
+{\pntext\f5\'B7\tab}Buffer Time Stamping has been improved with the addition of the new parameters: \b CORACQ_PRM_TIME_STAMP \b0 and \b CORACQ_PRM_TIME_STAMP_BASE. \b0\line The parameter \b CORXFER_PRM_COUNTER_STAMP_TIME_BASE \b0 is no longer supported. The new parameter \b CORACQ_PRM_TIME_STAMP \b0 permits reading the time stamp, \line resetting the time stamp while the \b CORACQ_PRM_TIME_STAMP_BASE \b0 permits saving in the CCF file the time base.\par
+{\pntext\f5\'B7\tab}Board Sync control has been simplified by the addition of 2 new parameters: \b CORACQ_PRM_BOARD_SYNC_OUTPUT1_SOURCE\b0  and \b CORACQ_PRM_BOARD_SYNC_OUTPUT2_SOURCE\b0 . \line These 2 parameters specify the source signal to send to one of the 2 board sync I/Os. The External Frame/Line Trigger source does not specify anymore the board sync as a destination \line (what was called \lquote Pulse to Board Sync\rquote  and \ldblquote To Board Sync\rquote ) in X64/Xcelera series.\par
+{\pntext\f5\'B7\tab}The order in which the Shaft Encoder drop/multiply operations are performed can now be specified using the new parameter: \b CORACQ_PRM_SHAFT_ENCODER_ORDER\b0 .\par
+{\pntext\f5\'B7\tab}When doing Bi-Color and Bayer conversion using the 80-bit configuration, if the number of camera pixels is not a multiple of 20 bytes, the last pixel of each resulting lines will not have proper pixel value based on the mirror image technique.\par
+{\pntext\f5\'B7\tab}If grabbing variable frame length images with the 80-bit configuration, if the number of bytes per lines is not a multiple of 20, user will need to set the horizontal active to the closest multiple of 20 bytes not exceeding the camera line width.\par
+{\pntext\f5\'B7\tab}In "Dual Bayer" configuration, if there are frame losts when acquiring from a bayer camera, when stopping the grab the 'End of Transfer' event might not be generated for one or both of the inputs.\par
+{\pntext\f5\'B7\tab}3 taps/10 bits Bayer camera must have an horizontal active of 24 pixels.\par
+{\pntext\f5\'B7\tab}When host buffers are RGB888, the horizontal active must be a multiple of 8 pixels.\par
+{\pntext\f5\'B7\tab}If the board cannot be reset in the PC. Use the alternate method by setting the registry key "ResetMethod" to 1.\par
+\pard\nowidctlpar\sa200\sl240\slmult1\i\fs16\tab [HKEY_LOCAL_MACHINE\\SOFTWARE\\Teledyne DALSA\\Xtium-CL MX4 Device Driver]\par
+\tab "ResetMethod"=dword:00000001\par
+\pard\nowidctlpar\i0\f4\fs24\line\line\f0\par
+\ul\b\fs32\par
+\cf1\ulnone\par
+}
+ 

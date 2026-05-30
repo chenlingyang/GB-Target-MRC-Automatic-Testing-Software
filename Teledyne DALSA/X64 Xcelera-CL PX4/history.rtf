@@ -1,0 +1,230 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fmodern\fprq1\fcharset0 Courier New;}{\f3\froman\fprq2\fcharset0 Times New Roman;}{\f4\fnil\fcharset0 Courier New;}{\f5\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\nowidctlpar\qc\cf1\lang1033\b\f0\fs48 X64 Xcelera-CL PX4 Driver \par
+\fs20 for\fs48\par
+Sapera LT Imaging Library \par
+\fs20 for\fs48\par
+Windows XP / Vista / 7 / 8\par
+(32/64 bit)\par
+\fs40 Version History\par
+Teledyne DALSA Inc.\par
+\par
+\pard\nowidctlpar\par
+\fs32 Version 1.41.00.0652\par
+\cf0\b0\fs24\tab May 15th, 2013\par
+\par
+\cf1\b\fs32 Hardware Supported\cf0\b0\fs20\par
+\pard\nowidctlpar\fi-360\li720\tx1080\f1\fs24\'b7\tab\f0 X64 Xcelera-CL PX4 Full\par
+\f1\'b7\tab\f0 X64 Xcelera-CL PX4 Dual\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1080 XIO Board\par
+\pard\nowidctlpar\sl240\slmult0\cf1\fs32\par
+\pard\nowidctlpar\b Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows XP/VISTA/7 32/64 bit\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Up to 10 taps (full version), 6 taps (dual version)\par
+{\pntext\f5\'B7\tab}1 Full Camera Link camera (full version)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 2 Base or one Medium Camera Link camera (dual version)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 PoCL\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 8, 10 and 12 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger input (2 on dual version)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe output (2 on dual version)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Internal frame trigger\par
+{\pntext\f5\'B7\tab}Input LUTs\par
+{\pntext\f5\'B7\tab}Bayer Decoding\par
+{\pntext\f5\'B7\tab}Flat Field Correction\par
+\pard\nowidctlpar\fs20\par
+\par
+\cf1\b\fs32 New Features \fs24 (since 1.30)\cf0\b0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720\fs24 On-board and Host DMA optimization for higher frame rate support.\par
+\pard\nowidctlpar\fi-360\li720\tx1440\f1\'b7\fs20\tab\f0\fs24 Serial port speed support up to 921600 baud.\par
+\f1\'b7\fs20\tab\f0\fs24 Support for physical LVAL invalid of 2 pixel minimum. Original design needed a minimum of 4 pixels.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Shaft encoder enhancements: support for parameters CORACQ_PRM_SHAFT_ENCODER_DIRECTION, CORACQ_PRM_LINE_TRIGGER_AUTO_DELAY and ACQ events: Shaft encoder reverse count overflow, Line trigger too fast and External line trigger too slow. \cf2\f2\par
+\pard\nowidctlpar\fi-360\li720\tx1440\par
+\pard\nowidctlpar\li720\cf0\f0\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Fixes \fs24 (since 1.30)\ul\fs32\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx180\cf0\ulnone\b0\fs24 Multi-thread/multi-board initialization of ACQ/XFER.\par
+{\pntext\f5\'B7\tab}Possible missing 1st frame of a sequence when an Abort is done before acquiring.\par
+{\pntext\f5\'B7\tab}ACQ event not received by Sapera Monitor if application does not register at least one ACQ event.\par
+{\pntext\f5\'B7\tab}Possible acquisition pass the virtual end of frame in RGB line scan mode.\par
+{\pntext\f5\'B7\tab}Increased length of auto-generated board sync signal when option 'To Board Sync' is selected on the Master board. Slave boards could miss pulses.\par
+{\pntext\f5\'B7\tab}Possible board not being able to re-train after a board reset.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sb40\sa20\tx360\tx720 When grabbing with a  base camera using a Medium or Full configuration, the 2nd unused camera input could affect the acquired images.\par
+{\pntext\f5\'B7\tab}Optimized XferSelect and XferAppend functions which were taking exponential times.\par
+{\pntext\f5\'B7\tab}FFC with dual channel cameras.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720 When using a dual camera configuration, possibility of events being turned off when creating an Xfer handle on one camera while grabbing with the other one.\par
+{\pntext\f5\'B7\tab}When grabbing from base or medium camera configuration, possible interference from unused 2nd and/or 3rd CameraLink chip output causing acquired image to be a flat grey image.  \par
+{\pntext\f5\'B7\tab}Possible Data Overflow using Dual FFC FPGA and segmented tap configuration.\par
+{\pntext\f5\'B7\tab}Possible tap de-synchronization when acquiring variable frame length images with segmented tap configuration.\par
+{\pntext\f5\'B7\tab}Possible buffer incomplete of acquired images in segmented tap configuration with segments having right-to-left direction.\par
+{\pntext\f5\'B7\tab}Improved FPGA memory interfacing in order to better support a wider range memory manufacturer.\par
+\pard\nowidctlpar\tx720\cf1\fs32\par
+\pard\nowidctlpar\sl240\slmult0\b Backward Compatibility\b0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\f1\fs20\'b7\tab\f0\fs24 Compatible with Sapera LT version 5.20 and later (XP), 6.02 and later (Windows Vista & Windows 7).\par
+\f1\fs20\'b7\tab\f0\fs24 For Wow64 driver under 64-bit OS,  compatible with Sapera LT version \cf0 7.11.02.1052\cf2\par
+\pard\nowidctlpar\fi-720\li720\sl240\slmult0\tx720\fs20\par
+\pard\nowidctlpar\cf1\b\fs32 Notes\cf0\b0\fs20\par
+\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720\fs24 Cropping width must be a multiple of 16 pixels.\par
+{\pntext\f5\'B7\tab}Hactive must be a multiple of 16 pixels/taps with multi-segmented tap cameras.\par
+{\pntext\f5\'B7\tab}Serial ports are only available once a Sapera application has started/executed. This will be the case in most instances as Device Manager runs on every bootup. \par
+{\pntext\f5\'B7\tab}4 taps of 8 bits with alternated taps and Camera Link configuration "two bases" is not supported.\par
+{\pntext\f5\'B7\tab}External Trigger Acquisition Callback \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li1440\tx720 Line scan: edge and level trigger\par
+{\pntext\f5\'B7\tab}Area scan: edge trigger only\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720 The LUT must not be change/set while grabbing.\par
+{\pntext\f5\'B7\tab}Vertical flip, Horizontal flip and cropping is not supported for 10 taps camera.\par
+{\pntext\f5\'B7\tab}Horizontal flip is not support for dual channel camera and for 2 alternated taps 10 or 12 bits camera.\par
+{\pntext\f5\'B7\tab}For 10 taps camera, to maximize the bandwidth, do not crop horizontally and use a multiple of 8 lines.\par
+{\pntext\f5\'B7\tab}In variable frame length, the external trigger must be inactive for at least one line.\par
+{\pntext\f5\'B7\tab}Monochrome camera with 8 taps alternated and color camera with 2 taps alternated are not supported.\par
+{\pntext\f5\'B7\tab}When a software trigger is used the parameter CORACQ_PRM_EXT_TRIGGER_DELAY has no effect.\par
+{\pntext\f5\'B7\tab}To optimize transfer bandwidth, parallel taps of 8 and 10 taps are automatically merged if the following conditions are met\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li1440\tx720 No horizontal or vertical flipping is requested\par
+{\pntext\f5\'B7\tab}All tap directions are from top to bottom\par
+{\pntext\f5\'B7\tab}No horizontal cropping of incoming image is requested\line\pard\nowidctlpar\fi-720\li720\tx720\par
+\pard\nowidctlpar\fi-720\li1440\tx720 If the number of vertical lines to acquire is not a multiple of the number of lines to merge, no merging will be done.\line\pard\nowidctlpar\fi-720\li720\tx720 For line length of 2K and less, line merging will be done on 2, 4 or 8 lines depending on the line length in pixels.\par
+\tab 0 - 800 : 4 lines\line\tab 801 - 1024 : 2 lines\line\tab 1025 - 2048 : 8 lines \par
+\line Line length multiple of 2K: No merging.\line For line length > 2K, number of lines merged = 2048 / (Line Length % 2048), max of 8 lines. If number of vertical lines to acquire is not a\line multiple of the number of lines to merge, the driver will try to merge less lines.\line       \par
+\pard\nowidctlpar\fi-720\li1440\tx720 Line merging imposes constraint on the number of vertical lines that must be a multiple of the number of lines merged. This can be an issue when acquiring variable frame length images. If transfer bandwidth is not an issue, the CORXFER_PRM_LINE_MERGING can be used to turn off the automatic line merging of parallel taps of 8 and 10 taps.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720 In 3-tap parallel configuration, the DataValid signal is always active, and cannot be de-activated. \par
+{\pntext\f5\'B7\tab}The buffer parameter CORBUFFER_PRM_SPACE_USED is updated only if the transfer event 'End of Frame' is registered.\par
+{\pntext\f5\'B7\tab}The buffer state CORBUFFER_VAL_STATE_OVERFLOW is set only if the transfer event 'End of Frame' is registered.\par
+{\pntext\f5\'B7\tab}The external frame trigger (in linescan) when set to acquire on a level high or low, will only start acquisition when an edge, rising or falling respectively, is detected.\par
+{\pntext\f5\'B7\tab}When acquiring from 2 bayer sources simultaneously, it is recommended to create 3 or more internal buffers per input in order to avoid losing frames. \line Also, note that there is only one bayer to RGB converter on the board, so images are converted in a serial fashion.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent360{\pntxtb\'B7}}\fi-360\li720\sb40\sa20\tx360\tx720 Removed HS80 specific firmware ("\b\f3\fs20 One Full Camera Link Input with Flat Field Correction\b0  (FFC), optimized for use with the Teledyne DALSA HS-80 camera.\f0\fs24 "). The optimization has been integrated\line into the standard Full FPGA. \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Dual Bayer firmware supports serial port speed up to 115200 baud and supports a minimum of 4 pixels for the physical LVAL.\par
+{\pntext\f5\'B7\tab}Flat-Line correction is not supported with 10-tap FPGA.\par
+\pard\nowidctlpar\ul\b\par
+\cf1\ulnone\fs40 =========================================================================\par
+\fs32 Version 1.30.00.0515\par
+\cf0\fs24\tab\b0 September 13th 2011\par
+\par
+\cf1\b\fs32 Hardware Supported\cf0\b0\fs20\par
+\pard\nowidctlpar\fi-360\li720\tx1080\f1\fs24\'b7\tab\f0 X64 Xcelera-CL PX4 Full\par
+\f1\'b7\tab\f0 X64 Xcelera-CL PX4 Dual\par
+\pard\nowidctlpar\sl240\slmult0\cf1\fs32\par
+\pard\nowidctlpar\b Key Features\par
+\pard\nowidctlpar\fi-360\li720\tx1440\cf0\b0\f1\fs24\'b7\tab\f0 Windows XP/VISTA/7 32/64 bit\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Up to 10 taps (full version), 6 taps (dual version)\par
+{\pntext\f5\'B7\tab}1 Full Camera Link camera (full version)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 2 Base or one Medium Camera Link camera (dual version)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 PoCL\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Linescan & areascan Camera Link cameras\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Horizontal and vertical flipping\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 Monochrome 8, 10, 12, 14 and 16 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 RGB 24, 30, 36 bits per pixel\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440\f1\'b7\tab\f0 On-board serial port accessible as a standard PC COM port (one per camera)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled dual-phase quadrature shaft encoder input \par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Opto-coupled external trigger input (2 on dual version)\par
+\f1{\pntext\f5\'B7\tab}\'b7\tab\f0 Strobe output (2 on dual version)\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx1440 Internal frame trigger\par
+{\pntext\f5\'B7\tab}Input LUTs\par
+{\pntext\f5\'B7\tab}Bayer Decoding\par
+{\pntext\f5\'B7\tab}Flat Field Correction\par
+\pard\nowidctlpar\fs20\par
+\par
+\cf1\b\fs32 New Features\cf0\b0\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720\fs24 Windows 7 support.\par
+{\pntext\f5\'B7\tab}Supports Sapera Monitor tool\par
+{\pntext\f5\'B7\tab}Added optimized CameraLink Full Firmware with Flatfield correction, to support DALSA's HS-80 camera.\par
+{\pntext\f5\'B7\tab}Support for 3-tap parallel, 8-bit monochrome (Dual board).\par
+{\pntext\f5\'B7\tab}10-tap FPGA now supports any line width multiple of 10 pixels instead of 80 pixels.\par
+{\pntext\f5\'B7\tab}Added support for installation switch /cr to require a reboot of the PC when a reset of the board is requested. This switch is useful on a minority of systems that generate a BSOD when the board is reset.\cf2\par
+\cf0{\pntext\f5\'B7\tab}Support for new Xfer parameter CORXFER_PRM_LINE_MERGING to control automatic or turning off merging of lines to optimize transfer bandwidth.\cf2\par
+\cf0{\pntext\f5\'B7\tab}Support for 'Shaft Encoder' time base for time stamping buffers.\par
+{\pntext\f5\'B7\tab}Medium and Full Bayer cameras.\par
+{\pntext\f5\'B7\tab}Acquiring Infinite number of frames upon receiving one external trigger.\par
+{\pntext\f5\'B7\tab}2 channels with timeslot 2 cameras.\par
+{\pntext\f5\'B7\tab}Support for Basler Sprint Camera using Bayer Method 6.\par
+{\pntext\f5\'B7\tab}100 nsec resolution for internal line trigger.\par
+{\pntext\f5\'B7\tab}100 msec time base for timers, permitting integration of over 70 minutes.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\li720\fs20\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlcont\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\cf1\b\fs32 Fixes\ul\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx180\cf0\ulnone\b0\fs24 Camera with 4 taps of 16-bits per pixel.\par
+{\pntext\f5\'B7\tab}Linescan acquisition into host buffers that are bigger than 1/2 the internal on-board memory.\par
+{\pntext\f5\'B7\tab}Bayer decoding of 2 cameras of 12-bits per pixel.\par
+{\pntext\f5\'B7\tab}Timestamp source for the 2nd camera was always using the usec timestamp independently of the one selected by user\par
+{\pntext\f5\'B7\tab}PoCL and camera DALSA HCL, the clock of the camera stopped for less than 100ms causing the power to be removed.\par
+{\pntext\f5\'B7\tab}Starting Device Manager at the same time as an Application caused Device Manager saying 'randomly' that the Firmware needs an update.\par
+{\pntext\f5\'B7\tab}Acquisition of camera CV-M8CL was not working: the FVAL falling edge is 1 pixel clock before the LVAL falling edge.\par
+{\pntext\f5\'B7\tab}Time integration of a vertically cropped image was not working.\par
+{\pntext\f5\'B7\tab}Buffer 'overflow' state when XferDesc is not used with XferAppend. \par
+{\pntext\f5\'B7\tab}Buffer 'overflow' state when line merging is active.\par
+{\pntext\f5\'B7\tab}External Trigger Delay value was taken into account even if the external trigger was disabled.\par
+{\pntext\f5\'B7\tab}Support for 12/14/16 bits per pixel, dual channel camera.\par
+{\pntext\f5\'B7\tab}Grabbing into host image buffers that are bigger than the on-board memory.\par
+{\pntext\f5\'B7\tab}Possible corrupted image when grabbing dual RGB or dual Bayer cameras with big image size.\par
+{\pntext\f5\'B7\tab}FFC with lines > 4KB\par
+{\pntext\f5\'B7\tab}Horizontal flipping of images for multi-segemented taps.\par
+{\pntext\f5\'B7\tab}Variable frame length trigger shorter than time it takes to fill host buffer, host buffer could still be filled when using segmented taps.\par
+{\pntext\f5\'B7\tab}GIO callbacks would only be generated on falling edges even if user requested rising edges.\par
+{\pntext\f5\'B7\tab}Host buffers > 4 GB in size.\par
+{\pntext\f5\'B7\tab}Host buffers crossing 4GB boundaries would generate a black line on this boundary.\par
+{\pntext\f5\'B7\tab}PCIe training issues in some computers.\par
+{\pntext\f5\'B7\tab}Optimized connection/disconnection time when using large amount of host buffers.\par
+{\pntext\f5\'B7\tab}Increased length of auto-generated board sync signal. Slave boards could miss pulses.\par
+\pard\nowidctlpar\tx720\cf1\fs32\par
+\pard\nowidctlpar\sl240\slmult0\b Backward Compatibility\b0\par
+\pard\nowidctlpar\fi-360\li720\sl240\slmult0\tx720\cf2\f1\fs20\'b7\tab\f0\fs24 Compatible with Sapera LT version 5.20 and later (XP), 6.02 and later (Windows Vista & Windows 7).\fs20\par
+\pard\nowidctlpar\fi-720\li720\sl240\slmult0\tx720\par
+\pard\nowidctlpar\cf1\b\fs32 Notes\cf0\b0\fs20\par
+\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720\fs24 Cropping width must be a multiple of 16 pixels.\par
+{\pntext\f5\'B7\tab}Hactive must be a multiple of 32 pixels/Taps with multi-tap camera\par
+{\pntext\f5\'B7\tab}Serial ports are only available once a Sapera application has started/executed. This will be the case in most instances as Device Manager runs on every bootup. \par
+{\pntext\f5\'B7\tab}4 taps of 8 bits with alternated taps and cameralink configuration "two bases" is not supported.\par
+{\pntext\f5\'B7\tab}External Trigger Acquisition Callback \par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li1440\tx720 Line scan: edge and level trigger\par
+{\pntext\f5\'B7\tab}Area scan: edge trigger only\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720 The LUT must not be change/set while grabbing.\par
+{\pntext\f5\'B7\tab}Vertical flip, Horizontal flip and cropping is not supported for 10 taps camera.\par
+{\pntext\f5\'B7\tab}Horizontal flip is not support for dual channel camera and for 2 alternated taps 10 or 12 bits camera.\par
+{\pntext\f5\'B7\tab}For 10 taps camera, to maximize the bandwidth, do not crop horizontally and use a multiple of 8 lines.\par
+{\pntext\f5\'B7\tab}In variable frame length, the external trigger must be inactive for at least one line.\par
+{\pntext\f5\'B7\tab}Monochrome camera with 8 taps alternated and color camera with 2 taps alternated are not supported.\par
+{\pntext\f5\'B7\tab}When a software trigger is used the parameter CORACQ_PRM_EXT_TRIGGER_DELAY has no effect.\par
+{\pntext\f5\'B7\tab}To optimize transfer bandwidth, parallel taps of 8 and 10 taps are automatically merged if the following conditions are met\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-720\li1440\tx720 No horizontal or vertical flipping is requested\par
+{\pntext\f5\'B7\tab}All tap directions are from top to bottom\par
+{\pntext\f5\'B7\tab}No horizontal cropping of incoming image is requested\line\pard\nowidctlpar\fi-720\li720\tx720\par
+\pard\nowidctlpar\fi-720\li1440\tx720 If the number of vertical lines to acquire is not a multiple of the number of lines to merge, no merging will be done.\line\pard\nowidctlpar\fi-720\li720\tx720 For line length of 2K and less, line merging will be done on 2, 4 or 8 lines depending on the line length in pixels.\par
+\tab 0 - 800 : 4 lines\line\tab 801 - 1024 : 2 lines\line\tab 1025 - 2048 : 8 lines \par
+\line Line length multiple of 2K: No merging.\line For line length > 2K, number of lines merged = 2048 / (Line Length % 2048), max of 8 lines. If number of vertical lines to acquire is not a\line multiple of the number of lines to merge, the driver will try to merge less lines.\line       \par
+\pard\nowidctlpar\fi-720\li1440\tx720 Line merging imposes constraint on the number of vertical lines that must be a multiple of the number of lines merged. This can be an issue when acquiring variable frame length images. If transfer bandwidth is not an issue, the CORXFER_PRM_LINE_MERGING can be used to turn off the automatic line merging of parallel taps of 8 and 10 taps.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx720 In 3-tap parallel configuration, the DataValid signal is always active, and cannot be de-activated. \par
+{\pntext\f5\'B7\tab}The buffer parameter CORBUFFER_PRM_SPACE_USED is updated only if the transfer event 'End of Frame' is registered.\par
+{\pntext\f5\'B7\tab}The buffer state CORBUFFER_VAL_STATE_OVERFLOW is set only if the transfer event 'End of Frame' is registered.\par
+{\pntext\f5\'B7\tab}The external frame trigger (in linescan) when set to acquire on a level high or low, will only start acquisition when an edge, rising or falling respectively, is detected.\par
+{\pntext\f5\'B7\tab}When acquiring from 2 bayer sources simultaneously, it is recommended to create 3 or more internal buffers per input in order to avoid losing frames. \line Also, note that there is only one bayer to RGB converter on the board, so images are converted in a serial fashion.\par
+\pard{\pntext\f5\'B7\tab}{\*\pn\pnlvlblt\pnf5\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\tx180 Variable frame length when using segmented taps and a pixel clock below 40MHz might acquire pass the end of the received frame length.\par
+\pard\nowidctlpar\ul\b\par
+\ulnone\b0\tab\tab\tab\par
+\cf1\b\fs40 =========================================================================\par
+\fs32 Version 1.20 \par
+\cf0\fs24\tab\b0 Never Released\tab\tab\tab\par
+\cf1\b\fs40 =========================================================================\par
+\fs32 Version 1.10.00.0205\par
+\cf0\fs24\tab\b0 July 6th 2007\tab\tab\tab\par
+\pard\f4\fs20\par
+\f0\tab - Fix FFC in linescan. FFC no apply correctly.\par
+\tab - Added support for PoCL\par
+\tab - 14 and 16 bit camera on the second acquisition module were not acquire correctly.\par
+\tab - Fix only 9 serial ports could be opened.\par
+\tab - Added support for VISTA 32 and 64 bits\par
+\tab - Fix parameter CORACQ_PRM_EXT_FRAME_TRIGGER_COUNT wasn't use in continuous grab.\par
+\tab - Fix support for camera with LVAL and FVAL not active at the same time, wasn't grabbing.\par
+\tab - Fix support for camera JAI, new fpgas, wasn't grabbing.\par
+\tab - Fix grab controler, a extra frame was needed after a XferStop when the external is used.\par
+\pard\nowidctlpar\cf1\b\fs40 =========================================================================\par
+\fs32 Version 1.00.00.117\par
+\cf2\b0\fs24\tab - First Release\par
+\tab March 30th 2007\par
+\pard\cf0\f4\fs20\tab\f0\fs24 Compatible with sapera 6.00 and up\par
+\pard\nowidctlpar\cf1\b\fs40\par
+\pard\cf0\b0\f4\fs20\tab\par
+}
+ 

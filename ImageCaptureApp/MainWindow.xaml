@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:ImageCaptureApp.Controls"
-        Title="图像采集卡上位机软件" Height="600" Width="1000"
+        Title="MRC自动测试系统（GBA1靶标）" Height="820" Width="1380"
         WindowStartupLocation="CenterScreen"
         KeyDown="Window_KeyDown">
     <Window.InputBindings>
@@ -10,6 +10,7 @@
     </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -38,6 +39,12 @@
 
         <!-- 工具栏 -->
         <ToolBar Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="5,0,10,0" VerticalAlignment="Center">
+                <TextBlock Text="采集源:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                <ComboBox x:Name="CmbCaptureSource" Width="200" VerticalAlignment="Center" SelectionChanged="CmbCaptureSource_SelectionChanged" IsEnabled="False">
+                    <ComboBoxItem Content="Teledyne DALSA（SaperaLT）" Tag="TeledyneDalsaSaperaLt" />
+                </ComboBox>
+            </StackPanel>
             <Button Content="开始采集" Click="BtnStart_Click" x:Name="BtnStart" Padding="10,5"/>
             <Button Content="停止采集" Click="BtnStop_Click" x:Name="BtnStop" Padding="10,5" IsEnabled="False"/>
             <Separator/>
@@ -48,22 +55,119 @@
             <Button Content="放大" Click="BtnZoomIn_Click" Padding="10,5"/>
             <Button Content="缩小" Click="BtnZoomOut_Click" Padding="10,5"/>
             <Button Content="重置" Click="BtnReset_Click" Padding="10,5"/>
-            <!-- 批量采集区域 -->
-         <StackPanel Orientation="Horizontal" Margin="5">
-            <TextBox x:Name="TxtBatchCount" Text="100" Width="60" Margin="1" ToolTip="采集张数" FontSize="16"/>
-            <TextBlock Text="张" VerticalAlignment="Center"/>
-            <TextBox x:Name="TxtSaveFolder" Text="C:\Captures" Width="200" Margin="5" IsReadOnly="True"/>
-            <Button x:Name="BtnSelectFolder" Content="浏览..." Click="BtnSelectFolder_Click" Width="60" Margin="2"/>
-            <Button x:Name="BtnBatchCapture" Content="批量采集" Click="BtnBatchCapture_Click" Width="80" Margin="2"/>
-            <TextBlock x:Name="TxtBatchProgress" Text="就绪" VerticalAlignment="Center" Margin="5"/>
-            </StackPanel>
+            <Separator/>
+            <Border Width="48" Background="Transparent"/>
+            <Button Content="MRC处理" Click="BtnMrcProcess_Click" x:Name="BtnMrcProcess" Padding="10,5" ToolTip="开启/停止实时MRC处理"/>
         </ToolBar>
 
-        <!-- 图像显示区域 -->
-        <controls:ImageDisplayControl x:Name="ImageDisplay" Grid.Row="2" Margin="1" RenderTransformOrigin="0.5,0.5"/>
+        <!-- 批量采集区域（独立一行，避免在工具栏里被折叠看不到） -->
+        <Border Grid.Row="2" Margin="6,4,6,4" Padding="6" BorderBrush="#FFBDBDBD" BorderThickness="1" CornerRadius="4">
+            <StackPanel>
+                <WrapPanel VerticalAlignment="Center" Margin="0,0,0,6">
+                    <TextBlock Text="批量采集：" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBlock Text="张数" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBox x:Name="TxtBatchCount" Text="100" Width="70" Margin="0,0,8,0" ToolTip="采集张数"/>
+                    <TextBlock Text="格式" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <ComboBox x:Name="CmbSaveFormat" Width="80" Margin="0,0,8,0" SelectionChanged="CmbSaveFormat_SelectionChanged">
+                        <ComboBoxItem Content="PNG" Tag="PNG"/>
+                        <ComboBoxItem Content="JPG" Tag="JPG"/>
+                        <ComboBoxItem Content="TIF" Tag="TIF"/>
+                        <ComboBoxItem Content="RAW" Tag="RAW"/>
+                    </ComboBox>
+                    <TextBlock Text="保存路径" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBox x:Name="TxtSaveFolder" Text="C:\Captures" Width="360" Margin="0,0,8,0" IsReadOnly="True"/>
+                    <Button x:Name="BtnSelectFolder" Content="浏览..." Click="BtnSelectFolder_Click" Width="70" Margin="0,0,8,0"/>
+                    <Button x:Name="BtnBatchCapture" Content="批量采集" Click="BtnBatchCapture_Click" Width="90" Margin="0,0,8,0"/>
+                    <TextBlock x:Name="TxtBatchProgress" Text="就绪" VerticalAlignment="Center"/>
+                </WrapPanel>
+
+                <WrapPanel VerticalAlignment="Center" Margin="0,0,0,6">
+                    <TextBlock Text="MRC处理：" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBlock Text="图像文件夹" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBox x:Name="TxtMrcFolder" Text="C:\Captures" Width="460" Margin="0,0,8,0" IsReadOnly="True"/>
+                    <Button x:Name="BtnMrcSelectFolder" Content="浏览..." Click="BtnMrcSelectFolder_Click" Width="70" Margin="0,0,8,0"/>
+                    <Button x:Name="BtnMrcProcessFolder" Content="处理文件夹" Click="BtnMrcProcessFolder_Click" Width="90" Margin="0,0,8,0"/>
+                    <TextBlock x:Name="TxtMrcProgress" Text="MRC就绪" VerticalAlignment="Center"/>
+                </WrapPanel>
+
+                <WrapPanel VerticalAlignment="Center">
+                    <TextBlock Text="CCF切换：" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBlock Text="配置文件" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBox x:Name="TxtCcfPath" Text="" Width="500" Margin="0,0,8,0" IsReadOnly="True" ToolTip="当前使用的相机CCF配置文件"/>
+                    <Button x:Name="BtnSelectCcf" Content="选择CCF..." Click="BtnSelectCcf_Click" Width="80" Margin="0,0,8,0"/>
+                    <Button x:Name="BtnApplyCcf" Content="应用CCF" Click="BtnApplyCcf_Click" Width="75"/>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- 图像与结果显示区域 -->
+        <Grid Grid.Row="3" Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" BorderBrush="#FFBDBDBD" BorderThickness="1" Margin="0,0,4,0">
+                <DockPanel>
+                    <TextBlock Text="实时采集预览" DockPanel.Dock="Top" Margin="6,4,6,4" FontWeight="SemiBold"/>
+                    <controls:ImageDisplayControl x:Name="ImageDisplay" Margin="0" RenderTransformOrigin="0.5,0.5"/>
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Column="1" BorderBrush="#FFBDBDBD" BorderThickness="1" Margin="4,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+
+                    <TabControl Grid.Row="0" x:Name="MrcResultTabs" Margin="0,0,0,4">
+                        <TabItem Header="标注结果图">
+                            <DockPanel>
+                                <TextBlock Text="单张 MRC 标注结果" DockPanel.Dock="Top" Margin="6,4,6,4" FontWeight="SemiBold"/>
+                                <controls:ImageDisplayControl x:Name="ResultImageDisplay" Margin="0" RenderTransformOrigin="0.5,0.5"/>
+                            </DockPanel>
+                        </TabItem>
+                        <TabItem Header="组号分布图" x:Name="TabMrcDistribution">
+                            <DockPanel>
+                                <TextBlock Text="批量最小可分辨组号分布" DockPanel.Dock="Top" Margin="6,4,6,4" FontWeight="SemiBold"/>
+                                <controls:ImageDisplayControl x:Name="DistributionImageDisplay" Margin="0" RenderTransformOrigin="0.5,0.5"/>
+                            </DockPanel>
+                        </TabItem>
+                    </TabControl>
+
+                    <Border Grid.Row="1" Margin="6,0,6,6" Padding="8,6" Background="#FFF5F5F5" BorderBrush="#FFD0D0D0" BorderThickness="1" CornerRadius="4"
+                            x:Name="BatchMrcSummaryPanel" Visibility="Collapsed">
+                        <TextBlock x:Name="TxtBatchMrcSummary" TextWrapping="Wrap" FontWeight="SemiBold" Foreground="#FF333333"/>
+                    </Border>
+
+                    <DockPanel Grid.Row="2">
+                        <TextBlock Text="MRC结果表（Excel关键结果）" DockPanel.Dock="Top" Margin="6,4,6,4" FontWeight="SemiBold"/>
+                        <DataGrid x:Name="MrcResultGrid"
+                                  Margin="4"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True"
+                                  CanUserAddRows="False"
+                                  CanUserDeleteRows="False"
+                                  HeadersVisibility="Column"
+                                  SelectionMode="Single"
+                                  SelectionChanged="MrcResultGrid_SelectionChanged">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="图像名" Binding="{Binding ImageName}" Width="*"/>
+                                <DataGridTextColumn Header="最小分辨组" Binding="{Binding MinGroupDisplay}" Width="90"/>
+                                <DataGridTextColumn Header="C值" Binding="{Binding CMeanDisplay}" Width="80"/>
+                                <DataGridTextColumn Header="异常点过滤" Binding="{Binding AbnormalFilterDisplay}" Width="90"/>
+                                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="130"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </Grid>
+            </Border>
+        </Grid>
 
         <!-- 状态栏 -->
-        <StatusBar Grid.Row="3">
+        <StatusBar Grid.Row="4">
             <StatusBarItem>
                 <TextBlock x:Name="StatusResolution" Text="分辨率: --"/>
             </StatusBarItem>

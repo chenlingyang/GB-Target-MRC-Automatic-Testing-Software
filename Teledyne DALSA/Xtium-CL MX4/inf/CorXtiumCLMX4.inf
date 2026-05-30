@@ -1,0 +1,85 @@
+; corXtiumCLMX4.inf
+;
+; Installation inf for the Xtium-CL MX4 board.
+;
+; (c) Copyright 2013 Teledyne DALSA Inc.
+;
+
+[Version]
+Signature="$Windows NT$"
+Provider=%Dalsa%
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+class=Image
+DriverVer=05/27/2019, 1.30.00.0311
+PnpLockDown=0 
+DriverPackageDisplayName=%Dalsa.PackageDesc%
+Catalogfile=CorXtiumCLMX4.cat
+
+[DestinationDirs]
+DefaultDestDir   = 11
+CorXtiumCLMX4.Sys   = 12   ; drivers
+
+
+[Manufacturer]
+%Dalsa%   = DalsaMfg,NTamd64
+
+; To support Win2000, and it will also support XP and later (32-bit OS)
+[DalsaMfg]
+%Dalsa.DeviceDesc% = CorXtiumCLMX4, PCI\VEN_11EC&DEV_F80B&CC_058000
+
+; For XP and later (64-bit OS)
+[DalsaMfg.NTamd64]
+%Dalsa.DeviceDesc% = CorXtiumCLMX4, PCI\VEN_11EC&DEV_F80B&CC_058000
+
+[CorXtiumCLMX4]
+CopyFiles=CorXtiumCLMX4.Sys
+AddReg=CorXtiumCLMX4.AddRegs
+DelReg=CorXtiumCLMX4.DelRegs
+DelFiles = CorXtiumCLMX4.Sys
+
+;
+; File sections
+;
+
+[CorXtiumCLMX4.Sys]
+CorXtiumCLMX4.sys         
+
+[CorXtiumCLMX4.AddRegs]
+HKLM,System\CurrentControlSet\Services\CorXtiumCLMX4,ErrorControl,0x00010001,0
+HKLM,System\CurrentControlSet\Services\CorXtiumCLMX4,Start,0x00010001,0
+HKLM,System\CurrentControlSet\Services\CorXtiumCLMX4,Type,0x00010001,0
+
+[CorXtiumCLMX4.DelRegs]
+
+;
+; Service Installation
+;
+
+[CorXtiumCLMX4.Services]
+AddService = CorXtiumCLMX4, 0x00000002, CorXtiumCLMX4_Service_Inst
+
+[CorXtiumCLMX4_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Coreco Drivers
+ServiceBinary  = %12%\CorXtiumCLMX4.sys
+
+;
+; Source file information
+;
+
+[SourceDisksNames]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+CorXtiumCLMX4.sys       = 1      ; all files on Disk 1
+
+
+[Strings]
+
+DiskId = "Teledyne DALSA Xtium-CL MX4 Installation DISK"
+Dalsa.DeviceDesc = "Xtium-CL MX4 Board"
+Dalsa.PackageDesc = "Xtium-CL MX4 Device Driver"
+Dalsa = "Teledyne DALSA"
+

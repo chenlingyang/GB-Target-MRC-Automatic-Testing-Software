@@ -1,0 +1,92 @@
+[General]
+Version=301
+Camera Name=Composite video, Free-Running
+Company Name=COHU
+Model Name=2200 series (NTSC)
+[Signal Description]
+Channel=1
+Frame=1
+Interface=1
+Scan=1
+Signal=1
+Video=2
+Pixel Depth=10
+Video Standard=2
+Field Order=1
+Coupling=1
+Taps=1
+Tap Output=2
+Tap 1 Direction=21
+Tap 2 Direction=21
+Tap 3 Direction=21
+Tap 4 Direction=21
+Tap 5 Direction=21
+Tap 6 Direction=21
+Tap 7 Direction=21
+Tap 8 Direction=21
+Channels Order=1
+Video Level Minimum=53550
+Video Level Maximum=714000
+[Signal Timings]
+Horizontal Active=640
+Horizontal Sync=56
+Vertical Active=240
+Vertical Sync=3
+Horizontal Front Porch=23
+Horizontal Back Porch=61
+Vertical Front Porch=3
+Vertical Back Porch=16
+Horizontal Front Invalid=0
+Horizontal Back Invalid=0
+Vertical Front Invalid=0
+Vertical Back Invalid=0
+[Pixel Clock]
+Pixel Clock Source=1
+Pixel Clock Frequency Internal=12272700
+Pixel Clock Frequency 1:1=12270000
+Pixel Clock Frequency External=0
+Pixel Clock Detection=4
+[Synchronization Signals]
+Synchronization Source=1
+Horizontal Sync Polarity=1
+Vertical Sync Polarity=1
+[Control Signals]
+Frame Integrate Method=0
+Frame Integrate Polarity=1
+Time Integrate Method=0
+Camera Trigger Method=0
+Camera Trigger Polarity=1
+Camera Trigger Duration=10
+Camera Reset Method=0
+Camera Reset Polarity=1
+Camera Reset Duration=10
+Line Integrate Method=0
+Line Trigger Method=0
+Line Trigger Polarity=1
+Line Trigger Delay=0
+Line Trigger Duration=0
+LineScan Direction=0
+LineScan Direction Polarity=1
+Camera Line Trigger Frequency Minimum=0
+Camera Line Trigger Frequency Maximum=-1
+Camera Time Integrate Duration Minimum=0
+Camera Time Integrate Duration Maximum=-1
+Time Integrate Pulse 1 Polarity=1
+Time Integrate Pulse 1 Delay=0
+Time Integrate Pulse 1 Duration=0
+Time Integrate Pulse 0 Polarity=1
+Time Integrate Pulse 0 Delay=0
+Time Integrate Pulse 0 Duration=0
+Line Integrate Pulse 1 Polarity=1
+Line Integrate Pulse 1 Delay=0
+Line Integrate Pulse 1 Duration=0
+Line Integrate Pulse 0 Polarity=1
+Line Integrate Pulse 0 Delay=0
+Line Integrate Pulse 0 Duration=0
+[Connector Description]
+HD Input=0x0
+VD Input=0x0
+Reset/Trigger Input=0x0
+Exposure Input=0x0
+[Custom Camera IO Control Signals]
+Max Control=0

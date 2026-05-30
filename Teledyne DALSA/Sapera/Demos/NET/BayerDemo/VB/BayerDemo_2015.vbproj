@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B6E5AB2-21D7-48B4-A1A7-7406E31CB224}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>DALSA.SaperaLT.Demos.NET.VB.BayerDemo</RootNamespace>
+    <AssemblyName>SapNETVBBayerDemo</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SapNETVBBayerDemo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SapNETVBBayerDemo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DALSA.SaperaLT.SapClassBasic, Version=8.60.0.0, Culture=neutral, PublicKeyToken=4d8604101dcb6b58, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Components\NET\Bin\DALSA.SaperaLT.SapClassBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DALSA.SaperaLT.SapClassBasic" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.Win32" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.IO" />
+    <Import Include="System.Runtime.InteropServices" />
+    <Import Include="System.Text" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\VB\AbortDlg.Designer.vb">
+      <Link>AbortDlg.Designer.vb</Link>
+      <DependentUpon>AbortDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AbortDlg.vb">
+      <Link>AbortDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AboutBox.Designer.vb">
+      <Link>AboutBox.Designer.vb</Link>
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AboutBox.vb">
+      <Link>AboutBox.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AcqConfigDlg.designer.vb">
+      <Link>AcqConfigDlg.designer.vb</Link>
+      <DependentUpon>AcqConfigDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AcqConfigDlg.vb">
+      <Link>AcqConfigDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AviFileDlg.Designer.vb">
+      <Link>AviFileDlg.Designer.vb</Link>
+      <DependentUpon>AviFileDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\AviFileDlg.vb">
+      <Link>AviFileDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\BayerDlg.designer.vb">
+      <Link>BayerDlg.designer.vb</Link>
+      <DependentUpon>BayerDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\BayerDlg.vb">
+      <Link>BayerDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\BufDlg.Designer.vb">
+      <Link>BufDlg.Designer.vb</Link>
+      <DependentUpon>BufDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\BufDlg.vb">
+      <Link>BufDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\ImageBox.Designer.vb">
+      <Link>ImageBox.Designer.vb</Link>
+      <DependentUpon>ImageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\ImageBox.vb">
+      <Link>ImageBox.vb</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\JpegFileDlg.Designer.vb">
+      <Link>JpegFileDlg.Designer.vb</Link>
+      <DependentUpon>JpegFileDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\JpegFileDlg.vb">
+      <Link>JpegFileDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\LoadSaveDlg.vb">
+      <Link>LoadSaveDlg.vb</Link>
+    </Compile>
+    <Compile Include="..\..\Common\VB\RawFileDlg.designer.vb">
+      <Link>RawFileDlg.designer.vb</Link>
+      <DependentUpon>RawFileDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\RawFileDlg.vb">
+      <Link>RawFileDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\SystemMenu.vb">
+      <Link>SystemMenu.vb</Link>
+    </Compile>
+    <Compile Include="..\..\Common\VB\TiffFileDlg.Designer.vb">
+      <Link>TiffFileDlg.Designer.vb</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiffFileDlg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\TiffFileDlg.vb">
+      <Link>TiffFileDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\VB\ViewDlg.Designer.vb">
+      <Link>ViewDlg.Designer.vb</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewDlg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\VB\ViewDlg.vb">
+      <Link>ViewDlg.vb</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BayerDemo.vb" />
+    <Compile Include="BayerDemoDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BayerDemoDlg.Designer.vb">
+      <DependentUpon>BayerDemoDlg.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SapMyProcessing.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Common\VB\AbortDlg.resx">
+      <Link>AbortDlg.resx</Link>
+      <DependentUpon>AbortDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\AboutBox.resx">
+      <Link>AboutBox.resx</Link>
+      <DependentUpon>AboutBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\AcqConfigDlg.resx">
+      <Link>AcqConfigDlg.resx</Link>
+      <DependentUpon>AcqConfigDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\AviFileDlg.resx">
+      <Link>AviFileDlg.resx</Link>
+      <DependentUpon>AviFileDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\BayerDlg.resx">
+      <Link>BayerDlg.resx</Link>
+      <DependentUpon>BayerDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\BufDlg.resx">
+      <Link>BufDlg.resx</Link>
+      <DependentUpon>BufDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\JpegFileDlg.resx">
+      <Link>JpegFileDlg.resx</Link>
+      <DependentUpon>JpegFileDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\RawFileDlg.resx">
+      <Link>RawFileDlg.resx</Link>
+      <DependentUpon>RawFileDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\TiffFileDlg.resx">
+      <Link>TiffFileDlg.resx</Link>
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TiffFileDlg.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\VB\ViewDlg.resx">
+      <Link>ViewDlg.resx</Link>
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ViewDlg.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BayerDemoDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BayerDemoDlg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

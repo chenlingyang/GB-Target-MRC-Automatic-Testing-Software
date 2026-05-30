@@ -1,0 +1,122 @@
+[General]
+Company Name=Sony
+Model Name=XC-55
+Camera Name=Restart Reset, Frame Mode
+Version=301
+
+[Signal Description]
+Channel=1
+Frame=2
+Interface=1
+Scan=1
+Signal=1
+Video=1
+Pixel Depth=8
+Video Standard=1
+Field Order=4
+Coupling=1
+Video Level Minimum=23000
+Video Level Maximum=820000
+Channels Order=1
+Tap Output=2
+Tap 1 Direction=1
+Tap 2 Direction=1
+Tap 3 Direction=1
+Tap 4 Direction=1
+Tap 5 Direction=1
+Tap 6 Direction=1
+Tap 7 Direction=1
+Tap 8 Direction=1
+Taps=1
+
+[Signal Timings]
+Horizontal Active=640
+Horizontal Sync=56
+Vertical Active=492
+Vertical Sync=3
+Horizontal Front Porch=23
+Horizontal Back Porch=61
+Vertical Front Porch=15
+Vertical Back Porch=15
+Horizontal Front Invalid=0
+Horizontal Back Invalid=0
+Vertical Front Invalid=0
+Vertical Back Invalid=0
+
+[Pixel Clock]
+Pixel Clock Source=1
+Pixel Clock Frequency Internal=12270000
+Pixel Clock Frequency 1:1=12270000
+Pixel Clock Frequency External=0
+Pixel Clock Detection=4
+
+[Synchronization Signals]
+Synchronization Source=1
+Horizontal Sync Polarity=1
+Vertical Sync Polarity=1
+
+[Control Signals]
+Frame Integrate Method=0
+Frame Integrate Polarity=1
+Time Integrate Method=2
+Time Integrate Polarity=1
+Time Integrate Pulse Polarity = 1
+Time Integrate Pulse Delay = 0
+Time Integrate Pulse Duration = 200
+Camera Trigger Method=0
+Camera Trigger Polarity=1
+Camera Trigger Duration=0
+Trigger/Exposure Signal=1
+Camera Reset Method=0
+Camera Reset Polarity=0
+Camera Reset Duration=0
+Line Integrate Method=0
+Line Integrate Polarity=1
+Line Integrate Delay=0
+Line Trigger Method=0
+Line Trigger Polarity=1
+Line Trigger Delay=0
+Line Trigger Duration=0
+Camera Time Integrate Duration Minimum=33333
+Camera Time Integrate Duration Maximum=-1
+Camera Line Trigger Frequency Minimum=0
+Camera Line Trigger Frequency Maximum=-1
+Data Valid Enable=0
+Data Valid Polarity=2
+Line Integrate Pulse 0 Delay=0
+Line Integrate Pulse 0 Duration=0
+Line Integrate Pulse 0 Polarity=1
+Line Integrate Pulse 1 Delay=0
+Line Integrate Pulse 1 Duration=0
+Line Integrate Pulse 1 Polarity=1
+LineScan Direction=1
+LineScan Direction Polarity=2
+Time Integrate Pulse 0 Delay=0
+Time Integrate Pulse 0 Duration=0
+Time Integrate Pulse 0 Polarity=1
+Time Integrate Pulse 1 Delay=0
+Time Integrate Pulse 1 Duration=200
+Time Integrate Pulse 1 Polarity=1
+WEN Polarity=1
+
+[Connector Description]
+HD Input =0x1010006
+VD Input =0x1010007
+Reset/Trigger Input =0x1010009
+
+Camera Link Configuration=0x0
+Exposure Input=0x0
+Line Integrate Input=0x0
+Line Trigger Input=0x0
+Linescan Direction Input=0x0
+Pixel Clock Output=0x0
+WEN Output=0x0
+[Custom Camera IO Control Signals]
+Max Control=0
+[Serial Port]
+Baud Rate=0x0
+Data Bits=0x0
+Flow Control=0x0
+Parity=0x0
+Stop Bits=0x0
+Initialization String=

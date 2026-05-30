@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<RegisterDescription xmlns="http://www.genicam.org/GenApi/Version_1_1"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_1 http://www.genicam.org/GenApi/GenApiSchema_Version_1_1.xsd"
+   ModelName="HostNodes"
+   VendorName="DALSA" 
+   MajorVersion="1"
+   MinorVersion="0"
+   SubMinorVersion="19"
+   ProductGuid="5B673AA5-B3F2-428f-AA26-E613FDA68A5B"
+   VersionGuid="55D10620-1C47-417e-959D-CB54453CB0F3"
+   StandardNameSpace="GEV"
+   SchemaMajorVersion="1"
+   SchemaMinorVersion="1"
+   SchemaSubMinorVersion="0"
+   ToolTip="Sapera Internal Nodes">
+   
+   <Category Name="Root">
+      <pFeature>SaperaHostFeatures</pFeature>
+   </Category>
+   <Category Name="SaperaHostFeatures">
+      <ToolTip>Sapera Host Specific Nodes</ToolTip>
+      <DisplayName>GigE Vision Host Controls</DisplayName>
+      <pFeature>InterPacketTimeout</pFeature>
+      <pFeature>InterPacketTimeoutRaw</pFeature>
+      <pFeature>packetResendMax</pFeature>
+      <pFeature>ImageTimeout</pFeature>
+      <pFeature>ImageTimeoutRaw</pFeature>
+      <pFeature>systemTransferStopDetectionMethod</pFeature>
+      <pFeature>systemTransferStopTime</pFeature>
+      <pFeature>turboTransferEnable</pFeature>
+      <pFeature>turboTransferQualityLevel_1</pFeature>
+      <pFeature>turboTransferQualityLevel_2</pFeature>
+      <pFeature>turboTransferQualityLevel</pFeature>
+      <!--<pFeature>turboTransferQualityLevel_Select</pFeature> -->
+      <pFeature>CommandAcknowledgeTimeout</pFeature>
+      <pFeature>CommandRetryCount</pFeature>
+      <pFeature>CommandAcknowledgeTimeoutDefault</pFeature>
+      <pFeature>CommandRetryCountDefault</pFeature>
+      <pFeature>multiCastStreamingEnable</pFeature>
+      <pFeature>multiCastStreamingIPAddress</pFeature>
+   </Category>
+   <Port Name="SaperaPort" MergePriority="+1" />
+   <Float Name="ImageTimeout" MergePriority="+1">
+      <ToolTip>Image Timeout</ToolTip>
+      <Description>Specifies the timeout value for a complete image transfer from the device, in seconds. The timeout counter starts with the reception of the first packet for a new image. If all image packets are not received by the end of the timeout period, the frame is considered lost and no more packet resend requests are issued for that frame.</Description>
+      <DisplayName>Image Timeout</DisplayName>
+      <pValue>ImageTimeoutConverter</pValue>
+      <Representation>Linear</Representation>
+   </Float>
+   <Converter Name="ImageTimeoutConverter" MergePriority="+1">
+      <FormulaTo> FROM * 1000000 </FormulaTo>
+      <FormulaFrom> TO / 1000000 </FormulaFrom>
+      <pValue>ImageTimeoutRaw</pValue>
+      <Slope>Increasing</Slope>
+      <IsLinear>Yes</IsLinear>
+   </Converter>
+   <Integer Name="ImageTimeoutRaw" MergePriority="+1">
+      <ToolTip>Image Timeout</ToolTip>
+      <Description>Specifies the timeout value for a complete image transfer from the device, in seconds. The timeout counter starts with the reception of the first packet for a new image. If all image packets are not received by the end of the timeout period, the frame is considered lost and no more packet resend requests are issued for that frame.</Description>
+      <DisplayName>Image Timeout</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <Streamable>Yes</Streamable>
+      <Value>700000</Value>
+      <Min>1000</Min>
+      <Max>60000000</Max>
+      <Inc>1000</Inc>
+      <Representation>Linear</Representation>
+   </Integer>
+   <Float Name="InterPacketTimeout" MergePriority="+1">
+      <ToolTip>Inter-Packet Timeout</ToolTip>
+      <Description>Specifies the timeout value between packets, in seconds. If a timeout occurs, a packet resend request is made for the next packet expected to follow the last packet received.</Description>
+      <DisplayName>Inter-Packet Timeout</DisplayName>
+      <pValue>InterPacketTimeoutConverter</pValue>
+      <Representation>Linear</Representation>
+   </Float>
+   <Converter Name="InterPacketTimeoutConverter" MergePriority="+1">
+      <FormulaTo> FROM * 1000000 </FormulaTo>
+      <FormulaFrom> TO / 1000000 </FormulaFrom>
+      <pValue>InterPacketTimeoutRaw</pValue>
+      <Slope>Increasing</Slope>
+      <IsLinear>Yes</IsLinear>      
+   </Converter>
+   <Integer Name="InterPacketTimeoutRaw" MergePriority="+1">
+      <ToolTip>Inter-Packet Timeout</ToolTip>
+      <Description>Specifies the timeout value between packets, in seconds. If a timeout occurs, a packet resend request is made for the next packet expected to follow the last packet received.</Description>
+      <DisplayName>Image Timeout</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <Streamable>Yes</Streamable>
+      <Value>45000</Value>
+      <Min>1000</Min>
+      <Max>655350</Max>
+      <Inc>1000</Inc>
+      <Representation>Linear</Representation>
+   </Integer>
+   <Integer Name="CommandAcknowledgeTimeout" MergePriority="+1">
+      <ToolTip>Command Acknowledge Timeout in ms</ToolTip>
+      <Description>Specifies the command acknowledgment timeout value (in ms) of a message sent to a device.</Description>
+      <DisplayName>Command Timeout</DisplayName>
+      <Streamable>Yes</Streamable>
+      <pValue>CommandAcknowledgeTimeoutReg</pValue>
+      <Min>10</Min>
+      <Max>120000</Max>
+      <Inc>1</Inc>
+      <Representation>Linear</Representation>
+   </Integer>
+   <IntReg Name="CommandAcknowledgeTimeoutReg" MergePriority="+1">
+      <Address>0xEB00020C</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+   <Integer Name="CommandAcknowledgeTimeoutDefault" MergePriority="+1">
+      <DisplayName>Command Acknowledge Timeout Default Value</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>200</Value>
+   </Integer>
+   <Integer Name="CommandRetryCount" MergePriority="+1">
+      <ToolTip>Command Retry Count</ToolTip>
+      <Description>Specifies the number of retries for a command sent to a device.</Description>
+      <DisplayName>Command Retry Count</DisplayName>
+      <Streamable>Yes</Streamable>
+      <pValue>CommandRetryCountReg</pValue>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Inc>1</Inc>
+      <Representation>Linear</Representation>
+   </Integer>
+   <IntReg Name="CommandRetryCountReg" MergePriority="+1">
+      <Address>0xEB000210</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+   <Integer Name="CommandRetryCountDefault" MergePriority="+1">
+      <DisplayName>Command Retry Count Default Value</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>3</Value>
+   </Integer>
+
+   <!-- #################### MultiCast #################### -->
+   <IntSwissKnife Name="multiCastIsLocked">
+      <Visibility>Invisible</Visibility>
+      <pVariable Name="TL_PARAMS_LOCKED">TLParamsLocked</pVariable>
+      <pVariable Name="PRIMARY_APPLICATION">multiCastPrimaryApplicationReg</pVariable>
+      <Formula>(PRIMARY_APPLICATION=0)?1:(TL_PARAMS_LOCKED)</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="multiCastIPIsAvailable">
+      <Visibility>Invisible</Visibility>
+      <pVariable Name="PRIMARY_APPLICATION">multiCastPrimaryApplicationReg</pVariable>
+      <Formula>(PRIMARY_APPLICATION=1)?1:0</Formula>
+   </IntSwissKnife>
+
+   <IntReg Name="multiCastPrimaryApplicationReg">
+      <Address>0xEB000608</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Cachable>NoCache</Cachable>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+
+   <Boolean Name="multiCastStreamingEnable">
+      <ToolTip>Multicast streaming activation</ToolTip>
+      <Description>Enable multicast streaming.</Description>
+      <DisplayName>Multicast streaming enable</DisplayName>
+      <pIsLocked>multiCastIsLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>multiCastStreamingEnableReg</pValue>
+   </Boolean>
+
+   <IntReg Name="multiCastStreamingEnableReg">
+      <Address>0xEB000600</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Cachable>NoCache</Cachable>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+
+   <Integer Name="multiCastStreamingIPAddress">
+      <ToolTip>Multicast Stream Destination IP address</ToolTip>
+      <Description>Specifies the multicast destination IP address for this streaming channel. The valid range of multicast IP addresses is limited to locally administered addresses 239.0.0.0 to 239.255.255.255.</Description>
+      <DisplayName>Multicast IP Address</DisplayName>
+      <pIsAvailable>multiCastIPIsAvailable</pIsAvailable>
+      <pIsLocked>multiCastIsLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>multiCastStreamingIPAddressReg</pValue>
+      <Min>0xEF000000</Min>
+      <Max>0xEFFFFFFF</Max>
+      <Inc>1</Inc>
+      <Representation>IPV4Address</Representation>
+   </Integer>
+
+   <IntReg Name="multiCastStreamingIPAddressReg">
+      <Address>0xEB000604</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Cachable>NoCache</Cachable>
+      <Sign>Unsigned</Sign>
+      <Endianess>BigEndian</Endianess>
+      <Representation>IPV4Address</Representation>
+   </IntReg>
+
+   <!-- Must not be a feature -->
+   <Float Name="ExposureTime" MergePriority="-1">
+      <Value>200000</Value>
+   </Float>
+   <Enumeration Name="systemTransferStopDetectionMethod" MergePriority="+1">
+      <ToolTip>System TransferStop Detection Method</ToolTip>
+      <Description>Specifies the transfer stop detection method at the Sapera application level. A transfer is consider stopped if no data arrives from the device, following a call to the SapTransfer.Freeze function, for a specified period of time. This time period can be set automatically or manually, based on the System TransferStop Time feature. The transfer must be considered stop before a new acquisition can be started (in addition, any SapTransfer.Wait conditions must also be met before starting a new acquisition).</Description>
+      <DisplayName>System TransferStop Detection Method</DisplayName>
+      <Visibility>Guru</Visibility>
+      <Streamable>Yes</Streamable>
+      <EnumEntry Name="Automatic">
+         <ToolTip>Automatic Transfer Stop Detection</ToolTip>
+         <Description>The transfer stop time is calculated as: (current Exposure Time feature value) + 10000 μs.</Description>
+         <DisplayName>Automatic</DisplayName>
+         <Value>1</Value>
+      </EnumEntry>
+      <EnumEntry Name="Manual">
+         <ToolTip>Manual Transfer Stop Detection</ToolTip>
+         <Description>The transfer stop time is specified by the System TransferStop Time feature.  Manual mode can be used if the exposure time is pulse controlled by the trigger width, to ensure that the transfer stop time exceeds the maximum expected exposure time.</Description>
+         <DisplayName>Manual</DisplayName>
+         <Value>0</Value>
+      </EnumEntry>
+      <pValue>transferStopDetectionMethod_reg</pValue>
+   </Enumeration>
+   <IntReg Name="transferStopDetectionMethod_reg" MergePriority="+1">
+      <Address>0xEB000300</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+   <IntSwissKnife Name="transferStopDetectionMethod_isLocked" MergePriority="+1">
+      <pVariable Name="D_MODE">transferStopDetectionMethod_reg</pVariable>
+      <pVariable Name="F_STREAMING">sapFeatureStreaming</pVariable>
+      <Formula>D_MODE &amp;&amp; (F_STREAMING = 0)</Formula>
+   </IntSwissKnife>
+   <Float Name="systemTransferStopTime" MergePriority="+1">
+      <ToolTip>The maximum time a transfer can be inactive</ToolTip>
+      <Description>When the System TransferStop Detection Method is set to Manual, the System TransferStop Time sets the time, in μs, a transfer can be inactive before it is considered stopped.</Description>
+      <DisplayName>System TransferStop Time</DisplayName>
+      <Visibility>Guru</Visibility>
+      <pIsLocked>transferStopDetectionMethod_isLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>transferStopDetectionTime_reg</pValue>
+      <Min>100</Min>
+      <Max>1000000000</Max>
+      <Inc>1</Inc>
+      <Unit>us</Unit>
+      <DisplayNotation>Fixed</DisplayNotation>
+      <DisplayPrecision>1</DisplayPrecision>
+   </Float>
+   <IntReg Name="transferStopDetectionTime_reg" MergePriority="+1">
+      <Address>0xEB000304</Address>
+      <Length>8</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <pInvalidator>ExposureTime</pInvalidator>
+      <pInvalidator>systemTransferStopDetectionMethod</pInvalidator>
+      <pInvalidator>sapFeatureStreaming</pInvalidator>
+      <Sign>Signed</Sign>
+      <Endianess>LittleEndian</Endianess>
+      <Representation>Linear</Representation>
+   </IntReg>
+
+   <Float Name="packetResendMax" MergePriority="+1">
+      <ToolTip>Maximum packet resends</ToolTip>
+      <Description>Maximum number of packets to resend per frame.</Description>
+      <DisplayName>Maximum Packet Resend</DisplayName>
+      <Visibility>Guru</Visibility>
+      <Streamable>Yes</Streamable>
+      <pValue>packetResendMax_cnv</pValue>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Inc>0.1</Inc>
+      <Unit>%</Unit>
+      <Representation>Linear</Representation>
+      <DisplayNotation>Fixed</DisplayNotation>
+      <DisplayPrecision>1</DisplayPrecision>      
+   </Float>
+
+   <Converter Name="packetResendMax_cnv" MergePriority="+1">
+      <FormulaTo>FROM*10</FormulaTo>
+      <FormulaFrom>TO/10</FormulaFrom>
+      <pValue>maximumPacketResend_reg</pValue>
+      <Slope>Increasing</Slope>
+      <IsLinear>Yes</IsLinear>
+   </Converter>
+
+   <IntReg Name="maximumPacketResend_reg" MergePriority="+1">
+      <Address>0xEB000400</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+   <Integer Name="sapFeatureStreaming" MergePriority="+1">
+      <Value>0</Value>
+   </Integer>
+
+   <!-- #################### TurboDrive #################### -->
+
+   <Boolean Name="turboTransferEnable" MergePriority="+1">
+      <ToolTip>TurboDrive activation</ToolTip>
+      <Description>Sets the enable state of the TurboDrive mode, if available. TurboDrive allows GigE Vision cameras to send lossless pixel information at a rate in excess of 125 MB/s, increasing line and frame rates beyond the nominal link capacity. TurboDrive performance depends on image content, but is often double the standard throughput.</Description>
+      <DisplayName>Turbo Transfer Mode</DisplayName>
+      <pIsLocked>turboTransferModeLocked_reg</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>turboTransferEnable_impl</pValue>
+   </Boolean>
+  
+   <Integer Name="turboTransferEnable_impl">
+      <pIndex>transferTurboCurrentlyAbailable</pIndex>
+      <pValueIndexed Index="0">turboTransferEnabl_off</pValueIndexed>
+      <pValueDefault>turboTransferMode_reg</pValueDefault>
+   </Integer>
+  
+   <Integer Name="turboTransferEnabl_off">
+      <ImposedAccessMode>RO</ImposedAccessMode>
+      <Value>0</Value>
+   </Integer>
+  
+   <IntReg Name="turboTransferModeLocked_reg">
+      <Address>0xEB000500</Address>
+      <Length>4</Length>
+      <AccessMode>RO</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+
+   <IntReg Name="turboTransferMode_reg">
+      <Address>0xEB000504</Address>
+      <Length>4</Length>
+      <AccessMode>RW</AccessMode>
+      <pPort>SaperaPort</pPort>
+      <Cachable>NoCache</Cachable>
+      <Sign>Unsigned</Sign>
+      <Endianess>LittleEndian</Endianess>
+   </IntReg>
+
+   <Integer Name="turboTransferQualityLevel_Val">
+      <pValue>turboTransferQualityLevel_Converter</pValue>
+      <pValueCopy>turboTransferQualityLevel_1_Converter</pValueCopy>
+      <pValueCopy>turboTransferQualityLevel_2_Converter</pValueCopy>
+   </Integer>
+
+   <IntConverter Name="turboTransferQualityLevel_Converter">
+      <pVariable Name="LEVEL1">turboTransferQualityLevel_1</pVariable>
+      <pVariable Name="LEVEL2">turboTransferQualityLevel_2</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <FormulaTo>  ODDLEVEL? ((LEVEL1 &lt;&lt; 4) | LEVEL2): ((LEVEL1=0)? 0x00: (((LEVEL1-1) &lt;&lt; 4) | (LEVEL1+1)))</FormulaTo>
+      <FormulaFrom>ODDLEVEL? ((LEVEL1 &lt;&lt; 4) | LEVEL2): ((LEVEL1=0)? 0x00: (((LEVEL1-1) &lt;&lt; 4) | (LEVEL1+1)))</FormulaFrom>
+      <pValue>turboTransferQualityLevel_Select</pValue>
+      <Representation>Linear</Representation>
+      <Slope>Varying</Slope>
+   </IntConverter>
+
+   <Integer Name="turboTransferQualityLevel_Select">
+      <DisplayName>Turbo Quality Level Select</DisplayName>
+      <Value>0x00</Value>
+      <Min>0x00</Min>
+      <Max>0xFF</Max>
+      <Representation>HexNumber</Representation>
+   </Integer>
+
+   <IntConverter Name="turboTransferQualityLevel_1_Converter">
+      <pVariable Name="LEVEL2">turboTransferQualityLevel_2_Converter</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <FormulaTo>   ODDLEVEL? ((FROM &amp; 0xF0) &gt;&gt; 4): (((FROM &amp; 0xF0) &gt;&gt; 4) + (FROM &amp; 0x0F))/2</FormulaTo>
+      <FormulaFrom> ODDLEVEL? ((TO &lt;&lt; 4) | LEVEL2): ((TO=0)? 0x00: (((TO-1) &lt;&lt; 4) | (TO+1))))</FormulaFrom>
+      <pValue>turboTransferQualityLevel_1</pValue>
+      <Representation>Linear</Representation>
+      <Slope>Varying</Slope>
+   </IntConverter>
+
+   <IntConverter Name="turboTransferQualityLevel_2_Converter">
+      <pVariable Name="LEVEL1">turboTransferQualityLevel_1</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <FormulaTo>   ODDLEVEL? (FROM &amp; 0x0F): 0xFF</FormulaTo>
+      <FormulaFrom> ODDLEVEL? ((LEVEL1 &lt;&lt; 4) | TO): 0xFF</FormulaFrom>
+      <pValue>turboTransferQualityLevel_2</pValue>
+      <Representation>Linear</Representation>
+      <Slope>Varying</Slope>
+   </IntConverter>
+
+   <Integer Name="turboTransferQualityLevel_1" MergePriority="+1">
+      <ToolTip>TurboDrive Quality Level 1</ToolTip>
+      <Description>Sets the maximum number of lowest bits per pixel that can be discarded with 0 indicating lossless encoding.</Description>
+      <DisplayName>Turbo Quality Level 1</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <pIsImplemented>CAP_TURBO_V2</pIsImplemented>
+      <pIsAvailable>transferTurboCurrentlyAbailable</pIsAvailable>
+      <pIsLocked>TLParamsLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>transferTurbo2MonoLossyLevel</pValue>
+      <Min>0</Min>
+      <pMax>turboTransferQualityLevelMax</pMax>
+      <Inc>1</Inc>
+   </Integer>
+  
+   <Integer Name="turboTransferQualityLevel_2" MergePriority="+1">
+      <ToolTip>TurboDrive Quality Level 2</ToolTip>
+      <Description>Sets the maximum number of lowest bits per pixel that can be discarded with 0 indicating lossless encoding.</Description>
+      <DisplayName>Turbo Quality Level 2</DisplayName>
+      <Visibility>Invisible</Visibility>
+      <pIsImplemented>CAP_TURBO_V2</pIsImplemented>
+      <pIsAvailable>transferTurboCurrentlyAbailable</pIsAvailable>
+      <pIsLocked>TLParamsLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <pValue>transferTurbo2OddLossyLevel</pValue>
+      <pMin>turboTransferQualityLevel_2_Min</pMin>
+      <pMax>turboTransferQualityLevel_2_Max</pMax>
+      <Inc>1</Inc>
+   </Integer>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_2_Min">
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>ODDLEVEL? 0: 0xFF</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_2_Max">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>ODDLEVEL? LEVELMAX: 0xFF</Formula>
+   </IntSwissKnife>
+  
+   <Enumeration Name="turboTransferQualityLevel" MergePriority="+1">
+      <ToolTip>TurboDrive Quality Level</ToolTip>
+      <Description>Sets the maximum number of lowest bits per pixel that can be discarded with 0 indicating lossless encoding.</Description>
+      <DisplayName>Turbo Quality Level</DisplayName>
+      <pIsImplemented>turboTransferQualityLevel_isImplemented</pIsImplemented>
+      <pIsAvailable>transferTurboCurrentlyAbailable</pIsAvailable>
+      <pIsLocked>TLParamsLocked</pIsLocked>
+      <Streamable>Yes</Streamable>
+      <EnumEntry Name="Quality_Level_0_0">
+         <ToolTip>Quality Level 0</ToolTip>
+         <Description>Quality Level 0</Description>
+         <DisplayName>Quality Level 0</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_0_0_isImplemented</pIsImplemented>
+         <Value>0x00</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_0_5">
+         <ToolTip>Quality Level 0.5</ToolTip>
+         <Description>Quality Level 0.5</Description>
+         <DisplayName>Quality Level 0.5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_0_5_isImplemented</pIsImplemented>
+         <Value>0x01</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_1_0">
+         <ToolTip>Quality Level 1</ToolTip>
+         <Description>Quality Level 1</Description>
+         <DisplayName>Quality Level 1</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_1_0_isImplemented</pIsImplemented>
+         <Value>0x02</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_1_5">
+         <ToolTip>Quality Level 1.5</ToolTip>
+         <Description>Quality Level 1.5</Description>
+         <DisplayName>Quality Level 1.5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_1_5_isImplemented</pIsImplemented>
+         <Value>0x12</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_2_0">
+         <ToolTip>Quality Level 2</ToolTip>
+         <Description>Quality Level 2</Description>
+         <DisplayName>Quality Level 2</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_2_0_isImplemented</pIsImplemented>
+         <Value>0x13</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_2_5">
+         <ToolTip>Quality Level 2.5</ToolTip>
+         <Description>Quality Level 2.5</Description>
+         <DisplayName>Quality Level 2.5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_2_5_isImplemented</pIsImplemented>
+         <Value>0x23</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_3_0">
+         <ToolTip>Quality Level 3</ToolTip>
+         <Description>Quality Level 3</Description>
+         <DisplayName>Quality Level 3</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_3_0_isImplemented</pIsImplemented>
+         <Value>0x24</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_3_5">
+         <ToolTip>Quality Level 3.5</ToolTip>
+         <Description>Quality Level 3.5</Description>
+         <DisplayName>Quality Level 3.5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_3_5_isImplemented</pIsImplemented>
+         <Value>0x34</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_4_0">
+         <ToolTip>Quality Level 4</ToolTip>
+         <Description>Quality Level 4</Description>
+         <DisplayName>Quality Level 4</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_4_0_isImplemented</pIsImplemented>
+         <Value>0x35</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_4_5">
+         <ToolTip>Quality Level 4.5</ToolTip>
+         <Description>Quality Level 4.5</Description>
+         <DisplayName>Quality Level 4.5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_4_5_isImplemented</pIsImplemented>
+         <Value>0x45</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_5_0">
+         <ToolTip>Quality Level 5</ToolTip>
+         <Description>Quality Level 5</Description>
+         <DisplayName>Quality Level 5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_5_0_isImplemented</pIsImplemented>
+         <Value>0x46</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_5_5">
+         <ToolTip>Quality Level 5.5</ToolTip>
+         <Description>Quality Level 5.5</Description>
+         <DisplayName>Quality Level 5.5</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_5_5_isImplemented</pIsImplemented>
+         <Value>0x56</Value>
+      </EnumEntry>
+      <EnumEntry Name="Quality_Level_6_0">
+         <ToolTip>Quality Level 6</ToolTip>
+         <Description>Quality Level 6</Description>
+         <DisplayName>Quality Level 6</DisplayName>
+         <pIsImplemented>turboTransferQualityLevel_6_0_isImplemented</pIsImplemented>
+         <Value>0x57</Value>
+      </EnumEntry>
+      <pValue>turboTransferQualityLevel_Val</pValue>
+   </Enumeration>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_isImplemented">
+      <pVariable Name="TURBO_V2">CAP_TURBO_V2</pVariable>
+      <Formula>(TURBO_V2)</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_0_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <Formula>(LEVELMAX>=0)</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_0_5_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>(ODDLEVEL &amp;&amp; (LEVELMAX>=1))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_1_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>((ODDLEVEL &amp;&amp; (LEVELMAX>=2)) || ((ODDLEVEL = 0) &amp;&amp; (LEVELMAX>=1)))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_1_5_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>(ODDLEVEL &amp;&amp; (LEVELMAX>=2))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_2_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel</pVariable>
+      <Formula>((ODDLEVEL &amp;&amp; (LEVELMAX>=3)) || ((ODDLEVEL = 0) &amp;&amp; (LEVELMAX>=2)))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_2_5_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>(ODDLEVEL &amp;&amp; (LEVELMAX>=3))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_3_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>((ODDLEVEL &amp;&amp; (LEVELMAX>=4)) || ((ODDLEVEL  = 0) &amp;&amp; (LEVELMAX>=3)))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_3_5_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>(ODDLEVEL &amp;&amp; (LEVELMAX>=4))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_4_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>((ODDLEVEL &amp;&amp; (LEVELMAX>=5)) || ((ODDLEVEL  = 0) &amp;&amp; (LEVELMAX>=4)))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_4_5_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>(ODDLEVEL &amp;&amp; (LEVELMAX>=5))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_5_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>((ODDLEVEL &amp;&amp; (LEVELMAX>=6)) || ((ODDLEVEL  = 0) &amp;&amp; (LEVELMAX>=5)))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_5_5_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>(ODDLEVEL &amp;&amp; (LEVELMAX>=6))</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransferQualityLevel_6_0_isImplemented">
+      <pVariable Name="LEVELMAX">turboTransferQualityLevelMax</pVariable>
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel_isAvailable</pVariable>
+      <Formula>((ODDLEVEL &amp;&amp; (LEVELMAX>=7)) || ((ODDLEVEL  = 0) &amp;&amp; (LEVELMAX>=6)))</Formula>
+   </IntSwissKnife>
+  
+   <IntSwissKnife Name="turboTransferQualityLevelMax">
+      <pVariable Name="PIXEL_SIZE_VAL">PixelSizeVal</pVariable>
+      <Formula>PIXEL_SIZE_VAL - 2</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="transferTurbo2OddLossyLevel_isAvailable">
+      <pVariable Name="ODDLEVEL">transferTurbo2OddLossyLevel</pVariable>
+      <Formula>(ODDLEVEL &lt; 0xFF)</Formula>
+   </IntSwissKnife>
+
+   <IntSwissKnife Name="turboTransfer_isColor">
+      <pVariable Name="SENSORCOLORTYPE">sensorColorType</pVariable>
+      <Formula>(SENSORCOLORTYPE=3)</Formula>
+   </IntSwissKnife>
+  
+   <!-- #################### Following variables should normally be overrided by the camera XML #################### -->
+
+   <Integer Name="transferTurbo2MonoLossyLevel"  MergePriority="-1">
+      <Value>0</Value>
+   </Integer>
+
+   <Integer Name="transferTurbo2OddLossyLevel"  MergePriority="-1">
+      <Value>0xFF</Value>
+   </Integer>
+
+   <Integer Name="sensorColorType" MergePriority="-1">
+      <Value>0</Value>
+   </Integer>
+  
+   <Integer Name="CAP_TURBO_V2"  MergePriority="-1">
+      <Value>0</Value>
+   </Integer>
+
+   <Integer Name="PixelSizeVal"  MergePriority="-1">
+      <Value>8</Value>
+   </Integer>
+
+   <Integer Name="transferTurboCurrentlyAbailable"  MergePriority="-1">
+      <Value>1</Value>
+   </Integer>
+
+</RegisterDescription>

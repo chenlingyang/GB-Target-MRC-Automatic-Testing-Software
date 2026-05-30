@@ -1,0 +1,16 @@
+[PrmCap]
+
+; Camera control setting
+CC1 =  0, 0xffffffff, 0, Not used
+CC2 =  0, 0xffffffff, 0, Not used
+CC3 =  0, 0xffffffff, 0, Not used
+CC4 =  0, 0xffffffff, 0, Not used
+External Line Trigger Source = 0, 0, 0, ELTS
+External Trigger Source = 0, 0, 0, ETS
+External Frame Trigger Source = 0, 0, 0, EFTS
+
+[ValueInfo]
+ELTS = 0x0;Automatic, 0x0001;From Shaft Encoder Phase A, 0x0002;From Shaft Encoder Phase B, 0x0003;From Shaft Encoder Phase A and B, 0x0004;From Board Sync, 0x0005;To Board Sync, 0x0006;Pulse To Board Sync, 0x0007;To Board Sync When Grabbing
+ETS  = 0x0;Automatic, 0x0001;From External Trigger #1, 0x0002;From External Trigger #2, 0x0003;From Board Sync , 0x0004;To Board Sync ,0x0005;Pulse to Board Sync ,0x0006;Software Trigger
+EFTS = 0x0;Automatic, 0x0001;From External Trigger #1, 0x0002;From External Trigger #2, 0x0003;From Board Sync , 0x0004;To Board Sync ,0x0005;Pulse to Board Sync ,0x0006;Software Trigger
+

@@ -1,0 +1,2498 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+
+<style id="dynCom" type="text/css"><!-- --></style>
+<script language="JavaScript"><!--
+function msoCommentShow(anchor_id, com_id)
+{
+	if(msoBrowserCheck()) 
+		{
+		c = document.all(com_id);
+		a = document.all(anchor_id);
+		if (null != c && null == c.length && null != a && null == a.length)
+			{
+			var cw = c.offsetWidth;
+			var ch = c.offsetHeight;
+			var aw = a.offsetWidth;
+			var ah = a.offsetHeight;
+			var x  = a.offsetLeft;
+			var y  = a.offsetTop;
+			var el = a;
+			while (el.tagName != "BODY") 
+				{
+				el = el.offsetParent;
+				x = x + el.offsetLeft;
+				y = y + el.offsetTop;
+				}
+			var bw = document.body.clientWidth;
+			var bh = document.body.clientHeight;
+			var bsl = document.body.scrollLeft;
+			var bst = document.body.scrollTop;
+			if (x + cw + ah / 2 > bw + bsl && x + aw - ah / 2 - cw >= bsl ) 
+				{ c.style.left = x + aw - ah / 2 - cw; }
+			else 
+				{ c.style.left = x + ah / 2; }
+			if (y + ch + ah / 2 > bh + bst && y + ah / 2 - ch >= bst ) 
+				{ c.style.top = y + ah / 2 - ch; }
+			else 
+				{ c.style.top = y + ah / 2; }
+			c.style.visibility = "visible";
+}	}	}
+function msoCommentHide(com_id) 
+{
+	if(msoBrowserCheck())
+		{
+		c = document.all(com_id);
+		if (null != c && null == c.length)
+		{
+		c.style.visibility = "hidden";
+		c.style.left = -1000;
+		c.style.top = -1000;
+		} } 
+}
+function msoBrowserCheck()
+{
+	ms = navigator.appVersion.indexOf("MSIE");
+	vers = navigator.appVersion.substring(ms + 5, ms + 6);
+	ie4 = (ms > 0) && (parseInt(vers) >= 4);
+	return ie4;
+}
+if (msoBrowserCheck())
+{
+	document.styleSheets.dynCom.addRule(".msocomanchor","background: infobackground");
+	document.styleSheets.dynCom.addRule(".msocomoff","display: none");
+	document.styleSheets.dynCom.addRule(".msocomtxt","visibility: hidden");
+	document.styleSheets.dynCom.addRule(".msocomtxt","position: absolute");
+	document.styleSheets.dynCom.addRule(".msocomtxt","top: -1000");
+	document.styleSheets.dynCom.addRule(".msocomtxt","left: -1000");
+	document.styleSheets.dynCom.addRule(".msocomtxt","width: 33%");
+	document.styleSheets.dynCom.addRule(".msocomtxt","background: infobackground");
+	document.styleSheets.dynCom.addRule(".msocomtxt","color: infotext");
+	document.styleSheets.dynCom.addRule(".msocomtxt","border-top: 1pt solid threedlightshadow");
+	document.styleSheets.dynCom.addRule(".msocomtxt","border-right: 2pt solid threedshadow");
+	document.styleSheets.dynCom.addRule(".msocomtxt","border-bottom: 2pt solid threedshadow");
+	document.styleSheets.dynCom.addRule(".msocomtxt","border-left: 1pt solid threedlightshadow");
+	document.styleSheets.dynCom.addRule(".msocomtxt","padding: 3pt 3pt 3pt 3pt");
+	document.styleSheets.dynCom.addRule(".msocomtxt","z-index: 100");
+}
+// --></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0075BF;
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: #ffffff;
+  padding: 6px;
+  text-decoration: none;
+  display: block;
+ 
+  
+}
+.sidenav h1 {
+  color: #ffffff;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 250px;
+  padding-left: 20px;
+}
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Corbel;
+	panose-1:2 11 5 3 2 2 4 2 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Wingdings 3";
+	panose-1:5 4 1 2 1 8 7 7 7 7;}
+@font-face
+	{font-family:"MS Shell Dlg 2";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	background:#0673A5;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:normal;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	background:#C9ECFC;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:normal;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:15.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:normal;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+h5
+	{mso-style-link:"Heading 5 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+h6
+	{mso-style-link:"Heading 6 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-link:"Heading 7 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:#0673A5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-link:"Heading 8 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-link:"Heading 9 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:10.0pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:20.0pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-link:"Footnote Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#0673A5;
+	font-weight:bold;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{mso-style-link:"Endnote Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{mso-style-link:"Macro Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:11.0pt;
+	font-family:Consolas;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:26.0pt;
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	letter-spacing:.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Body Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-link:"Subtitle Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#404040;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{mso-style-link:"Body Text 3 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{mso-style-link:"Body Text Indent 3 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:6.0pt;
+	margin-right:.8in;
+	margin-bottom:10.0pt;
+	margin-left:.8in;
+	line-height:110%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#806000;
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{color:#005DBA;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#6C606A;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-link:"Document Map Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Consolas;}
+code
+	{font-family:Consolas;}
+kbd
+	{font-family:Consolas;}
+pre
+	{mso-style-link:"HTML Preformatted Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Consolas;}
+tt
+	{font-family:Consolas;}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+span.MsoPlaceholderText
+	{color:#3C3C3C;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:110%;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;}
+p.MsoIntenseQuote, li.MsoIntenseQuote, div.MsoIntenseQuote
+	{mso-style-link:"Intense Quote Char";
+	margin-top:.25in;
+	margin-right:.6in;
+	margin-bottom:.25in;
+	margin-left:.6in;
+	text-align:center;
+	line-height:110%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Segoe UI",sans-serif;
+	color:#806000;
+	font-style:italic;}
+span.MsoIntenseEmphasis
+	{color:#806000;
+	font-style:italic;}
+span.MsoIntenseReference
+	{font-variant:small-caps;
+	color:#806000;
+	text-transform:none;
+	letter-spacing:.25pt;
+	font-weight:bold;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:110%;
+	background:#0673A5;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Corbel",sans-serif;
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:.75pt;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Corbel",sans-serif;
+	color:white;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	background:#0673A5;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Corbel",sans-serif;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	background:#C9ECFC;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.75pt;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	letter-spacing:.5pt;}
+span.SubtitleChar
+	{mso-style-name:"Subtitle Char";
+	mso-style-link:Subtitle;
+	color:#404040;}
+span.IntenseQuoteChar
+	{mso-style-name:"Intense Quote Char";
+	mso-style-link:"Intense Quote";
+	color:#806000;
+	font-style:italic;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-link:"Heading 5";
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-link:"Heading 6";
+	font-family:"Corbel",sans-serif;
+	color:#0076C0;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.Heading7Char
+	{mso-style-name:"Heading 7 Char";
+	mso-style-link:"Heading 7";
+	font-family:"Corbel",sans-serif;
+	color:#0673A5;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.Heading8Char
+	{mso-style-name:"Heading 8 Char";
+	mso-style-link:"Heading 8";
+	font-family:"Corbel",sans-serif;
+	text-transform:uppercase;
+	letter-spacing:.5pt;}
+span.Heading9Char
+	{mso-style-name:"Heading 9 Char";
+	mso-style-link:"Heading 9";
+	font-family:"Corbel",sans-serif;
+	text-transform:uppercase;
+	letter-spacing:.5pt;
+	font-style:italic;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;}
+span.BodyText3Char
+	{mso-style-name:"Body Text 3 Char";
+	mso-style-link:"Body Text 3";}
+span.BodyTextIndent3Char
+	{mso-style-name:"Body Text Indent 3 Char";
+	mso-style-link:"Body Text Indent 3";}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-weight:bold;}
+span.DocumentMapChar
+	{mso-style-name:"Document Map Char";
+	mso-style-link:"Document Map";
+	font-family:"Segoe UI",sans-serif;}
+span.EndnoteTextChar
+	{mso-style-name:"Endnote Text Char";
+	mso-style-link:"Endnote Text";}
+span.FootnoteTextChar
+	{mso-style-name:"Footnote Text Char";
+	mso-style-link:"Footnote Text";}
+span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;}
+span.MacroTextChar
+	{mso-style-name:"Macro Text Char";
+	mso-style-link:"Macro Text";
+	font-family:Consolas;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-link:"Plain Text";
+	font-family:Consolas;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.UnresolvedMention1
+	{mso-style-name:"Unresolved Mention1";
+	color:#605E5C;
+	background:#E1DFDD;}
+span.UnresolvedMention2
+	{mso-style-name:"Unresolved Mention2";
+	color:#605E5C;
+	background:#E1DFDD;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-link:"Body Text";
+	font-family:"Segoe UI",sans-serif;}
+.MsoChpDefault
+	{font-family:"Corbel",sans-serif;}
+.MsoPapDefault
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:110%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#005DBA" vlink="#6C606A">
+
+
+<div class="sidenav">
+<h1 style="color:white;font-size:20px">Z-Expert Help</h1>
+  <a style="color:white" href="#TOC">Table of Contents</a>
+  <a style="color:white "href="#QuickStartTutorial">Quick Start Tutorial</a>
+  <a style="color:white "href="#UserInterface">User Interface</a>
+  <a style="color:white "href="#MultiSensorCalibration">Unified Measurement Space</a>
+  <a style="color:white "href="#SynchronizationWizard">Synchronization Wizard</a>
+</div>
+
+<div class="content">
+
+<p  class=MsoTitle><a name="_Hlk46921236"></a><b>Z-Expert Help</b></p>
+
+<p class=MsoNormal><img width=489 height=368 id="Picture 20"
+src="Z-Expert_Help_files/image001.jpg"></p>
+
+<div style='border:solid #0673A5 3.0pt;padding:0in 0in 0in 0in;background:#0673A5'>
+
+<p class=MsoTocHeading id="TOC">Contents</p>
+
+</div>
+
+<p class=MsoToc1><a href="#Introduction">Introduction</a></p>
+
+<p class=MsoToc1><a href="#QuickStartTutorial">Quick Start Tutorial</a></p>
+
+<p class=MsoToc1><a href="#UserInterface">User Interface</a></p>
+
+<p class=MsoToc2><a href="#CommandRibbon">Z-Expert Task Bar</a></p>
+
+<p class=MsoToc2><a href="#MenuCommands">Menu Commands</a></p>
+
+<p class=MsoToc2><a href="#SourcesExplorer">Sources Explorer</a></p>
+
+<p class=MsoToc3><a href="#_Toc47004206">Sensors</a></p>
+
+<p class=MsoToc3><a href="#MultiSensorCalibrationTree">Multi-Sensor Calibration Navigation Tree</a></p>
+
+<p class=MsoToc2><a href="#FeaturesBrowser">Features Browser</a></p>
+
+<p class=MsoToc3><a href="#_Toc47004209">Parameter Visibility</a></p>
+
+<p class=MsoToc2><a href="#Display-Window">Display</a></p>
+
+<p class=MsoToc3><a href="#SelectingProfileSurface">Selecting Profile or Surface Display</a></p>
+
+<p class=MsoToc3><a href="#Display-Window-Menu-Commands">Display Window Menu Commands</a></p>
+
+<p class=MsoToc2><a href="#OutputMessages">Output Messages</a></p>
+
+<p class=MsoToc2><a href="#EventsRegistration">Events Registration</a></p>
+
+<p class=MsoToc2><a href="#SourceInformation">Source Information</a></p>
+
+<p class=MsoToc1><a href="#MultiSensorCalibration">Creating a Unified Measurement Space</a></p>
+
+<p class=MsoToc2><a href="#SensorAlignment">Sensor Alignment</a></p>
+
+<p class=MsoToc2><a href="#CalibrationTargetObject">Calibration Target Object</a></p>
+
+<p class=MsoToc2><a href="#CalibrationLayout">Creating a Multi-Sensor CalIbration Layout</a></p>
+
+<p class=MsoToc3><a href="#CalibrationQuickSetup">Calibration Quick Setup</a></p>
+
+<p class=MsoToc2><a href="#CustomTarget">Using a Custom Target Object</a></p>
+
+<p class=MsoToc2><a href="#SynchronizationWizard">Synchronization Wizard</a></p>
+
+<p class=MsoToc3><a href="#SynchronizationWizardFeatures">Synchronization Wizard Features</a></p>
+
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #0673A5 3.0pt;padding:0in 0in 5.0pt 0in;background:
+#0673A5'>
+
+<h1 style='background:#0673A5;border:none;padding:0in'><a name="Introduction">Introduction</a></h1>
+
+</div>
+
+<p class=MsoNormal>Sapera Z-Expert is an intuitive
+graphical utility that allows configuring and setup of Teledyne DALSA’s GigE
+Vision compliant 3D profile sensors such as the Z-Trak. Z-Expert allows configuring
+of 3D sensor parameters and provides live display of a profile or 3D surface
+view.</p>
+
+<p class=MsoNormal>Z-Expert can save 3D data as 3D images using industry
+standard point cloud formats like STL, PLY, and so forth. Parameter settings can also be saved in a configuration file. </p>
+
+<p class=MsoNormal>Z-Expert also provides a step-by-step process to create a
+unified measurement space using multiple sensors. It can configure up to 16
+sensors in a variety of topologies using user- defined calibration targets.</p>
+
+<table class=MsoTableGrid border=1 cellspacing=3 cellpadding=0>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><img width=45 height=43 id="Picture 5"
+  src="Z-Expert_Help_files/image002.png"></p>
+  </td>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal'>The current version provides support for Teledyne DALSA Z-Trak 3D Profile Sensors: Use the legacy CamExpert application for all other Teledyne DALSA acquisition devices, such as frame grabbers and GigE cameras.</p>
+  </td>
+ </tr>
+</table>
+<p></p>
+<div style='border:solid #0673A5 3.0pt;padding:0in 0in 5.0pt 0in;background:
+#0673A5'>
+
+<h1 id="QuickStartTutorial" style='background:#0673A5;border:none;padding:0in'><a name="_Toc47004198">Quick
+Start Tutorial</a></h1>
+
+</div>
+
+<p class=MsoNormal>Before you begin to use Z-Expert, make sure sensors are
+powered and cables are connected.</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'>1.&nbsp;&nbsp;&nbsp;&nbsp;
+Select a sensor.</p>
+
+<p class=MsoNormal><img width=1033 height=371
+src="Z-Expert_Help_files/image003.png"></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'>2.&nbsp;&nbsp;&nbsp;&nbsp;
+Verify sensor settings.</p>
+
+<p class=MsoNormal><img width=1197 height=488
+src="Z-Expert_Help_files/image004.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'>3.&nbsp;&nbsp;&nbsp;&nbsp;
+Acquire and display image(s).</p>
+
+<p class=MsoNormal><img width=1096 height=701
+src="Z-Expert_Help_files/image005.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #0673A5 3.0pt;padding:0in 0in 0in 0in;background:#0673A5'>
+
+<h1 id="UserInterface"><a name="_Toc47004204">User Interface</a></h1>
+
+</div>
+
+<p class=MsoNormal>The Z-Expert user interface consists of the application main
+window, and several different panels that group together common functionality. </p>
+
+<p class=MsoNormal><img width=794 height=526 id="Picture 89"
+src="Z-Expert_Help_files/image006.jpg"></p>
+
+<p class=MsoNormal>Window panels include:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Sources Explorer</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Features Browser</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Display</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Output Messages</p>
+
+<p class=MsoNormal>Panel display can be toggled as required using the View
+menu command.</p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="CommandRibbon"><a name="_Toc49697562">Z-Expert Task Bar</a></h2>
+
+</div>
+
+<p class=MsoNormal>The Z-Expert Task Bar groups common commands into control
+groups for quick access to common functions, such as:</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo3'><![if !supportLists]>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Scan control buttons</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo3'><![if !supportLists]>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>View control buttons</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo3'><![if !supportLists]>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>UMS (Unified Measurement Space) layout setup buttons</p>
+
+<p class=MsoNormal><img
+src="Z-Expert_Help_files/Z-Expert-Task-Bar.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 id="GlobalGrabFreezeButton"style='border:none;padding:0in'>Global Grab / Freeze Button</h4>
+
+</div>
+
+<p class=MsoNormal>The Global Grab button initiates a scan from all selected sensors
+using the current feature settings. Click again to stop scan.</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=40 height=39 id="Picture 24"
+  src="Z-Expert_Help_files/image042.png"></p>
+  </td>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b>Global Grab</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=36 height=38 id="Picture 25"
+  src="Z-Expert_Help_files/image043.png"></p>
+  </td>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b>Freeze</b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Some feature values can be changed during live scan but for
+certain others to take effect the scan must be stopped. <o:p></o:p></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 id="GlobalSnap1Button" style='border:none;padding:0in'>Global Snap 1</h4>
+
+</div>
+
+<p class=MsoNormal>Execute a single scan.</p>
+
+<p class=MsoNormal><img border=0 width=36 height=34
+id="Picture 1" src="Z-Expert_Help_files/image044.png"></p>
+
+<p class=MsoNormal>Note a scan can consist of more than
+one profile. Use the <b>Data Output-&gt;Profiles Per Scan</b> feature to change the number of profiles per scan.</p>
+<img src="Z-Expert_Help_files/Data-Output-Profiles-Per-Scan-Feature.png">
+
+
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 id="GlobalSnapXButton" style='border:none;padding:0in'>Global Snap X</h4>
+
+</div>
+
+<p class=MsoNormal>Execute a grab of <i>x</i> number of scans.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=35
+id="Picture 33" src="Z-Expert_Help_files/image045.png"></p>
+
+<p class=MsoNormal>Since resulting 3D data from each scan is stored in a host
+buffer, changing the Buffer Count, controls how many scans are done with each
+SNAP X command.</p>
+
+<p class=MsoNormal>To change the Buffer Count do the
+following:</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in;
+mso-list:l1 level1 lfo2'><![if !supportLists]>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Select a sensor form the Source Explorer window<o:p></o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in;
+mso-list:l1 level1 lfo2'><![if !supportLists]>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Right click to access the context menu<o:p></o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in;
+mso-list:l1 level1 lfo2'><![if !supportLists]>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Select Source Settings panel<o:p></o:p></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in;
+mso-list:l1 level1 lfo2'><![if !supportLists]>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<![endif]>Change Buffer Count value<o:p></o:p></p>
+
+
+<p class=MsoNormal><img border=0 width=399 height=235
+id="Picture 102" src="Z-Expert_Help_files/image046.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 id="GlobalAbortButton" style='border:none;padding:0in'>Global Abort</h4>
+
+</div>
+
+<p class=MsoNormal>Aborts the current scan acquisition in progress.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=36
+id="Picture 54" src="Z-Expert_Help_files/image047.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 id="ViewLayoutButtons" style='border:none;padding:0in'>View Layout Buttons</h4>
+
+<p class=MsoNormal>The display area allows preview of the live scans. Using the
+View layout buttons the display area can be divided into multiple independent
+viewing areas. Each view area can be connected to a sensor by simply dragging
+and dropping the name of a selected sensor on the view area.</p>
+
+<p class=MsoNormal>Use the View buttons to create 1 to 9 views. Use the All View button for additional views, such as 12 or 16. </p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=29 height=30
+  src="Z-Expert_Help_files/viewbutton_1.png"></p>
+  </td>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>1 View</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=30 height=29
+  src="Z-Expert_Help_files/viewbutton_2.png"></p>
+  </td>
+  <td valign=top style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>2 View</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=29 height=30
+  src="Z-Expert_Help_files/viewbutton_4.png"></p>
+  </td>
+  <td valign=top style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>4 View</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=29 height=30
+  src="Z-Expert_Help_files/viewbutton_9.png"></p>
+  </td>
+  <td valign=top style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>9 View</p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=29 height=30
+  src="Z-Expert_Help_files/viewbutton_all.png"></p>
+  </td>
+  <td valign=top style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>All Views. </p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>Opens a pop-up menu to select from available views:
+  <br>
+  <img border=0 width=80 height=140 src="Z-Expert_Help_files/viewbutton_all_menu.png"></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=27 height=30
+  src="Z-Expert_Help_files/viewbutton_clear.png"></p>
+  </td>
+  <td valign=top style='padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>Clear Views</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Create Unified Measurement Space Layout</h4>
+
+</div>
+
+<p class=MsoNormal>Opens the Unified Measurement Space Layout Selector dialog.
+See Creating a Unified Measurement Space more details.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=36 id="Picture 2"
+src="Z-Expert_Help_files/Create-Multi-Sensor-Calibration-Button.jpg"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Edit Unified Measurment Space Layout</h4>
+
+</div>
+
+<p class=MsoNormal>Use this button to edit currently selected UMS Layout using the <a href="#CalibrationQuickSetup">Calibration Quick
+Setup</a> dialog. Note, if any UMS parameters are changed the system must be recalibrated.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=36 id="Picture 10"
+src="Z-Expert_Help_files/Edit-Layout-Button.jpg"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Sensors Input</h4>
+
+</div>
+
+<p class=MsoNormal>Adds all available sensors to the display window.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=37 id="Picture 15"
+src="Z-Expert_Help_files/Sensors-Input-Button.jpg"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Calibration Icon</h4>
+
+</div>
+
+<p class=MsoNormal>When the UMS is successfully calibrated the calibration icon is
+shown in green. For UMS to be successful each selected sensor in the UMS layout
+must also be calibrated successfully.</p>
+
+<p class=MsoNormal><img border=0 width=29 height=30
+id="Picture 28" src="Z-Expert_Help_files/image024.png"></p>
+
+<p class=MsoNormal>If any sensors are not calibrated, the System Calibration identifies a partially calibrated
+state in yellow.</p
+
+<p class=MsoNormal><img border=0 width=27 height=30
+id="Picture 31" src="Z-Expert_Help_files/image025.jpg"></p>
+
+<p class=MsoNormal>Red indicates an uncalibrated state.</p>
+
+<p class=MsoNormal><img border=0 width=30 height=30
+id="Picture 32" src="Z-Expert_Help_files/image026.jpg"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Unified Measuerement Space</h4>
+
+</div>
+
+<p class=MsoNormal>Displays the resulting merged image, combining output of all selected sensors
+as a unified measurement space.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=36
+id="Picture 36" src="Z-Expert_Help_files/Unified-Space.jpg"></p>
+
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Save UMS Calibration</h4>
+
+</div>
+
+<p class=MsoNormal>Opens the Save Calibration dialog to save
+the current UMS calibration data to a .mscalib file.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=35
+id="Picture 37" src="Z-Expert_Help_files/Save-Multi-Sensor-Calibration-Button.jpg"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Load Multi-Sensor Calibration</h4>
+
+</div>
+
+<p class=MsoNormal>Opens the Load Calibration dialog to load a
+previously saved .mscalib file.</p>
+
+<p class=MsoNormal><img border=0 width=38 height=37
+id="Picture 40" src="Z-Expert_Help_files/Load-Multi-Sensor-Calibration-Button.jpg"></p>
+
+</div>
+
+
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="MenuCommands"><a name="_Toc47004205"></a><a name="_Ref46927574"></a><a name="_Toc47004199">Menu Commands</a></h2>
+
+</div>
+
+<p class=MsoNormal>The Z-Expert main menu bar groups common commands under the
+File, View and Settings menus.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="FileMenu"><a name="_Toc47004200">File</a></h3>
+
+</div>
+
+<p class=MsoNormal>The File menu contains the following commands allow you to load
+an image from disk or a previously saved Multi-Sensor Calibration file
+(.mscalib).</p>
+
+<p class=MsoNormal><img width=201 height=96 id="Picture 27"
+src="Z-Expert_Help_files/image008.png"></p>
+
+<table class=MsoTableLightListAccent3 border=1 cellspacing=0 cellpadding=0
+ width="100%" style='width:100.0%;border-collapse:collapse;border:none'>
+ <tr>
+  <td width="19%" valign=top style='width:19.62%;border-top:solid #0076C0 1.0pt;
+  border-left:solid #0076C0 1.0pt;border-bottom:none;border-right:none;
+  background:#0076C0;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>COMMAND</b></p>
+  </td>
+  <td width="80%" valign=top style='width:80.38%;border-top:solid #0076C0 1.0pt;
+  border-left:none;border-bottom:none;border-right:solid #0076C0 1.0pt;
+  background:#0076C0;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>DESCRIPTION</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" valign=top style='width:19.62%;border:none;border-left:solid #0076C0 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Open
+  Image</b></p>
+  </td>
+  <td width="80%" valign=top style='width:80.38%;border:none;border-right:solid #0076C0 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Loads
+  an image from file. Supported file formats are .png, jpg, bmp, tif and crc.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="19%" valign=top style='width:19.62%;border-top:none;border-left:
+  solid #0076C0 1.0pt;border-bottom:solid #0076C0 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Load
+  Multi-Sensor Calibration</b></p>
+  </td>
+  <td width="80%" valign=top style='width:80.38%;border-top:none;border-left:
+  none;border-bottom:solid #0076C0 1.0pt;border-right:solid #0076C0 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Loads
+  a multi-sensor calibration from file (.mscalib).</p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="ViewMenu"><a name="_Toc47004201"></a><a name="_Ref519501512"></a><a
+name="_Ref519501131"></a>View</h3>
+
+</div>
+
+<p class=MsoNormal>The View menu commands allow you to toggle the display of
+the various Z-Expert panels. </p>
+
+<p class=MsoNormal>Panels include:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Source Explorer</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Features Browser</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Console Messages</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Events Registration</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Source Information</p>
+
+<p class=MsoNormal><img width=174 height=207 id="Picture 79"
+src="Z-Expert_Help_files/image009.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The View Layout commands allows you to specify the display window
+configuration.</p>
+
+<p class=MsoNormal><img width=252 height=197 id="Picture 92"
+src="Z-Expert_Help_files/image010.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="WizardMenu"><a name="_Toc47004202">Wizard</a></h3>
+
+</div>
+
+<p class=MsoNormal>The Wizard menu command opens the Synchronization Wizard.</p>
+
+<p class=MsoNormal><img width=230 height=73 id="Picture 80"
+src="Z-Expert_Help_files/image011.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="HelpMenu"><a name="_Toc47004203">Help</a></h3>
+
+</div>
+
+<p class=MsoNormal>The Help menu commands allow you to open the Z-Expert help
+document and display the current version and plugin information about the
+installed Z-Expert application.</p>
+
+<p class=MsoNormal><img width=188 height=74 id="Picture 76"
+src="Z-Expert_Help_files/image012.png"></p>
+
+<p class=MsoNormal><img width=402 height=290 id="Picture 78"
+src="Z-Expert_Help_files/image013.png"></p>
+
+<p class=MsoNormal>This dialog also lists the plugins
+currently supported by this version of Z-Expert.</p>
+
+<p class=MsoNormal> </p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="SourcesExplorer">Sources Explorer</h2>
+
+</div>
+
+<p class=MsoNormal>The Sources Explorer displays all acquisition sensors
+installed and available in the system as well as any Multi-Sensor Calibration
+available. It also shows any unsupported GigE devices or loaded images.</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3><a name="_Toc47004206">Sensors</a></h3>
+
+</div>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal;
+text-autospace:none'>After selecting an acquisition sensor, use the <span
+lang=EN-CA style='font-family:"Wingdings 3";mso-ansi-language:EN-CA'>q</span><span
+lang=EN-CA style='mso-ansi-language:EN-CA'> </span>or <span lang=EN-CA
+style='font-family:"Wingdings 3";mso-ansi-language:EN-CA'>u</span><span
+lang=EN-CA style='font-family:"Verdana",sans-serif;mso-ansi-language:EN-CA'> </span>buttons to toggle the display
+of the available acquisition servers supported by the sensor. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img src="Z-Expert_Help_files/Sources_Explorer.png"></p>
+
+<p class=MsoNormal>The sensor icon is shown in blue for
+available sensors, green for sensors connected to the Z-Expert application, and
+red for unavailable sensors (offline or connected to another application).</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td valign=top style='border:solid windowtext 1.0pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-CA style='mso-ansi-language:EN-CA;
+  mso-no-proof:yes'><img border=0 width=46 height=38 id="_x0000_i1511"
+  src="Z-Expert_Help_files/image015.jpg"></span></p>
+  </td>
+  <td valign=top style='border:solid windowtext 1.0pt;border-left:none;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Blue icon indicates available sensor.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-CA style='mso-ansi-language:EN-CA;
+  mso-no-proof:yes'><img border=0 width=48 height=38 id="_x0000_i1510"
+  src="Z-Expert_Help_files/image016.jpg"></span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Green icon for connected sensors.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-CA style='mso-ansi-language:EN-CA;
+  mso-no-proof:yes'><img border=0 width=47 height=36 id="_x0000_i1509"
+  src="Z-Expert_Help_files/image017.jpg"></span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Red for unavailable sensors (offline or connected to
+  another application).</p>
+  </td>
+ </tr>
+</table>
+
+
+<p class=MsoNormal>Use the Connect / Disconnect checkbox to
+free the sensor to allow control access from other applications (Z-Expert
+always connects to sensors in read/write mode).</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Sensor Pop-Up Menu
+Commands</h4>
+
+</div>
+
+<p class=MsoNormal>For each sensor, the right-click pop-up
+menu provides access to a variety of commands.</p>
+
+<p class=MsoNormal><img width=127 height=119 id="Picture 104"
+src="Z-Expert_Help_files/image018.png"></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>Add to View</b>: Adds the currently selected
+sensor to an available View panel.</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>Refresh</b>: Refreshes the status of the
+currently connected sensor.</p>
+
+<p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level1 lfo5'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b>Disconnection</b>: Disconnects the current
+sensor from the Z-Expert application, freeing it to connect to other
+applications.</p>
+
+
+<h5>Features Command Menu</h5>
+
+<p class=MsoNormal>The Features command menu groups additional commands related
+to sensor configuration, such as opening the Features Browser.</p>
+
+<p class=MsoNormal><img width=283 height=141 id="Picture 105"
+src="Z-Expert_Help_files/image019.png"></p>
+
+<p class=MsoNormal>The Actions sub-menu includes commands to
+perform a device reset as well as to save the current sensor feature settings
+to an available Power-up Configuration user set or load a configuration.</p>
+
+<p class=MsoNormal><img width=454 height=139 id="Picture 103"
+src="Z-Expert_Help_files/image020.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>A previously saved user set of feature settings or the factory default configuration can be loaded using the <b>Load Configuration From</b> sub-menu.</p>
+
+<p class=MsoNormal><img width=575 height=188 id="Picture 107"
+src="Z-Expert_Help_files/image021.png"></p>
+
+<p class=MsoNormal>The CCF sub-menu allows you to load or save
+a camera configuration file (.ccf).</p>
+
+<p class=MsoNormal><img width=351 height=142 id="Picture 106"
+src="Z-Expert_Help_files/image022.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="MultiSensorCalibrationTree"><a name="_Toc47004207">Multi-Sensor Calibration Tree</a></h3>
+
+</div>
+
+<p class=MsoNormal>The Multi-Sensor Calibration tree shows the
+System Calibration and its associated sensors and their calibration status. For
+more information, refer to the <a
+href="#_Multi-Sensor_Calibration_Overview">Creating a Unified Measurement Space</a>. To perform Multi-Sensor
+Calibration see the <a href="#_Creating_a_Multi-Sensor">Creating a Multi-Sensor Calbration Layout</a> section. </p>
+
+<p class=MsoNormal><img border=0 width=306 height=199
+id="Picture 98" src="Z-Expert_Help_files/image023.png"></p>
+
+<p class=MsoNormal>When a sensor is successfully calibrated
+the calibration icon is shown in green.  </p>
+
+<p class=MsoNormal><img border=0 width=29 height=30
+id="Picture 84" src="Z-Expert_Help_files/image024.png"></p>
+
+<p class=MsoNormal>If not all sensors are calibrated, the
+System Calibration identifies a partially calibrated state in yellow.</p>
+
+<p class=MsoNormal><img border=0 width=27 height=30
+id="Picture 38" src="Z-Expert_Help_files/image025.jpg"></p>
+
+<p class=MsoNormal>Red indicates an uncalibrated state.</p>
+
+<p class=MsoNormal><img border=0 width=30 height=30
+id="Picture 44" src="Z-Expert_Help_files/image026.jpg"></p>
+
+<p class=MsoNormal>Click the Reset Calbration icon to
+reattempt the calibration process.</p>
+
+<p class=MsoNormal><img border=0 width=32 height=30
+id="Picture 45" src="Z-Expert_Help_files/image027.jpg"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>System Calibration Pop-Up
+Menu</h4>
+
+</div>
+
+<p class=MsoNormal><img border=0 width=138 height=122
+id="Picture 129" src="Z-Expert_Help_files/image028.png"></p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5>Create Target</h5>
+
+</div>
+
+<p class=MsoNormal>The Create Target menu commands allow you
+to create a custom Prism target for multi-sensor calibration.</p>
+
+<p class=MsoNormal><img src="Z-Expert_Help_files/Create-Prism.png"></p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h6 style='border:none;padding:0in'>Prism Editor</h6>
+
+</div>
+
+<p class=MsoNormal>The Prism Editor allows you to create a
+custom target for multi-sensor calibration. Specify the number of points in the
+target and their corresponding X, Z position. If the sides are equilateral, enter
+the side length (as determined by the sensor measurement unit (Scan3dDistanceUnit
+feature), and click <b>Populate</b>. </p>
+
+<p class=MsoNormal><img border=0 width=549 height=346
+id="Picture 132" src="Z-Expert_Help_files/image030.png"></p>
+
+<p class=MsoNormal>Click <b>Create</b> to add the Prism to the System
+Calibration. </p>
+
+<p class=MsoNormal><img border=0 width=233 height=182
+id="Picture 138" src="Z-Expert_Help_files/image031.png"></p>
+
+<p class=MsoNormal>You can then assign sensors to their respective corners by
+using the corner’s right-click pop-up menu.</p>
+
+<p class=MsoNormal><img border=0 width=434 height=58
+id="Picture 140" src="Z-Expert_Help_files/image032.png"></p>
+
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h6 style='border:none;padding:0in'>Merge Settings</h6>
+
+</div>
+
+<p class=MsoNormal>When using a multi-sensor calibration, the Merge
+Settings commands determine how overlapping points from different sensors are
+treated.</p>
+
+<p class=MsoNormal><img border=0 width=419 height=119
+id="Picture 125" src="Z-Expert_Help_files/MergeSettings.png"></p>
+
+<p class=MsoNormal>The Merge Behaviour drop-down list includes
+the following options:</p>
+
+<p class=MsoNormal><img border=0 width=296 height=78
+id="Picture 8" src="Z-Expert_Help_files/MergeBehaviour.png"></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Keep All Points</b>:
+Keep all points as-is.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Remove Points</b>: Points
+closer to each other than the given threshold are replaced with one point.</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Voxel Centroid</b>:
+Replace all points within a voxel with their centroid.</p>
+
+<p class=MsoNormal>The <b>Threshold </b>determines how close
+points must be to implement the selected merge behaviour..</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="FeaturesBrowser"><a name="_Toc47004208"></a><a name="_Ref46927589"></a><a
+name="_Creating_a_Multi-Sensor"></a>Features Browser</h2>
+
+</div>
+
+<p class=MsoNormal>The Features Browser panel allows viewing or changing all
+parameters supported by the acquisition sensor; refer to the acquisition sensor
+documentation for information on supported features.</p>
+
+<p class=MsoNormal>Categories organize related parameters together; click on
+the category to view its parameter group. Available categories are
+sensor-dependent. Context help for the selected parameter is displayed in the
+information window below the Parameters panel.</p>
+
+<p class=MsoNormal><img border=0 width=624 height=508
+id="Picture 42" src="Z-Expert_Help_files/image035.png"></p>
+
+<p class=MsoNormal><img border=0 width=505 height=313
+id="Picture 19" src="Z-Expert_Help_files/image036.png"></p>
+
+<p class=MsoNormal>Z-Expert includes a search utility to locate features by
+name. </p>
+
+<p class=MsoNormal><img border=0 width=419 height=72
+id="Picture 41" src="Z-Expert_Help_files/image037.png"></p>
+
+<p class=MsoNormal>Results are filtered by keyword with only the categories
+containing the keyword displayed. For example, filtering for “Offset” shows the
+following results (sensor-specific):</p>
+
+<p class=MsoNormal><img border=0 width=658 height=235
+id="Picture 88" src="Z-Expert_Help_files/image038.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3><a name="_Toc47004209">Parameter Visibility</a></h3>
+
+</div>
+
+<p class=MsoNormal>For GenICam or Gig-E Vision supported cameras, the <b>Parameters
+visibility</b> drop-down list allows you to display different parameters, based
+on different levels of ease-of-use. Currently, parameters are divided into
+three levels of use: Beginner, Expert, and Guru. </p>
+
+<p class=MsoNormal><img border=0 width=255 height=85
+id="Picture 13" src="Z-Expert_Help_files/image039.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="Display-Window"><a name="_Toc49848097"></a><a name="_Ref519504642">Display</a></h2>
+
+</div>
+
+<p class=MsoNormal>The Display window contains toolbar elements (buttons and
+drop-down list) to easily control image acquisition and display.</p>
+
+<p class=MsoNormal><img border=0 width=624 height=609 id="Picture 9"
+src="Z-Expert_Help_files/Display-Window.jpg"></p>
+
+<p class=MsoNormal>The display window can be configured to hold multiple
+display panels to show the acquisition from multiple devices simultaneously
+using the <a href="#_View_Layout_Buttons">View Layout buttons</a>.</p>
+
+<p class=MsoNormal>Each display panel shows the selected acquisition view
+(profile or surface view). Depending on the pixel format, reflectance values
+may also be available for display. When the pixel format is Uniform X, the
+scaling and offset parameters determine the axis units.</p>
+
+<p class=MsoNormal>Each display panel contains Grab, Abort, Snap 1 and Snap X
+buttons to control the acquisition.</p>
+
+<p class=MsoNormal><img border=0 width=245 height=28
+id="Picture 34" src="Z-Expert_Help_files/DisplayButtons.png"></p>
+
+<p class=MsoNormal>The status bar displays information such as the acquisition
+status (Idle or Acquiring) and, if Acquiring, the scans per second.</p>
+
+<p class=MsoNormal><img border=0 width=37 height=22
+id="Picture 101" src="Z-Expert_Help_files/Display-Idle.png"></p>
+
+<p class=MsoNormal><img border=0 width=245 height=17 id="Picture 21"
+src="Z-Expert_Help_files/Display-Status-Acquiring.png"></p>
+
+<p class=MsoNormal>The buffer control allows you to view selected profile
+buffers following an acquisition of multiple profiles (Grab or Snap n).
+Clicking on the information icon opens the <a href="#_Buffer_Information">Buffer
+Information</a> dialog for the selected buffer.</p>
+
+<p class=MsoNormal><img border=0 width=107 height=29
+id="Picture 18" src="Z-Expert_Help_files/Display-BufferCount.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="SelectingProfileSurface"><a name="_Toc49848098">Selecting Profile or Surface Display</a></h3>
+
+</div>
+
+<p class=MsoNormal>Use the display type button to select whether to view
+Profile or 3D Surface output.</p>
+
+<p class=MsoNormal><img border=0 width=108 height=76
+id="Picture 47" src="Z-Expert_Help_files/Display-Profile-Surface-Button.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Surface Display</h4>
+
+</div>
+
+<p class=MsoNormal>For Surface display, the image height (profiles per scan) should
+be greater than 1. Standard mouse controls can be used to rotate, shift and
+zoom the surface display.</p>
+
+<p class=MsoNormal><img border=0 width=624 height=543
+id="Picture 29" src="Z-Expert_Help_files/Display-3D-Surface-View.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="Display-Window-Menu-Commands"><a name="_Toc49848099">Display Window Menu Commands</a></h3>
+
+</div>
+
+<p class=MsoNormal>Click on the Window Menu icon to open the pop-up menu.</p>
+
+<p class=MsoNormal><img border=0 width=252 height=65ble 
+id="Picture 3" src="Z-Expert_Help_files/Display-Window-Menu.png"></p>
+
+<p class=MsoNormal>The available pop-up menu commands depends on the viewing mode (profile or surface).</p>
+
+<p class=MsoNormal>If no Multi-Sensor Calibration is loaded, the menu includes
+the Settings option.</p>
+
+<p class=MsoNormal><img border=0 width=259 height=121
+id="Picture 7" src="Z-Expert_Help_files/Display-Window-Menu-Profile.png"> <img border=0 width=319 height=118 id="Picture 4"
+src="Z-Expert_Help_files/Display-Window-Menu-MultiSensor-Calibration.png"></p>
+
+<p class=MsoNormal>The Mulit-Sensor Calibration option allows you to
+select to display the system calibration or a connected sensor in the window.</p>
+
+<p class=MsoNormal><img border=0 width=455 height=141
+id="Picture 11" src="Z-Expert_Help_files/Display-Window-Menu-MultiSensor-Calibration2.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Settings Menu</h4>
+
+</div>
+
+<p class=MsoNormal>The Settings menu, in Profile View, includes the following
+options:</p>
+
+<ul>
+      <li class=MsoNormal><a href="#ProfileIndex">Profile Index</a>
+      <li class=MsoNormal><a href="#X_Axis">X Axis</a>
+      <li class=MsoNormal><a href="#Z_Axis">Z Axis</a>
+	  <li class=MsoNormal><a href="#CrosshairMouseCursor">Use Crosshair Mouse Cursor</a>
+	  <li class=MsoNormal><a href="#Trapezes">Trapezes</a>
+    </ul>
+
+<p class=MsoNormal><img border=0 width=297 height=142
+id="Picture 26" src="Z-Expert_Help_files/Display-Menu-Settings.png"></p>
+
+<p class=MsoNormal>When in Surface view, the Settings menu includes the Scales
+features which allow the X, Y and Z scales to be adjusted.</p>
+
+<p class=MsoNormal><img border=0 width=521 height=95
+id="Picture 30" src="Z-Expert_Help_files/Display-Menu-Settings-Surface.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5 id="ProfileIndex">Profile Index</h5>
+
+</div>
+
+<p class=MsoNormal>When the Profiles Per Scan feature is set to more than 1,
+the Profile Index allows you to select the profile in the buffer to view.</p>
+
+<p class=MsoNormal><img border=0 width=350 height=142
+id="Picture 52" src="Z-Expert_Help_files/Display-Menu-Settings-Profile-Index.png"></p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5 id="X_Axis">X Axis</h5>
+
+</div>
+
+<p class=MsoNormal>The X Axis setting allows you to choose if the X coordinate
+in the display represents the index of the profile point or the X value in
+real-world coordinates.</p>
+
+<p class=MsoNormal><img border=0 width=490 height=140
+id="Picture 63" src="Z-Expert_Help_files/Display-Menu-Settings-X-Axis.png"></p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5 id="Z_Axis">Z Axis</h5>
+
+</div>
+
+<p class=MsoNormal>The Z-Axis menu commands allow you to select the valuess to
+display on the Z-axis, as well as change the display color. The available values
+to display depend on the image output format (for example, Uniform X, XZ or
+XZRW). For example, reflectance values are only available when the 3D sensor
+uses XZRW format. </p>
+
+<p class=MsoNormal><img border=0 width=420 height=163
+id="Picture 65" src="Z-Expert_Help_files/Display-Menu-Settings-Z-Axis.png"></p>
+
+<p class=MsoNormal>Toggle the display of values using the Show command. To
+change the display color of the element, use the Color command and select the
+required color using the <a href="#_Color_Picker">Color Picker</a> dialog.</p>
+
+<p class=MsoNormal><img border=0 width=489 height=168
+id="Picture 12" src="Z-Expert_Help_files/Display-Menu-Settings-Z-Axis-Profiles.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5 id="CrosshairMouseCursor">Use Crosshair Mouse Cursor</h5>
+
+</div>
+
+<p class=MsoNormal>When enabled the mouse cursor in the display window is shown
+as a crosshair: <img border=0 width=30 height=30
+id="Picture 99" src="Z-Expert_Help_files/Display-Mouse-Crosshair.png">.</p>
+
+<p class=MsoNormal><img border=0 width=295 height=141
+id="Picture 66" src="Z-Expert_Help_files/Display-Menu-Settings-Crosshair.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5>Distance Cursors</h5>
+
+</div>
+
+<p class=MsoNormal>When enabled distance cursors allows simple measurements to
+be taken between parallel lines along the X and Z axes.</p>
+
+<p class=MsoNormal><img border=0 width=363 height=141
+id="Picture 67" src="Z-Expert_Help_files/Display-Menu-Settings-Distance-Cursors.png"></p>
+
+<p class=MsoNormal>Hovering the mouse cursor over a line provides the distance
+measurement as a tool-tip. </p>
+
+<p class=MsoNormal><img border=0 width=402 height=429
+id="Picture 73" src="Z-Expert_Help_files/Display-Distance-Cursors.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-bottom:solid #099BDD 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h5 id="Trapezes">Trapezes</h5>
+
+</div>
+
+<p class=MsoNormal>Z-Expert allows you to set a trapezoidal area-of-interest
+(AOI), a trapeze, within the 3D sensor field-of-view (FOV) to limit the output of
+profile values to within this trapeze; profile points outside the trapeze are
+ignored.</p>
+
+<p class=MsoNormal>The trapeze can be positioned interactively using the mouse
+to focus on the required area of interest.</p>
+
+<p class=MsoNormal><img border=0 width=269 height=348
+id="Picture 14" src="Z-Expert_Help_files/Display-Trapeze.png"> </p>
+
+<p class=MsoNormal>If a portion of the trapeze falls outside the FOV an
+intermediate trapeze displays the actual resulting AOI of the current trapeze
+position.</p>
+
+<p class=MsoNormal><img border=0 width=383 height=456
+id="Picture 71" src="Z-Expert_Help_files/Display-Trapeze-Intermediate.jpg"></p>
+
+<p class=MsoNormal>The trapeze coordinates are assigned to the 3D sensor AOI
+features. </p>
+
+<p class=MsoNormal><img src="Z-Expert_Help_files/FeatureBrowser-AOI-Features.png"></p>
+
+<p class=MsoNormal>Use the <b>Trapezes &gt; Lock</b> command to fix the trapeze
+position so that it cannot be moved. Use the Interactive Trapeze Color and
+Intermediate Trapeze Color commands to set the trapeze display color using the <a
+href="#_Color_Picker">Color Picker</a> dialog.</p>
+
+<p class=MsoNormal><img border=0 width=474 height=209
+id="Picture 68" src="Z-Expert_Help_files/Display-Menu-Settings-Trapezes.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Sensors</h4>
+
+</div>
+
+<p class=MsoNormal>The Sensors menu allows you to select the available sensor
+output to display in the window.</p>
+
+<p class=MsoNormal><img border=0 width=276 height=96
+id="Picture 43" src="Z-Expert_Help_files/Display-Menu-Sensors.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Images</h4>
+
+</div>
+
+<p class=MsoNormal>The Images menu provides access to the <b>Save Images</b>
+and <b>Load Image</b> commands.</p>
+
+<p class=MsoNormal><img border=0 width=213 height=96
+id="Picture 17" src="Z-Expert_Help_files/Display-Menu-Images.png"></p>
+
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'><a name="_Grab_/_Freeze"></a><a
+name="_Snap_1"></a><a name="_Snap_n"></a><a name="_Abort"></a><a
+name="_Display_Configuration"></a><a name="_Display_Settings"></a>Clear Source</h4>
+
+</div>
+
+<p class=MsoNormal>The Clear Source command removes the current 3D sensor from
+the display window, freeing it to be assigned to another source as required.</p>
+
+<p class=MsoNormal><img border=0 width=110 height=95
+id="Picture 61" src="Z-Expert_Help_files/Display-ClearSource.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3><a name="_Toc49848100"></a><a name="_Color_Picker"></a>Color Picker</h3>
+
+</div>
+
+<p class=MsoNormal>The Color Picker dialog allows you to specify the display
+color for a variety of graphic elements in the display window to customize
+visualization.</p>
+
+<p class=MsoNormal><img border=0 width=540 height=416
+id="Picture 70" src="Z-Expert_Help_files/ColorPicker.png"></p>
+
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="OutputMessages"><a name="_Toc47004218"></a><a name="_Ref519504644">Output
+Messages</a></h2>
+
+</div>
+
+<p class=MsoNormal>The Output Messages panel displays informational, warning
+and error messages generated by the Z-Expert application.</p>
+
+<p class=MsoNormal><img border=0 width=609 height=174
+id="Picture 51" src="Z-Expert_Help_files/image086.png"></p>
+
+<p class=MsoNormal>Right-click anywhere in the Output Messages panel to open a
+pop-up menu which allows you to clear all the messages in the window, or select
+all or copy selected messages.</p>
+
+<p class=MsoNormal><img border=0 width=137 height=76
+id="Picture 50" src="Z-Expert_Help_files/image087.png"></p>
+
+<p class=MsoNormal>You can use the mouse to select specific messages or [Control]+A
+to select all messages. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="EventsRegistration"><a name="_Toc47004223">Events Registration</a></h2>
+
+</div>
+
+<p class=MsoNormal>Use the Events Registration pane to select the events to
+monitor for each available sensor.</p>
+
+<p class=MsoNormal><img border=0 width=496 height=463
+id="Picture 90" src="Z-Expert_Help_files/image093.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="SourceInformation"><a name="_Toc47004224">Source Information</a></h2>
+
+</div>
+
+<p class=MsoNormal>The Source Information dialog displays key feature settings
+for the selected sensor. To open the dialog, use the <b>View &gt; Source Information</b>
+menu command. Drag-and-drop a sensor onto the dialog to view its feature settings.</p>
+
+<p class=MsoNormal><img src="Z-Expert_Help_files/View-Source-Information.png"></p>
+
+<p class=MsoNormal><img border=0 width=467 height=684
+id="Picture 91" src="Z-Expert_Help_files/image094.png"></p>
+
+<div style='border:solid #0673A5 3.0pt;padding:0in 0in 0in 0in;background:#0673A5'>
+
+<h1 id="MultiSensorCalibration"><a name="_Multi-Sensor_Calibration_Overview"></a>Creating a Unified Measurement Space</h1>
+
+</div>
+
+<p class=MsoNormal>Multiple Z-Trak 3D sensors can be
+calibrated to use the same world coordinate system. This allows sensors at
+different positions to acquire profiles of the same target object and construct
+a single image from merging multiple observation points. By using multiple
+sensors to profile the target at different angles, a more complete
+representation of the target object can be achieved. </p>
+
+<p class=MsoNormal>The Z-Expert tool, included with Sapera LT,
+performs the calibration using a target object of known dimensions. Two or more
+sensors can be calibrated.</p>
+
+<p class=MsoNormal>Key points for creating a unified measurement space:</p>
+
+    <ul>
+      <li class=MsoNormal><b>Measurement Unit</b>: All sensors must use the same measurement unit.</li>
+      <li class=MsoNormal><b>Z-Axis</b>: All sensors must be aligned on the same Z-axis plane.</li>
+      <li class=MsoNormal><b>Target object prism</b>: The target object prism cannot be moving.</li>
+    </ul>
+
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="SensorAlignment">Sensor Alignment</h2>
+
+</div>
+
+<p class=MsoBodyText>When calibrating multiple Z-Trak sensors, the X and Z axes
+of all sensors must belong to one plane. In other words, the laser sheets of
+all sensors belong to the same plane. To ensure that the field of view (FOV) of
+each sensor is correctly aligned, an alignment plate can be used to position
+the sensor bodies; this secures all laser scanning line sheets on the same XZ
+plane. </p>
+
+<p class=MsoBodyText><img border=0 width=585 height=435
+id="Picture 75" src="Z-Expert_Help_files/image095.jpg"></p>
+
+<p class=MsoBodyText>This allows for 3 degrees of freedom for all sensors:
+translation in X, translation in Z and rotation around Y.</p>
+
+<p class=MsoBodyText><img border=0 width=436 height=494
+src="Z-Expert_Help_files/image096.png"></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText>Different model sensors can be used within the same
+calibration, provided they all use the same <i>Measurement Units</i> feature
+setting (for example, microns). When using multiple sensors Teledyne DALSA
+recommends to not acquire simultaneously to avoid interference by other sensor
+lasers, but to pulse each sensor acquisition consecutively. During calibration,
+Z-Expert automatically synchronizes sensor lasers internally, returning sensor
+features to their original settings when calibration is complete. For more
+information on synchronizing sensors, refer to the <a
+href="#_Synchronization_Wizard">Synchronization Wizard</a> section.</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="CalibrationTargetObject">Calibration Target Object</h2>
+
+</div>
+
+<p class=MsoBodyText>Multi-sensor calibration requires that a target object of
+known dimensions be placed in the scene and visible in the FOV of each sensor.
+The calibration target object, referred to as a prism, presents a wedge that
+appears as a corner to each sensor. Target object prisms are polygons in the XZ
+plane, with that polygon extruded along the Y direction. The X and Z
+coordinates of all vertices of the polygon in the XZ plane are required to
+accurately define the prism.</p>
+
+<p class=MsoBodyText>Typically, the origin of the coordinate system is
+considered the center of the prism. The prism can have a variable number of
+sides; for example, a triangle to an eight-sided octagon. The number of corners
+is not limited, but well-defined corner angles allow the calibration algorithm
+to easily identify corners and calculate transformations with greater accuracy.
+</p>
+
+<p class=MsoBodyText>Each sensor “observes” a corner whose position is defined
+in relation to the target object coordinate system. In general, the more the
+target object fills the FOV, the more accurate the calibration.</p>
+
+<p class=MsoBodyText><img border=0 width=157 height=194
+src="Z-Expert_Help_files/image097.png"> <img border=0
+width=234 height=190 id="Picture 81" src="Z-Expert_Help_files/image098.jpg"></p>
+
+<p class=MsoBodyText>The calibration algorithm identifies the corner assigned
+to each sensor, and given the dimensions of the prism, calculates the required
+calibration. Only one corner should be presented to each sensor to ensure
+accurate results. Not all corners need to have associated sensors; that is,
+there can be more corners than sensors depending on the target prism shape and
+the sensor configuration.</p>
+
+<p class=MsoBodyText>Any shape prism is possible; it does not have to be
+equilateral (equal length sides), as long as only one corner is presented to
+each sensor.</p>
+
+<p class=MsoBodyText>Key points for the target prism are:</p>
+
+    <ul>
+      <li class=MsoNormal><b>Convex /\ corners</b>: Corner points must be convex /\; concave \/ corners are not permitted due to secondary reflections.</li>
+      <li class=MsoNormal><b>Counter-clockwise corner indices</b>: Any corner can be the first corner, but subsquent corner points must proceed from the first in counter-clockwise direction.</li>
+      <li class=MsoNormal><b>Corner profile</b>: Each sensor must target a different single corner of the prism. The corner profile should be clean and centered in the FOV, with a margin of space on each side of the X-axis.</li>
+	  <li class=MsoNormal><b>Stationary target prism</b>: The target prism must not be moving.</li>
+    </ul>
+
+
+<p class=MsoBodyText><img border=0 width=353 height=263
+src="Z-Expert_Help_files/Target-Prism-Corners.png"></p>
+
+<p class=MsoBodyText>The individual points of a prism can be assigned
+coordinates relative to a system coordinate origin that lies elsewhere on the
+common Z-axis.</p>
+
+<p class=MsoBodyText><img border=0 width=405 height=386
+src="Z-Expert_Help_files/image100.png"></p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="CalibrationLayout">Creating a Multi-Sensor CalIbration
+Layout</h2>
+
+</div>
+
+<p class=MsoNormal>Z-Expert includes a Calibration Quick Setup
+utility which provides a simplified method to calibrate common sensor
+configurations, such as ring and linear configurations.</p>
+
+<p class=MsoNormal>Before beginning calibration, verify that
+all sensors are properly configured and acquiring profiles containing a corner
+of the target object prism. To verify sensor feature settings use the <a
+href="#_Features_Browser">Features Browser</a>; modify feature settings as required.</p>
+
+<p class=MsoNormal>To create a new layout, click the Create
+Multi-Sensor Calibration button.</p>
+
+<p class=MsoNormal><img border=0 width=26 height=30
+id="Picture 74" src="Z-Expert_Help_files/image102.png"></p>
+
+<p class=MsoNormal>Select the layout that corresponds most
+closely to your application setup. Note that not all sensors in the layout need
+to be present (minimum 2).</p>
+
+<p class=MsoNormal><img border=0 width=634 height=395
+id="Picture 60" src="Z-Expert_Help_files/Calibration-Layout-Selector.png"></p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="CalibrationQuickSetup">Calibration Quick Setup</h3>
+
+</div>
+
+<p class=MsoNormal>Sensors are represented as blue squares; target prisms are
+shown as black squares or triangles. The shape of the target prism should
+correspond to that as shown in the layout (for example, a triangle or square).
+The Quick Setup wizard requires that target prisms have equilateral sides. If
+you require a custom target then you must manually create it using the Prism editor; refer to the <a href="#_Using_a_Custom">Using a Custom Target
+Object</a> section.</p>
+
+<p class=MsoNormal><img border=0 width=624 height=465
+id="Picture 87" src="Z-Expert_Help_files/image104.jpg"></p>
+
+<p class=MsoBodyText>Right-click on the required square icon representing the
+sensor to assign a sensor to that position. Do this for all sensors present in
+the configuration. </p>
+
+<p class=MsoNormal><img border=0 width=316 height=137
+id="Picture 108" src="Z-Expert_Help_files/image105.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoBodyText>Enter the target side length of the prism; the unit is
+defined by the <i>Measurement Units</i> feature setting specified in the sensors;
+all sensors must use the same world-coordinate unit (for example, microns).</p>
+
+<p class=MsoBodyText>The orientation parameter provides various typical
+configurations for the selected layout, such as straight and angled.</p>
+
+<p class=MsoBodyText><img border=0 width=336 height=104
+id="Picture 112" src="Z-Expert_Help_files/image106.png"></p>
+
+<p class=MsoBodyText>The Point Removal Method determines how overlapping points
+from sensors are handled. Possible values are: Sets the point removal mode.
+Possible values are:</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Keep All Points: Keep all points as-is (default).</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Remove Points: Remove some points that are close to some other
+points.</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Voxel Centroid: Replace all points within a voxel with their centroid.</p>
+
+<p class=MsoBodyText><img border=0 width=343 height=73
+id="Picture 113" src="Z-Expert_Help_files/image107.png"></p>
+
+<p class=MsoBodyText>The Point Removal Threshold sets the threshold at which points
+closer to each other than the given threshold are replaced with one point.
+Default value is 1.0.</p>
+
+<p class=MsoBodyText>To apply the configuration, click <b>Create</b>.</p>
+
+<p class=MsoBodyText><img border=0 width=98 height=22
+id="Picture 109" src="Z-Expert_Help_files/image108.png"></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText>To perform the calibration, select the <b>Apply
+Calibration</b> checkbox for each sensor in the Calibration Target tree and
+acquire a profile from each sensor. To do so, enable acquisition for each
+sensor using its checkbox, and click the Grab, Snap or Snap X button. </p>
+
+<p class=MsoBodyText><img border=0 width=266 height=290
+id="Picture 114" src="Z-Expert_Help_files/image109.jpg"></p>
+
+<p class=MsoBodyText>Verify that each sensor is successfully profiling its
+assigned corner in the Display panel.</p>
+
+<p class=MsoBodyText><img border=0 width=585 height=238
+id="Picture 115" src="Z-Expert_Help_files/image110.jpg"></p>
+
+<p class=MsoBodyText>If calibration is successful, the Calibration icons will
+be green.</p>
+
+<p class=MsoBodyText><img border=0 width=249 height=148
+id="Picture 116" src="Z-Expert_Help_files/image111.jpg"></p>
+
+<p class=MsoBodyText>To view the merged image, right-click on the System
+Calibration and click <b>Add To View</b>.</p>
+
+<p class=MsoBodyText><img border=0 width=279 height=139
+id="Picture 117" src="Z-Expert_Help_files/image112.jpg"></p>
+
+<p class=MsoBodyText>The merged view displays the resulting image from all the
+calibrated sensors’ profiles.</p>
+
+<p class=MsoBodyText><img border=0 width=328 height=263
+id="Picture 118" src="Z-Expert_Help_files/image113.jpg"></p>
+
+<p class=MsoBodyText>The calibration transformation can now be saved to file to
+use with the Sapera LT SDK to merge images at an application level or to be
+loaded back to Z Expert in a future session. To do so, right-click on the
+System Calibration and click <b>Save Calibration</b>.</p>
+
+<p class=MsoBodyText><img border=0 width=278 height=143
+id="Picture 119" src="Z-Expert_Help_files/image114.jpg"></p>
+
+<p class=MsoBodyText>Multi-sensor calibration files are saved with the <i>.mscalib
+</i>file extension.</p>
+
+<div style='border:solid #C9ECFC 3.0pt;padding:0in 0in 0in 0in;background:#C9ECFC'>
+
+<h2 id="CustomTarget"><a name="_Using_a_Custom"></a>Using a Custom
+Target Object</h2>
+
+</div>
+
+<p class=MsoBodyText>Z-Expert supports using a custom target object with any
+number of sides and side lengths. Only one corner or
+vertex should be presented to each sensor in the configuration. The same
+corner should not be presented to more than one sensor.</p>
+
+<p class=MsoBodyText><img border=0 width=405 height=386
+src="Z-Expert_Help_files/image115.png"></p>
+
+<p class=MsoBodyText>To create multi-sensor calibration system using a custom
+target, right-click in the Sources Explorer panel and click <b>Multi-Sensor
+Calibration System</b>.</p>
+
+<p class=MsoBodyText><img border=0 width=467 height=212
+id="Picture 133" src="Z-Expert_Help_files/image116.png"></p>
+
+<p class=MsoBodyText>Right-click on the System Calibration and click <b>Create
+Target</b>.</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText><img border=0 width=430 height=287
+id="Picture 134" src="Z-Expert_Help_files/image117.png"></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText>In the Prism Editor, enter the X, Z coordinates of each
+point; click <b>+</b>
+to add a point to the prism. The unit is defined by the <i>Measurement Units</i>
+feature setting specified in the sensors; all sensors must use the same world
+coordinate unit (for example, microns).</p>
+
+<p class=MsoBodyText><img border=0 width=549 height=346
+id="Picture 135" src="Z-Expert_Help_files/image030.png"></p>
+
+<p class=MsoBodyText>If the target prism is equilateral, enter the number points,
+the side length and click <b>Autogenerate</b>; the corner coordinates are added
+automatically. The furthest corner on the positive X-axis is considered, by
+default, to be at Z = 0.</p>
+
+<p class=MsoBodyText><img border=0 width=591 height=370
+id="Picture 136" src="Z-Expert_Help_files/image118.png"></p>
+
+<p class=MsoBodyText>The Prism and its corners are added to the System
+Calibration in the Sources Explorer panel. Right-click on a corner to assign a
+sensor to it (Add Observation performs the same function).</p>
+
+<p class=MsoBodyText><img border=0 width=605 height=315
+id="Picture 137" src="Z-Expert_Help_files/image119.png"></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText>Select all the sensors in the System Calibration and
+acquire images from all of them until the calibration icon for each sensor is
+green, indicating a successful calibration.</p>
+
+<p class=MsoBodyText><img border=0 width=353 height=356
+id="Picture 123" src="Z-Expert_Help_files/CalibrationYellow.jpg">   <img border=0 width=346 height=356 id="Picture 124"
+src="Z-Expert_Help_files/CalibrationSuccessful.jpg"></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<div style='border:solid #0673A5 3.0pt;padding:0in 0in 0in 0in;background:#0673A5'>
+
+<h1 id="SynchronizationWizard"><a name=SynchronizationWizard></a><a name="_Toc47004220"></a><a
+name="_Features_Browser"></a><a name="_3D_View_Selector"></a><a
+name="_Buffer_Information"></a><a name="_Synchronization_Wizard"></a>Synchronization
+Wizard</h1>
+
+</div>
+
+<p class=MsoNormal>The Synchronization Wizard is designed to help synchronize
+acquisition timing between multiple 3D sensors. Synchronization relies on the <a
+href="#_Precision_Time_Protocol">Precision Time Protocol (PTP)</a>
+capabilities of the sensors. </p>
+
+<p class=MsoNormal>Synchronization Wizard automatically adjusts the following
+sensor features as required:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+profileRate</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+AcquisitionLineRate</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ExposureTime</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+multiSensorSyncMode</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+multiSensorSyncGroup</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+multiSensorSyncDelay</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ptpMode</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TriggerMode</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TriggerSelector</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TriggerSource</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TriggerOverlap</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TriggerDelay</p>
+
+<p class=MsoNormal>To add sensors to the Synchronization Wizard, use the mouse
+to drag and drop them from the Sources Explored into the Synchronization Wizard
+pane. </p>
+
+
+<p class=MsoNormal><img src="Z-Expert_Help_files/image123.jpg"></p>
+
+<p class=MsoNormal>To perform the synchronization click the <b>Synchronize</b>
+button:</p>
+
+<p class=MsoNormal><img border=0 width=36 height=32
+id="Picture 72" src="Z-Expert_Help_files/image124.jpg"></p>
+
+<p class=MsoNormal>Click the <b>Move Sensors To View</b> button to add the
+sensors to the Display window (if not already added).</p>
+
+<p class=MsoNormal><img border=0 width=36 height=30
+id="Picture 77" src="Z-Expert_Help_files/image125.jpg"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h3 id="SynchronizationWizardFeatures"><a name="_Toc47004222">Synchronization Wizard Features</a></h3>
+
+</div>
+
+<p class=MsoNormal>The Synchronization Wizard configures several sensor
+features to accomplish synchronization. These include:</p>
+
+    <ul>
+      <li class=MsoNormal><b>Mode</b>: Determines how triggers are
+propagated from the Master sensor to Slave sensors.</li>
+      <li class=MsoNormal><b>Trigger Rate (Hz)</b>: Master sensor trigger rate when the Trigger
+Source is set to Internal Trigger.</li>
+      <li class=MsoNormal><b>Master Sync Delay</b>: Delay applied after receiving a trigger for the Master sensor to acquire a scan.</li>
+	  <li class=MsoNormal><b>Trigger Source</b>: Specifies the Master sensor trigger source as
+either an Internal Trigger (generated at the specified Trigger Rate) or an
+External Trigger.</li>
+    </ul>
+
+
+<div style='border:none;border-top:solid #099BDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+
+<h4 style='border:none;padding:0in'>Mode</h4>
+
+</div>
+
+<p class=MsoNormal>The Mode feature setting determines how triggers are
+propagated from the Master sensor to Slave sensors. </p>
+
+<p class=MsoNormal><img border=0 width=349 height=190
+id="Picture 6" src="Z-Expert_Help_files/image126.png"></p>
+
+<p class=MsoNormal>The following options are available:</p>
+
+    <ul>
+      <li class=MsoNormal><b>Multiplex</b>: Sensors are triggered in succession, with an
+equal period between acquisitions, such that only one sensor is acquiring a
+profile at any moment. This prevents possible interference from other sensors
+if the laser is strobing with acquisition.</li>
+      <li class=MsoNormal><b>All at once</b>: All sensors acquire simultaneously. A delay is introduced at the
+Master sensor to provide a margin for inherent network latencies to ensure that
+all sensors receive the triggers commands before the requested acquisition
+execution.</li>
+      <li class=MsoNormal><b>Manual</b>: Synchronization delays for each sensor are set
+manually.</li>
+    </ul>
+
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+<div>
+
+<hr class=msocomoff align=left size=1 width="33%">
+
+<div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

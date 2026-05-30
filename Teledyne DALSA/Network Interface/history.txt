@@ -1,0 +1,309 @@
+|==================================================================================
+	Sapera Network Imaging Package for Windows 7/Vista/XP (32 and 64-bits)
+
+History
+
+##################################################################################################################
+
+Note: Compatible with Sapera LT 6.00 and up (32-bits)
+      Require Sapera LT 7.00 (64-bits)
+
+1.00.00.0115
+August 11th, 2006
+	- First release
+
+1.10.00.0126
+February 01, 2007
+
+1.20.00.0138
+June 22, 2007
+
+    Added
+	- New “DALSA GigE Vision Device Status” application.
+	- Device and/or NIC conflict detection.
+	- Increase heartbeat process priority to time critical.
+
+    Fixes
+	- Fixed potential installation issue with VPN.
+	- Fixed potential deadlock with “Packet resend” issue.
+	- Improved Device auto-discovery sequence.
+
+1.30.00.0146
+November 29, 2007
+
+    Added
+	- Support for Windows Vista 32.
+
+    Fixes
+	- Issue with Persitent IP configuration (multiple camera configuration).
+          in Network Configuration tool.
+
+1.31.00.0151
+March 27, 2008
+
+    Added
+	- Option in "DALSA Network Configuration Tool" to remove conflicted device.
+	  detection from the discovery process.
+	- Option in "DALSA Network Configuration Tool" to control discovery.
+	  process on a NIC basis. 
+
+    Fixes
+	- Issue with Force IP.
+
+1.40.00.0169
+November 25, 2008
+
+    Added
+	- Programmable timeout for frame lost conditions.
+	- Programmable timeout for packet resend.
+
+    Fixes
+	- Issue with DLL signature under Windows Vista.
+	- Issue with potential access violation in Gige Server.
+	- Multiple processing application management - related to when a Genie has an embedded Sapera Processing license. 
+	- MTU auto-detection - correction of maximum packet size detection at boot-up.
+	- Discovery process improvement.
+
+1.41.00.0174
+March 10, 2009
+
+    Added
+	- DALSA Network Configuration Tool now allows Camera Recovery for devices other than DALSA devices.
+	- Added option to the DALSA Network Configuration Tool to select the type of GigE Vision Interface 
+	  (i.e. Generic XML or DALSA) used to access a device.
+
+    Fixes
+	- Device Discovery process improvement.
+
+1.42.00.0177
+April 28, 2009
+
+    Fixes
+	- Issue with CorgigeServer message logging.
+
+1.50.00.0187
+October 14, 2009
+
+    Added
+	- Windows 64-bits support (XP, Vista, 7), require Sapera LT 7.0
+	- DALSA GigE Vision Device Status windows is now resizable.
+
+    Fixes
+	- Improve MTU detection with application starting early in the system boot process
+	  (startup folder or registry run).
+
+1.60.00.0202
+April 14, 2010
+
+    Added
+	- DALSA Smart DHCP server, control setting available in the Networking Configuration Tool.
+
+    Fixes
+	- None.
+
+1.70.00.0209
+October 13, 2010
+
+    Added
+	- Redesigned Network Configuration Tool
+
+    Fixes
+	- Multiple improvements to the DALSA Smart DHCP Server
+
+1.81.00.0250
+August 22, 2012
+
+    Fixes
+	- Improvements to the DALSA Smart DHCP Server
+	- Improvements to the DALSA Network Configuration Tool.
+
+1.82.00.0265
+November 28, 2012
+
+    Added
+	- Virtual Serial Port support for Genie TS.
+
+    Fixes
+	- Improvements to the DALSA Smart DHCP Server.
+	- Improvements to the DALSA Network Configuration Tool.
+
+2.10.00.0297
+April 27, 2015
+
+    Added
+	- Initial support for Teledyne DALSA patent pending "TurboDrive" technology.
+		Limitation: Packet size must be at least 9000.
+		            Only 8 bit monochrome supported.
+		            Only Windows 7 and up are supported.
+
+    Fixes
+	- Class D and class E IP address Validation added in Network Configuration Tool.
+
+2.11.00.0315
+October 6,2015
+
+    Added
+	- Initial "TurboDrive" support for 8-bit mode with Teledyne DALSA Nano cameras.
+	- "TurboDrive decoding is now distributed over all CPU cores available.
+	- "TurboDrive" algorithm optimized to reduce CPU time.
+
+2.12.00.0316
+October 21,2015
+
+    Fixes
+	- Corrected the inclusion of the wrong binary driver for Windows 32 bits.
+
+3.00.00.0408
+February 10,2016
+
+    Added
+	- Added support for "TurboDrive" 10 and 12-bit Pixel format.
+	- Added support for Windows10 OS.
+	- Added support for biColorBGRG8 and biColorBGRG12 Pixel format.
+
+    Fixes
+	- Modification to fix a potential issue when changing from dymamic IP mode to persistent IP mode.
+
+4.00.00.0609
+June 08,2016
+
+    Added
+	- Added support for Linea Gige Color Pixel Formats:
+		BGRa 8-bit
+		Green Only 8-Bit
+		BiColorRGBG8
+		BiColorRGBG12
+		BiColorRGBG12Packed
+		RGB12V1Packed
+		RGB8
+	- Added TurboDrive support for the new Linea Gige color camera pixel formats.
+	- Added support to use a Nano Camera as the hardware dongle when developing with the Sapera Processing and Sherlock packages.
+	- The new windows Filter Driver (based on NDIS 6.20) is now installed when using Windows 7 and higher systems.
+
+    Fixes
+	- Fixed potential memory leaks when using TurboDrive. 
+	- Improved the installation package to insure the GigE Generic driver integrity, while updating the Genie Framework on Sapera 8.00 and higher versions.
+
+4.01.00.0611
+September 8th, 2016
+
+    Fixes
+	- Fixed potential MTU detection issue.
+	- Fixed BGR8 support.
+
+4.02.00.0612
+September 22th, 2016
+
+    Fixes
+	- Fixed potential packet reception issue.
+
+4.03.00.0613
+October 12th, 2016
+
+    Added
+	- Improved packet reception.
+
+4.04.00.0614
+October 27th, 2016
+
+    Added
+	- New network optimization guide manual.
+
+5.00.00.0703
+May 12th, 2017
+
+    Added
+	- Teledyne DALSA Sapera GigE Vision Filter Driver was completely redesigned based on Microsoft Network Driver Interface
+	  Specification (NDIS) 6.20 to improve performance and reliability for 32-bit & 64-bit systems  running versions of
+	  Microsoft Windows 7 and later.
+	- The previous architecture based on NDIS 5.1 is kept with previous version of Microsoft Windows (Windows XP & Vista).
+
+5.10.00.0771
+November 14th, 2017
+
+    Added
+	- Support for Turbo Drive Version 1 with metadata.
+	- Support for Turbo Drive Version 2. (mono 8-bit and Bayer only, when metadata is disabled).
+	- Support for Sapera function CorManGetServerByDeviceUserId.
+	- Changed Kernel drivers signing to comply with Windows 10 and Secure Boot requirements – this was preventing installation
+	  of the software.
+	- Necessary DLL to the Network Imaging Package to allow the use of Genie Mono, Genie Color and Genie HM with Teledyne
+	  DALSA interface (as opposed to GigE Vision interface). This is supported on all supported OS, including WoW64.
+
+    Fixes
+	- BSOD that could occur while logging messages.
+	- Possible BSOD with “next empty” cycling mode.
+	- Reduced default interface memory size from 32MB to 16MB in 32-bits system to avoid kernel memory allocation problems.
+	- Fixed the possibility that the DHCP server could be disabled on a NIC at Windows startup (for Windows Vista and up only). 
+
+5.11.00.0772
+December 5th, 2017
+
+    Fixes
+	- Possible corruption of IP stack, which could result in camera disconnection, among other possible effects. 
+
+5.20.00.0809
+May 8th, 2018
+
+    Fixes
+	- Possible corruption of IP stack, which could result in camera disconnection, among other possible effects.
+
+5.30.00.0872
+February 1st, 2019
+
+Added in this Release
+	- Multicast support (refer to the Application Note on the web site for additional detail).
+	- Default connection values for the GigE Vision connection mode (Exclusive or Control) within the Network Configuration Tool.
+	- Validation & Automatic firmware update.
+	- Support for new Sapera function SapBuffer::GetHostPerformanceCounterStamp.
+	- Custom option to disable ImageTimeout and InterPacketTimeout.
+	- Support for GVSP_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNK_DATA.
+
+Improved in this Release
+	- Persistent IP management in Network Configuration Tool.
+	- High frame rate support. (Greater then 3000 fps).
+	- MTU (Maximum Transmission Unit) packet size detection.
+
+
+Fixed Issues
+	- Potential unwanted disabling of the Teledyne DALSA DHCP Server for network cards (NICs) with a persistent IP address.
+
+5.31.00.0908
+March 26th, 2019
+
+Added in this Release
+	- Support for GPUDirect transfer sync feature.
+
+Improved in this Release
+	- Reduction of CPU time consumed.
+
+Fixed Issues
+	- Potential deadlock in "Sapera Gige Server".
+	- Potential Crash of "Sapera GigE Server" with Calibir, Spyder GigE and third party cameras.
+	- Serial port detection with Genie Nano (when equipped with that option).
+
+5.50.00.0982
+December 11 2019
+5.51.00.0990
+January 20 2020
+
+Added in this Release
+	- Support for GenICam pixel formats BiColorRGBG12P and BiColorBGRG12P.
+	- Support for all E2V GigE Camera models.
+
+Improved in this Release
+	- Reduction of CPU time consumed.
+	- Device Status management.
+	- The maximum camera limit.
+
+5.52.00.1011
+October 16 2020
+
+Added in this Release
+	- Option to “Permanently Enable” Remote Serial Port Mode.
+	- Option to “Enable On Connect” Remote Serial Port Mode.
+	- GVSP_PAYLOAD_TYPE_TURBO_V2_MODE_EXTENDED_CHUNK and GVSP_PAYLOAD_TYPE_TURBO_V2_MODE_BAYER_EXTENDED_CHUNK.
+	- GVSP_PIX_BAYGR12_PACKED, GVSP_PIX_BAYRG12_PACKED, GVSP_PIX_BAYGB12_PACKED and GVSP_PIX_BAYBG12_PACKED.
+	- GVSP_PIX_BAYGR10_PACKED, GVSP_PIX_BAYRG10_PACKED, GVSP_PIX_BAYGB10_PACKED and GVSP_PIX_BAYBG10_PACKED.
+	- Option to Disable/Enable Image Timeout and Inter Packet Timeout using Network Configuration Tool.
+	- Support for all Digital Professional Imaging and Teledyne Lumenera GigE Camera models.

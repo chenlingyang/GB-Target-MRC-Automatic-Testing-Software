@@ -55,3 +55,16 @@ artifacts/
 # EmguCV native libraries (will be restored by NuGet)
 **/x64/
 **/x86/
+
+# Portable release output (large; regenerate via build-release.bat)
+ImageCaptureApp/PublishOutput/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Nested git repo inside mrc experiments
+mrc/MRC_progress/.git/
+
+# Office temp files
+~$*

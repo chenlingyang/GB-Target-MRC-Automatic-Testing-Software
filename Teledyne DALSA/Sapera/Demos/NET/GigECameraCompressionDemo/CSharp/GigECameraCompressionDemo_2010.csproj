@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED01AAA3-956B-4DBF-9B4A-D4E7C767CB70}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DALSA.SaperaLT.Demos.NET.CSharp.GigECameraCompressionDemo</RootNamespace>
+    <AssemblyName>SapNETCSharpCameraCompressionDemo</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DALSA.SaperaLT.SapClassBasic, Version=8.60.0.0, Culture=neutral, PublicKeyToken=4d8604101dcb6b58, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Components\NET\Bin\DALSA.SaperaLT.SapClassBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\CSharp\AbortDlg.cs">
+      <Link>AbortDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AbortDlg.designer.cs">
+      <Link>AbortDlg.designer.cs</Link>
+      <DependentUpon>AbortDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AboutBox.cs">
+      <Link>AboutBox.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AboutBox.Designer.cs">
+      <Link>AboutBox.Designer.cs</Link>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AcqConfigDlg.cs">
+      <Link>AcqConfigDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AcqConfigDlg.Designer.cs">
+      <Link>AcqConfigDlg.Designer.cs</Link>
+      <DependentUpon>AcqConfigDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AviFileDlg.cs">
+      <Link>AviFileDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\AviFileDlg.designer.cs">
+      <Link>AviFileDlg.designer.cs</Link>
+      <DependentUpon>AviFileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\BufDlg.cs">
+      <Link>BufDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\BufDlg.designer.cs">
+      <Link>BufDlg.designer.cs</Link>
+      <DependentUpon>BufDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\ImageBox.cs">
+      <Link>ImageBox.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\ImageBox.designer.cs">
+      <Link>ImageBox.designer.cs</Link>
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\JpegFileDlg.cs">
+      <Link>JpegFileDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\JpegFileDlg.designer.cs">
+      <Link>JpegFileDlg.designer.cs</Link>
+      <DependentUpon>JpegFileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\LoadSaveDlg.cs">
+      <Link>LoadSaveDlg.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\RawFileDlg.cs">
+      <Link>RawFileDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\RawFileDlg.designer.cs">
+      <Link>RawFileDlg.designer.cs</Link>
+      <DependentUpon>RawFileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\SystemMenu.cs">
+      <Link>SystemMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\TiffFileDlg.cs">
+      <Link>TiffFileDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\TiffFileDlg.designer.cs">
+      <Link>TiffFileDlg.designer.cs</Link>
+      <DependentUpon>TiffFileDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\ViewDlg.cs">
+      <Link>ViewDlg.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\Common\CSharp\ViewDlg.designer.cs">
+      <Link>ViewDlg.designer.cs</Link>
+      <DependentUpon>ViewDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GigECameraCompressionDemoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GigECameraCompressionDemoDlg.Designer.cs">
+      <DependentUpon>GigECameraCompressionDemoDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GigECameraCompressionDemo.cs" />
+    <Compile Include="JpegProcessing.cs" />
+    <Compile Include="LoadSaveHwJpegDlg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\..\Common\CSharp\AbortDlg.resx">
+      <Link>AbortDlg.resx</Link>
+      <DependentUpon>AbortDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\AboutBox.resx">
+      <Link>AboutBox.resx</Link>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\AcqConfigDlg.resx">
+      <Link>AcqConfigDlg.resx</Link>
+      <DependentUpon>AcqConfigDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\AviFileDlg.resx">
+      <Link>AviFileDlg.resx</Link>
+      <DependentUpon>AviFileDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\BufDlg.resx">
+      <Link>BufDlg.resx</Link>
+      <DependentUpon>BufDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\ImageBox.resx">
+      <Link>ImageBox.resx</Link>
+      <DependentUpon>ImageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\JpegFileDlg.resx">
+      <Link>JpegFileDlg.resx</Link>
+      <DependentUpon>JpegFileDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\RawFileDlg.resx">
+      <Link>RawFileDlg.resx</Link>
+      <DependentUpon>RawFileDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\TiffFileDlg.resx">
+      <Link>TiffFileDlg.resx</Link>
+      <DependentUpon>TiffFileDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Common\CSharp\ViewDlg.resx">
+      <Link>ViewDlg.resx</Link>
+      <DependentUpon>ViewDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GigECameraCompressionDemoDlg.resx">
+      <DependentUpon>GigECameraCompressionDemoDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SapMyProcessing.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

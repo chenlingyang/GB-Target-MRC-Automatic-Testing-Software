@@ -1,0 +1,82 @@
+;
+; DALSAVSerial.inf
+;
+
+[Version]
+Signature="$Windows NT$"
+Class=Ports
+ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider=%DALSAMFG%
+CatalogFile=DALSAVSerial.cat
+DriverVer=02/20/2020,..
+
+[Manufacturer]
+%DALSAMFG%=DALSA,NTAMD64
+
+[DALSA.NTAMD64]
+%VirtualSerialDeviceName%=VirtualSerial_Install,DALSA\VirtualSerial
+
+[SourceDisksFiles]
+DALSAVSerial.dll=1
+WudfUpdate_01009.dll=1
+cor_portTools.dll=1
+
+[SourceDisksNames]
+1 = %MediaDescription%
+
+; =================== UMDF DALSAVSerial Device ==================================
+
+[VirtualSerial_Install.NT]
+CopyFiles=UMDriverCopy
+
+[VirtualSerial_Install.NT.hw]
+
+[VirtualSerial_Install.NT.Services]
+AddService=WUDFRd,0x000001fa,WUDFRD_ServiceInstall
+
+[VirtualSerial_Install.NT.CoInstallers]
+CopyFiles=CoInstallers_CopyFiles
+AddReg=CoInstallers_AddReg
+
+[VirtualSerial_Install.NT.Wdf]
+UmdfService=DALSAVSerial,VirtualSerial_Install
+UmdfServiceOrder=DALSAVSerial
+
+[VirtualSerial_Install]
+UmdfLibraryVersion=1.9.0
+ServiceBinary=%12%\UMDF\DALSAVSerial.dll
+DriverCLSID={4e469217-3771-49d2-b70f-051f54456ff9}
+
+[WUDFRD_ServiceInstall]
+DisplayName = %WudfRdDisplayName%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\WUDFRd.sys
+LoadOrderGroup = Base
+
+
+[CoInstallers_CopyFiles]
+WudfUpdate_01009.dll
+cor_portTools.dll
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WUDFUpdate_01009.dll", "cor_portTools.dll, PortsClassInstaller"
+HKR,,EnumPropPages32,0x00000000,"cor_portTools.dll, SerialPortPropPageProvider"
+HKR,,PortSubClass,1,01
+
+[DestinationDirs]
+UMDriverCopy=12,UMDF ; copy to drivers\UMDF
+CoInstallers_CopyFiles=11
+
+[UMDriverCopy]
+DALSAVSerial.dll
+
+; =================== Generic ==================================
+
+[Strings]
+DALSAMFG="Teledyne DALSA Inc."
+MediaDescription="Teledyne DALSA UMDF Serial driver for telnet devices"
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"
+VirtualSerialDeviceName="Teledyne DALSA VirtualSerial User-Mode Device"
+

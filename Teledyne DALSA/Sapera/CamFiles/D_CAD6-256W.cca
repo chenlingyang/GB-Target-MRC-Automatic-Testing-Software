@@ -1,0 +1,64 @@
+[General]
+Camera Name=64 pixels/lines 
+Company Name=Teledyne DALSA
+Model Name=CA-D6-256W
+[Signal Description]
+Channel=1
+Frame=2
+Interface=2
+Scan=1
+Signal=2
+Video=1
+Pixel Depth=8
+Video Standard=1
+Bit Ordering=1
+Field Order=4
+Coupling=2
+Taps=4
+
+[Signal Timings]
+Horizontal Active=64
+Horizontal Sync=8
+Vertical Active=260
+Vertical Sync=1
+Horizontal Front Porch=0
+Horizontal Back Porch=0
+Vertical Front Porch=0
+Vertical Back Porch=0
+Horizontal Front Invalid=0
+Horizontal Back Invalid=0
+Vertical Front Invalid=0
+Vertical Back Invalid=0
+
+[Pixel Clock]
+Pixel Clock Source=2
+Pixel Clock Frequency Internal=20000000
+Pixel Clock Frequency 1:1=20000000
+Pixel Clock Frequency External=20000000
+
+[Synchronization Signals]
+Synchronization Source=4
+Horizontal Sync Polarity=1
+Vertical Sync Polarity=1
+
+[Control Signals]
+Frame Integrate Method=1
+Frame Integrate Polarity=1
+Time Integrate Method=2
+Time Integrate Polarity=2
+Time Integrate Pulse Polarity=2
+Camera Trigger Method=1
+Camera Trigger Polarity=2
+Camera Trigger Duration=200
+Camera Trigger/Exposure Signal=1
+Camera Reset Method=0
+Camera Reset Polarity=2
+Camera Reset Duration=0
+Line Integrate Method=0
+Line Integrate Polarity=1
+Line Integrate Delay=0
+Line Trigger Method=0
+Line Trigger Polarity=2
+Line Trigger Delay=0
+Line Trigger Duration=0
+

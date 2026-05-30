@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabDemo_2017", "GrabDemo\CSharp\GrabDemo_2017.csproj", "{E691F747-85EE-4B2C-8122-9412CC0BDCB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigECameraDemo_2017", "GigECameraDemo\CSharp\GigECameraDemo_2017.csproj", "{9F4983BD-0FBD-4492-90BC-6E9F4D1E7FAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigESeqGrabDemo_2017", "GigESeqGrabDemo\CSharp\GigESeqGrabDemo_2017.csproj", "{75996DD6-8EB7-4886-8CD6-43F510493C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeqGrabDemo_2017", "SeqGrabDemo\CSharp\SeqGrabDemo_2017.csproj", "{337CA9CF-C9E2-4D59-BC13-33C37EAB6A81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BayerDemo_2017", "BayerDemo\CSharp\BayerDemo_2017.csproj", "{1063EB97-CD29-4BDC-9309-2A5C15E89B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorConvDemo_2017", "ColorConversionDemo\CSharp\ColorConvDemo_2017.csproj", "{1063EB97-CD29-4BDC-9309-2A5C15E89B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatFieldDemo_2017", "FlatFieldDemo\CSharp\FlatFieldDemo_2017.csproj", "{A509323F-6263-495B-BE34-C130B9233DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigEFlatFieldDemo_2017", "GigEFlatFieldDemo\CSharp\GigEFlatFieldDemo_2017.csproj", "{8024F744-BE65-47AF-AB6B-BC54E8101CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiBoardSyncGrabDemo_2017", "MultiBoardSyncGrabDemo\CSharp\MultiBoardSyncGrabDemo_2017.csproj", "{A7569E0F-989D-44CC-B015-45963FC6D1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigEMetadataDemo_2017", "GigEMetadataDemo\CSharp\GigEMetadataDemo_2017.csproj", "{6EE2E00F-68BE-4F98-926F-CDBA393D7A0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigECameraCompressionDemo_2017", "GigECameraCompressionDemo\CSharp\GigECameraCompressionDemo_2017.csproj", "{3868F6B9-9262-4C6E-AE58-64D973C7F862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E691F747-85EE-4B2C-8122-9412CC0BDCB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E691F747-85EE-4B2C-8122-9412CC0BDCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E691F747-85EE-4B2C-8122-9412CC0BDCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E691F747-85EE-4B2C-8122-9412CC0BDCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4983BD-0FBD-4492-90BC-6E9F4D1E7FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4983BD-0FBD-4492-90BC-6E9F4D1E7FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4983BD-0FBD-4492-90BC-6E9F4D1E7FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4983BD-0FBD-4492-90BC-6E9F4D1E7FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75996DD6-8EB7-4886-8CD6-43F510493C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75996DD6-8EB7-4886-8CD6-43F510493C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75996DD6-8EB7-4886-8CD6-43F510493C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75996DD6-8EB7-4886-8CD6-43F510493C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337CA9CF-C9E2-4D59-BC13-33C37EAB6A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337CA9CF-C9E2-4D59-BC13-33C37EAB6A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337CA9CF-C9E2-4D59-BC13-33C37EAB6A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337CA9CF-C9E2-4D59-BC13-33C37EAB6A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1063EB97-CD29-4BDC-9309-2A5C15E89B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A509323F-6263-495B-BE34-C130B9233DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A509323F-6263-495B-BE34-C130B9233DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A509323F-6263-495B-BE34-C130B9233DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A509323F-6263-495B-BE34-C130B9233DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8024F744-BE65-47AF-AB6B-BC54E8101CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8024F744-BE65-47AF-AB6B-BC54E8101CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8024F744-BE65-47AF-AB6B-BC54E8101CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8024F744-BE65-47AF-AB6B-BC54E8101CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7569E0F-989D-44CC-B015-45963FC6D1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7569E0F-989D-44CC-B015-45963FC6D1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7569E0F-989D-44CC-B015-45963FC6D1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7569E0F-989D-44CC-B015-45963FC6D1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE2E00F-68BE-4F98-926F-CDBA393D7A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE2E00F-68BE-4F98-926F-CDBA393D7A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE2E00F-68BE-4F98-926F-CDBA393D7A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE2E00F-68BE-4F98-926F-CDBA393D7A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3868F6B9-9262-4C6E-AE58-64D973C7F862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3868F6B9-9262-4C6E-AE58-64D973C7F862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3868F6B9-9262-4C6E-AE58-64D973C7F862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3868F6B9-9262-4C6E-AE58-64D973C7F862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28E21410-360A-4DDC-AEB4-854C37E8BF63}
+	EndGlobalSection
+EndGlobal

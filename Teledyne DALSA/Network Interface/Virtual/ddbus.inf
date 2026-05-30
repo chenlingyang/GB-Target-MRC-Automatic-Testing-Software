@@ -1,0 +1,98 @@
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider=%DALSAmfg%
+DriverVer=01/29/2017,0.0.2
+CatalogFile=ddbus.cat
+
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+ddbus.sys  = 1,,
+
+;*****************************************
+; DALSABus  Install Section
+;*****************************************
+
+[Manufacturer]
+%StdMfg%=Standard,NTAMD64
+
+; For Win2K because it cannot parse decorated sections
+[Standard]
+;
+; These are the DALSA bus pnp ids
+;
+%DALSADynamicBus.DeviceDesc%=DALSADynamicBus_Device, root\DALSA
+
+; For XP and later
+[Standard.NTAMD64]
+%DAlSADynamicBus.DeviceDesc%=DALSADynamicBus_Device, root\DALSA
+
+[DALSADynamicBus_Device.NT]
+CopyFiles=Drivers_Dir
+
+[DALSADynamicBus_Device.NT.HW]
+AddReg=DALSADynamicBus_Device.NT.AddReg
+
+[DALSADynamicBus_Device.NT.AddReg]                            
+HKR,,DeviceCharacteristics,0x10001,0x0100         ; Use same security checks on relative opens
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"      ; Allow generic-all access to Built-in administrators and Local system 
+
+[Drivers_Dir]
+ddbus.sys
+
+
+;-------------- Service installation
+[DALSADynamicBus_Device.NT.Services]
+AddService = ddbus,%SPSVCINST_ASSOCSERVICE%, ddbus_Service_Inst
+
+; -------------- ddbus driver install sections
+[ddbus_Service_Inst]
+DisplayName    = %ddbus.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\ddbus.sys
+LoadOrderGroup = Extended Base
+
+
+;
+;--- DALSADynamicBus_Device Coinstaller installation ------
+;
+[DestinationDirs]
+DALSADynamicBus_Device_CoInstaller_CopyFiles = 11
+
+[DALSADynamicBus_Device.NT.CoInstallers]
+AddReg=DALSADynamicBus_Device_CoInstaller_AddReg
+CopyFiles=DALSADynamicBus_Device_CoInstaller_CopyFiles
+
+[DALSADynamicBus_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "wdfcoinstaller01009.dll,WdfCoInstaller"
+
+[DALSADynamicBus_Device_CoInstaller_CopyFiles]
+wdfcoinstaller01009.dll
+
+[SourceDisksFiles]
+wdfcoinstaller01009.dll=1 ; make sure the number matches with SourceDisksNames
+
+[DALSADynamicBus_Device.NT.Wdf]
+KmdfService = ddbus, ddbus_wdfsect
+[ddbus_wdfsect]
+KmdfLibraryVersion = 1.9
+
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+DALSAmfg = "Teledyne DALSA Inc."
+StdMfg = "(Standard system devices)"
+DiskId1 = "Teledyne DALSA Dynamic Bus Installation Disk #1"
+DAlSADynamicBus.DeviceDesc = "Teledyne DALSA Dynamic Bus Enumerator"
+ddbus.SVCDESC = "Teledyne DALSA Dynamic Bus Enumerator"
+

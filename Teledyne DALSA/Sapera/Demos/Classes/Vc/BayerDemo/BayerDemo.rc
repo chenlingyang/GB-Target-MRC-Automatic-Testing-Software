@@ -1,0 +1,212 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\BayerDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 217, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BayerDemo"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Sapera Bayer Demo Version 8.60",IDC_STATIC,40,10,133,8,SS_NOPREFIX
+    LTEXT           "Copyright (c) Teledyne Digital Imaging Inc. 2002-2020",IDC_STATIC,40,25,168,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_BAYERDEMO_DIALOG DIALOGEX 0, 0, 480, 333
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+CAPTION "Bayer Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&New",IDC_FILE_NEW,67,18,71,15
+    PUSHBUTTON      "Load &Raw",IDC_FILE_LOAD,150,18,72,15
+    PUSHBUTTON      "&Save Raw",IDC_FILE_SAVE,234,18,66,15
+    PUSHBUTTON      "Save &Converted",IDC_FILE_SAVE_CONVERTED,312,18,78,15
+    PUSHBUTTON      "&Load Config",IDC_LOAD_ACQ_CONFIG,64,65,65,15
+    PUSHBUTTON      "&Buffer",IDC_BUFFER_OPTIONS,64,290,65,15
+    PUSHBUTTON      "&Exit",IDC_EXIT,429,9,39,34
+    LTEXT           "",IDC_STATUS,151,54,318,15,SS_CENTERIMAGE | SS_SUNKEN
+    PUSHBUTTON      "&Snap",IDC_SNAP,64,87,65,15
+    PUSHBUTTON      "&Grab",IDC_GRAB,64,111,65,15
+    PUSHBUTTON      "&Freeze",IDC_FREEZE,64,134,65,15
+    CONTROL         "",IDC_VIEW_WND,"Static",SS_BITMAP,151,73,15,13
+    SCROLLBAR       IDC_HORZ_SCROLLBAR,151,315,306,10,WS_DISABLED
+    SCROLLBAR       IDC_VERT_SCROLLBAR,457,78,10,240,SBS_VERT | WS_DISABLED
+    GROUPBOX        "Acquisition Control",IDC_STATIC,54,49,92,106
+    GROUPBOX        "File Control",IDC_STATIC,54,6,350,36
+    GROUPBOX        "Bayer Conversion",IDC_STATIC,54,161,92,109
+    CONTROL         "Enable",IDC_BAYER_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,179,35,10
+    PUSHBUTTON      "&Options",IDC_BAYER_OPTIONS,64,197,65,15
+    PUSHBUTTON      "&View",IDC_VIEW_OPTIONS,64,310,65,15
+    GROUPBOX        "General Options",IDC_STATIC,54,276,91,55
+    CONTROL         "Hardware Conversion",IDC_BAYER_USE_HARDWARE,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,61,249,82,18
+    LTEXT           "Output Format",IDC_STATIC,64,219,46,8
+    COMBOBOX        IDC_BAYER_OUTPUT_FORMAT,64,231,79,38,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         109,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,40,332,WS_EX_ACCEPTFILES | WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\BayerDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,60,0,0
+ PRODUCTVERSION 8,60,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Teledyne Digital Imaging Inc."
+            VALUE "FileDescription", "Sapera Bayer Demo"
+            VALUE "FileVersion", "8.60"
+            VALUE "InternalName", "BayerDemo"
+            VALUE "LegalCopyright", "Copyright (c) Teledyne Digital Imaging Inc. 2002-2020"
+            VALUE "OriginalFilename", "BayerDemo.exe"
+            VALUE "ProductName", "Sapera LT"
+            VALUE "ProductVersion", "8.60"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_BAYERDEMO_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 476
+        BOTTOMMARGIN, 332
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BANNER              BITMAP                  "res\\DalsaBanner.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About BayerDemo..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+

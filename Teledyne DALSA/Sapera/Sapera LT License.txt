@@ -1,0 +1,53 @@
+License Agreement for Sapera LT
+
+IMPORTANT -- READ CAREFULLY BEFORE INSTALLING THE SOFTWARE.
+
+This is a legal agreement between you (either an individual or an entity) and Teledyne DALSA Inc. ("Teledyne DALSA"). Installation and use of this software constitutes acceptance of the terms of this agreement. If you do not agree to the terms of this agreement, contact Teledyne DALSA for other licensing options or promptly return the software and the accompanying items (including written materials and binders or other containers) to Teledyne DALSA or its authorized distributor from which you received the software for a full refund.
+
+1.  GRANT OF LICENSE
+
+a.  Teledyne DALSA grants you the rights to install and use any number of copies of the software program and its accompanying documentation (the "Licensed Software") on a single site. A site is defined as a single physical address, i.e. a building or group of buildings sharing the same postal address.
+
+b.  Distributables. You have a right to reproduce, and distribute, in object code form and solely as part of your installation system, the distributable installation executable files included in the Licensed Software and specifically identified in the documentation, provided (i) the system deployed with the Distributable includes at least one Teledyne DALSA supported by the Licensed Software (ii) you include your valid copyright notice on your application; and (iii) you agree to indemnify, hold harmless and defend Teledyne DALSA from and against any claims or lawsuits, including attorney's fees, that arise or result from the use or distribution of your application. You may not, however, modify the Teledyne DALSA copyright notice embedded in the resources contained in the installation executable files.
+
+c.  Sample Code. Teledyne DALSA grants you a limited, nonexclusive, royalty-free license to: (a) use and modify the source code version of Sample Code included in the Licensed Software and identified as “Demos” or “Examples” in the Software documentation for the sole purposes of designing, developing, and testing your software product(s), and (b) reproduce and distribute the Sample Code, along with any modifications thereof, in object and/or source code form. 
+
+d.  Documentation. You may make and use an unlimited number of copies of any documentation, provided that such copies shall be used only for personal purposes and are not to be republished or distributed (either in hard copy or electronic form) beyond your premises.
+
+2.  COPYRIGHT
+
+The Licensed Software is owned by Teledyne DALSA and is protected by copyright laws and treaties, as well as other forms of intellectual property. Therefore, you must treat the Licensed Software like any other copyrighted material (e.g., a book or musical recording), except that you may make copies of the Licensed Software solely for backup or archival purposes, provided you reproduce and include Teledyne DALSA's copyright and trademark notices contained in the original package.
+
+3.  OTHER RESTRICTIONS
+
+a.  You may use the Licensed Software solely for the purpose of developing applications and application systems. The Licensed Software is not designed for use in on-line control equipment in hazardous environments such as operation of nuclear facilities, aircraft navigation or control, or direct life support machines.
+
+b.  You may not use, copy, or modify the files containing the Licensed Software, or any backup copy, in whole or in part, or translate such files into any other file format or language, except as expressly provided for in this agreement. You may not rent, lease or sublicense the Licensed Software, but you may transfer the Licensed Software and accompanying written materials on a permanent basis, provided you retain no copies, the recipient agrees to the terms of this License Agreement, immediately contacts Teledyne DALSA to inform Teledyne DALSA of such transfer and pays to Teledyne DALSA a transfer fee in an amount to be determined by Teledyne DALSA and in effect at the time in question. Upon such transfer, your license under this License Agreement is automatically terminated.
+
+c.  You may not reverse engineer, decompile or disassemble the Licensed Software for any purpose whatsoever.
+
+4.  TERM
+
+Your license is effective upon installation of the Licensed Software. You may terminate it at any time by destroying the Licensed Software together with all copies, including any installed copies. It will also terminate upon conditions set forth elsewhere in this Agreement or if you fail to comply with any term or condition of this Agreement. You agree upon such termination to destroy all copies of the Licensed Software in any form in your possession or under your control.
+
+5.  LIMITED WARRANTY
+
+Teledyne DALSA warrants that for a period of ninety (90) days from the date of receipt, the Licensed Software will perform substantially in accordance with the accompanying written materials. THE FOREGOING IS THE SOLE AND EXCLUSIVE WARRANTY OFFERED BY Teledyne DALSA. Teledyne DALSA DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, WITH REGARD TO THE LICENSED SOFTWARE AND ALL ACCOMPANYING MATERIALS.
+
+6.  CUSTOMER REMEDY
+
+Teledyne DALSA's entire liability and your exclusive remedy shall be, at Teledyne DALSA's option, either (a) return of the price paid, or (b) repair or replacement of the Licensed Software that does not meet Teledyne DALSA's Limited Warranty and which is returned to Teledyne DALSA within the warranty period. The Limited Warranty is void if failure of the Licensed Software has resulted from accident, abuse or misapplication. Any replacement of Licensed Software will be warranted for the remainder of the original warranty period or thirty (30) days, whichever is longer.
+
+7.  DISCLAIMER OF DAMAGES
+
+You assume responsibility for, among other things, (i) the selection of the Licensed Software to achieve your intended results, (ii) the acquisition of other software (including any programming or operating system software) and/or equipment compatible with the Licensed Software, and (iii) the installation, use and results obtained from the Licensed Software. Further, inasmuch as the price paid for the license rights granted to you to use the Licensed Software may be substantially disproportionate to the value of products to be used in conjunction with the Licensed Software, and for the express purpose of limiting the liability against Teledyne DALSA to an extent which is reasonably proportionate to the commercial value of this transaction, you agree that, to the maximum extent permitted by law, Teledyne DALSA shall in no event be liable for any damages whatsoever (including without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use or inability to use the Licensed Software, whether direct, indirect, incidental, consequential, special or otherwise, REGARDLESS OF THE FORM OF ACTION, even if Teledyne DALSA has been advised of the possibility of such damages.
+
+8.  UPDATES & TECHNICAL SUPPORT
+
+For the life of the Licensed Software, provided that the Licensed Software has been duly registered on Teledyne DALSA’s web site, Teledyne DALSA will make available to you Technical Support and upgrades in the manner and under the guidelines set forth in the Licensed Software user documentation, which may be modified from time to time by Teledyne DALSA at its discretion without notice. Teledyne DALSA may, from time to time, revise or update the Licensed Software. In so doing, Teledyne DALSA incurs no obligation to furnish such revision or updates to you. Updates and further support terms are available to you on the same basis as Teledyne DALSA makes them available to its other licensees at then current prices.  Teledyne DALSA may stop supporting older versions of the License Software at any given time without notice.
+
+9.  GENERAL
+
+a.  This License is personal between you and Teledyne DALSA. It is not transferable and any attempt by you to rent, lease, sublicense, assign or transfer any of the rights, duties or obligations hereunder, except as provided in Section 3, above, is void. This Agreement and the conduct of the parties hereto shall be governed by the laws of the Province of Ontario.
+
+b.  YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. YOU FURTHER AGREE THAT IT IS THE COMPLETE AND EXCLUSIVE STATEMENT OF THE AGREEMENT BETWEEN YOU AND Teledyne DALSA WHICH SUPERSEDES ANY PROPOSAL OR PRIOR AGREEMENT, ORAL OR WRITTEN, AND ANY OTHER COMMUNICATIONS BETWEEN YOU AND Teledyne DALSA OR Teledyne DALSA'S AGENT(S) RELATING TO THE LICENSED SOFTWARE.

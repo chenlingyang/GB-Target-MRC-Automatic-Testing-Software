@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 
+
+this file lists and describes the executable files displayed and managed by sapera explorer
+
+...SYNTAX..............................................................................................................
+
+@Name is the user friendly name of the item
+
+.Description should be kept relatively short at 300 characters
+
+.PathToExecutable points to the executable file relatively to the sapera root folder
+.PathToFolder points to a folder on the file system, relative to the sapera root folder
+
+@IsTool set to true categorizes the item as a tool
+@IsT2IR set to true categorizes the item as a t2ir
+@IsDemo set to true categorizes the item as a demo
+@IsExample set to true categorizes the item as an example
+@IsDocumentation set to true indicates the item is help-related
+
+@IsFrameGrabber set to true categorizes the item as a frame-grabber related item
+@IsCamera set to true categorizes the item as a camera related item
+@Is3DSensor set to true categorizes the item as a 3D sensors related item
+
+@Thumbnail includes the path to the thumbnail image, relative to the 'Thumbnails' folder 
+           
+@HasNativeSampleCode set to true if sample code provided for Sapera++
+@HasManagedSampleCode set to true if sample code provided for Sapera .NET
+
+-->
+
+<SaperaExplorerXmlRoot>
+
+   <XmlItems>
+      
+      <!-- Documentation Part 1 (Getting Started) -->
+
+      <SaperaExplorerXmlItem Name="Getting Started Manual for GigE Vision Cameras and 3D Sensors" IsDocumentation="true" IsCamera="true" Is3DSensor="true">
+         <Description>
+            Describes how to get started with the physical setup and Sapera API programming when using GigE Vision
+            cameras and Z-Trak profile sensors.
+         </Description>
+         <PathToExecutable>Help\SaperaGettingStarted_Cameras.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Optimization Guidefor GigE Vision Cameras" IsDocumentation="true" IsCamera="true" Is3DSensor="true">
+         <Description>
+            Describes the Sapera Network Imaging Package and how to modify the network adapter (NIC) settings to
+            optimize performance for different application requirements
+         </Description>
+         <PathToExecutable>..\Network Interface\NetworkOptimizationGuide.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Getting Started Manual for Frame Grabbers" IsDocumentation="true" IsFrameGrabber="true">
+         <Description>
+            Describes how to get started with the physical setup and Sapera API programming when using Teledyne DALSA
+            frame grabbers.
+         </Description>
+         <PathToExecutable>Help\SaperaGettingStarted_FrameGrabbers.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Getting Started Manual for USB3 Vision Cameras" IsDocumentation="true" IsCamera="true" Is3DSensor="false">
+         <Description>
+            Describes how to get started with the physical setup and Sapera API programming when using USB3 Vision
+            cameras.
+         </Description>
+         <PathToExecutable>Help\SaperaGettingStarted_USB_Cameras.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <!-- Tools -->
+
+      <SaperaExplorerXmlItem Name="Sapera CamExpert" IsTool="true" IsT2IR="true" IsCamera="true" IsFrameGrabber="true" Thumbnail="sapera.camexpert.jpg">
+         <Description>
+            CamExpert allows you to configure acquisition settings and acquire images from GigE Vision cameras, and
+            Teledyne DALSA frame grabbers or USB3 Vision cameras. It also allows you to configure cameras attached to
+            these frame grabbers (CameraLink, CLHS, CXP).
+         </Description>
+         <PathToExecutable>CamExpert\camexpert.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera Z-Expert" IsTool="true" IsT2IR="true" Is3DSensor="true" Thumbnail="sapera.z_expert.jpg">
+         <Description>
+            Z-Expert allows you to configure acquisition settings and acquire images simultaneously from multiple
+            Z-Trak 3D profile sensors. This allows the creation of multi-sensor calibration data which you can apply
+            using the Sapera API as demonstrated by the MultiSensorCalibration3D example (available on request from
+            Teledyne DALSA).
+         </Description>
+         <PathToExecutable>Expert\ZExpert.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera Configuration" IsTool="true" Thumbnail="sapera.configuration.png">
+         <Description>
+            Sapera Configuration shows the detected acquisition devices which provide Sapera API compatible servers
+            (GigE Vision cameras, CameraLink cameras, Teledyne DALSA frame grabbers and USB3 Vision cameras). It also
+            allows changing the amount of contiguous system memory reserved for the storage of internal data structures
+            used for Sapera buffers and frame grabber DMA transfers. It also allows the mapping of CameraLink frame
+            grabber serial ports to Windows COM ports, and the detection of GenCP compliant cameras connected to these.
+            devices.
+         </Description>
+         <PathToExecutable>Bin\SapConf.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera Log Viewer" IsTool="true" IsT2IR="true" Thumbnail="sapera.logviewer.png">
+         <Description>
+            Sapera Log Viewer shows errors and other types of messages generated by Teledyne DALSA acquisition hardware
+            and the Sapera API. This is typically used by Teledyne DALSA technical support to troubleshoot hardware
+            and software issues.
+         </Description>
+         <PathToExecutable>Bin\logview.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera Monitor" IsTool="true" IsT2IR="true" Thumbnail="sapera.monitor.png">
+         <Description>
+            Sapera Monitor allows you to selectively display the acquisition events generated by Sapera acquisition
+            devices concurrently with an application using the Sapera API (e.g., CamExpert or a user application). For
+            Teledyne DALSA frame grabbers, you can also display the transfer events. This allows you to troubleshoot
+            application behavior without modifying its source code, or when the source code is not available. Note that
+            you need to start Sapera Monitor after launching the application.
+         </Description>
+         <PathToExecutable>Bin\SaperaMonitor.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera Color Calibration" IsTool="true" IsCamera="true" IsFrameGrabber="true" Thumbnail="sapera.colorcalib.jpg">
+         <Description>
+            Sapera Color Calibration allows you to generate color correction coefficients to adjust the camera sensor
+            color response for known colors at a specific illumination. This ensures the camera outputs the correct
+            color for a given scene. The coefficients are saved as a *.ccor file which can then be uploaded to perform
+            real-time correction using the camera hardware (instead of performing software correction on the host after
+            the image transfer). Note that only some Teledyne DALSA CameraLink and GigE Vision cameras support this
+            feature.
+         </Description>
+         <PathToExecutable>Bin\ColorCalib.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera PCI Diagnostic" IsTool="true" IsFrameGrabber="true" Thumbnail="sapera.pcidiag.png">
+         <Description>
+            Sapera PCI Diagnostic helps in the debugging of Teledyne DALSA frame grabber hardware issues. It reads the
+            contents of the PCI configuration space and detects memory and I/O conflicts between PCI devices. Use it to
+            verify the integrity of your system before and after installing a new frame grabber.
+         </Description>
+         <PathToExecutable>Bin\CPciDiag.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <!-- Demos -->
+
+      <SaperaExplorerXmlItem Name="GigE Vision Camera Demo" IsDemo="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from a Teledyne DALSA GigE Vision or USB3 Vision camera. You can either use the
+            current camera configuration when starting up, or load a configuration file (CCF) which is usually created
+            using CamExpert. Note that GigE Vision cameras other than Teledyne DALSA are also supported.
+         </Description>
+         <PathToExecutable>Demos\Binaries\GigeCameraDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Sequential Grab Demo" IsDemo="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire a sequence of images from a Teledyne DALSA GigE Vision or USB3 Vision camera. When the
+            acquisition sequence includes a sufficient number of buffers (use the Buffer button to change this), the
+            frame rates using methods available in the Sapera API are also displayed.  You can then replay the
+            acquisition sequence, or save it to a Windows AVI file which you can reload later for playback. You can
+            display each acquired buffer individually, this shows associated camera and buffer timestamp values, and
+            also the time difference between successive frames. Note that GigE Vision cameras other than Teledyne DALSA
+            are also supported.
+         </Description>
+         <PathToExecutable>Demos\Binaries\GigESeqGrabDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Bayer Demo" IsDemo="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="false">
+         <Description>
+            Shows how to acquire images from a Teledyne DALSA GigE Vision or USB3 Vision camera while conditionally
+            performing software Bayer conversion. The camera needs to be set up to output a monochrome Bayer encoded
+            image at startup, or by loading a configuration file (CCF) which is usually created using CamExpert. It is
+            possible to control settings such as the conversion method (algorithm) and Bayer mosaic alignment. Note
+            that GigE Vision cameras other than Teledyne DALSA are also supported.
+         </Description>
+         <PathToExecutable>Demos\Binaries\GigEBayerDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Metadata Demo" IsDemo="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire a sequence of images from a Teledyne DALSA GigE Vision camera which includes support
+            for Sapera API compatible metadata. When the acquisition sequence includes a sufficient number of buffers
+            (use the Buffer button to change this), the frame rates using methods available in the Sapera API are also
+            displayed.  You can then replay the acquisition sequence, or display each acquired buffer individually to
+            display the associated metadata (if it was enabled during acquisition). This also shows associated camera
+            and buffer timestamp values, and the time difference between successive frames.
+         </Description>
+         <PathToExecutable>Demos\Binaries\GigEMetaDataDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Flatfield Demo" IsDemo="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from a Teledyne DALSA GigE Vision or USB3 Vision camera while conditionally
+            performing hardware (if available) or software based flat-field correction. This allows to compensate for
+            the Photo Response Non Uniformity (PRNU) and the Fix Pattern Noise (FPN) characteristics of the camera
+            sensor, and also to replace bad pixels in a consistent way. You can either perform calibration to generate
+            the offset and gain buffer values required for the Sapera flat-field correction implementation, or you can
+            load the results of a previous calibration. Note that GigE Vision cameras other than Teledyne DALSA are
+            also supported.
+             </Description>
+         <PathToExecutable>Demos\Binaries\GigEFlatFieldDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Camera Compression Demo" IsDemo="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from a Teledyne DALSA GigE Vision camera with special firmware which outputs
+            JPEG compressed images. You can leave the camera compression functionality off, or turn it on to activate
+            software based decompression. Note that only some Genie-TS models currently support this.
+         </Description>
+         <PathToExecutable>Demos\Binaries\GigECameraCompressionDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab Demo" IsDemo="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from a camera connected to a Teledyne DALSA frame grabber. You need to load a
+            configuration file (CCF) to correctly configure the frame grabber when starting up, this is usually created
+            using CamExpert. Note that you cannot control the camera settings through this demo.
+         </Description>
+         <PathToExecutable>Demos\Binaries\GrabDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sequential Grab Demo" IsDemo="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire a sequence of images from a camera connected to a Teledyne DALSA frame grabber. You
+            need to load a configuration file (CCF) to correctly configure the frame grabber when starting up, this is
+            usually created using CamExpert. When the acquisition sequence includes a sufficient number of buffers (use
+            the Buffer button to change this), the frame rates using methods available in the Sapera API are also
+            displayed.  You can then replay the acquisition sequence, or save it to a Windows AVI file which you can
+            reload later for playback. You can display each acquired buffer individually, this shows the associated
+            buffer timestamp value. Note that you cannot control the camera settings through this demo.
+         </Description>
+         <PathToExecutable>Demos\Binaries\SeqGrabDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Color Conversion Demo" IsDemo="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from a camera connected to a Teledyne DALSA frame grabber while performing
+            hardware of software based color conversion (includes Bayer conversion). The frame grabber needs to be set
+            up to output a monochrome Bayer encoded image at startup, this is done by loading a configuration file
+            (CCF) which is usually created using CamExpert. It is possible to control settings such as the conversion
+            method (algorithm) and Color Conversion / Bayer mosaic alignment. Note that you cannot control the camera
+            settings through this demo.
+         </Description>
+         <PathToExecutable>Demos\Binaries\ColorConvDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Flatfield Demo" IsDemo="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from a camera connected to a Teledyne DALSA frame grabber while conditionally
+            performing hardware (if available) or software based flat-field correction. This allows to compensate for
+            the Photo Response Non Uniformity (PRNU) and the Fix Pattern Noise (FPN) characteristics of the camera
+            sensor, and also to replace bad pixels in a consistent way. You need to load a configuration file (CCF) to
+            correctly configure each frame grabber when starting up, this is usually created using CamExpert. You can
+            either perform calibration to generate the offset and gain buffer values required for the Sapera flat-field
+            correction implementation, or you can load the results of a previous calibration. Note that you cannot
+            control the camera settings through this demo.
+         </Description>
+         <PathToExecutable>Demos\Binaries\FlatFieldDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="I/O Demo" IsDemo="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="false">
+         <Description>
+            Shows how to use the frame grabber General I/O functionality included in the Sapera API. You can monitor
+            the current state of the input and output pins, and change their state between low and high polarity. You
+            can also monitor interrupts on the input pins and count the number of incoming interrupts. In order to use
+            the demo in an optimal way, you should first correctly connect the I/O pins of the frame grabber to the
+            appropriate external equipment.
+         </Description>
+         <PathToExecutable>Demos\Binaries\IODemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Multi-board Sync Acquisition Demo" IsDemo="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            Shows how to acquire images from two cameras, each connected to a different Teledyne DALSA frame grabber,
+            and then combine the two acquired images in a single buffer for display. You need to load a configuration
+            file (CCF) to correctly configure each frame grabber when starting up, this is usually created using
+            CamExpert. It is assumed that both acquisition sources are synchronized so that acquired images can be
+            retrieved together. Note that you cannot control the camera settings through this demo.
+         </Description>
+         <PathToExecutable>Demos\Binaries\MultiBoardSyncGrabDemo.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <!-- Examples -->
+
+      <SaperaExplorerXmlItem Name="GenICam Find Camera Example" IsExample="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports the GenICam cameras available through the Sapera API, both connected directly
+            (GigE Vision and USB3 Vision) or connected to a Teledyne DALSA frame grabber (CameraLink, CLHS, and CXP).
+            It shows how to list the currently detected cameras by their user defined name, serial number, Sapera
+            server name, or their model name. For all camera types except CameraLink, the appropriate notifications are
+            automatically shown as the cameras are connected and disconnected. For CameraLink, you need to explicitly
+            perform camera detection in order to generate these notifications. For GigE Vision cameras, you can also
+            find the Sapera server name from the camera user defined name, this is useful for application which need to
+            enumerate multiple cameras in a deterministic way.
+         </Description>
+         <PathToExecutable>Examples\Binaries\FindCamera.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GenICam Camera Features Example" IsExample="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports the GenICam cameras available through the Sapera API, both connected directly
+            (GigE Vision and USB3 Vision) or connected to a Teledyne DALSA frame grabber (CameraLink, CLHS, and CXP).
+            It shows how to enumerate all available camera features, and also how to retrieve feature specific
+            information: feature name, access type (e.g. read-only), data type (e.g. string), and current value. It
+            also shows how to retrieve the valid range and/or valid values for some specific features.
+         </Description>
+         <PathToExecutable>Examples\Binaries\CameraFeatures.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GenICam Camera Events Example" IsExample="true" IsT2IR="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports the GenICam cameras available through the Sapera API, both connected directly
+            (GigE Vision and USB3 Vision) or connected to a Teledyne DALSA frame grabber (CameraLink, CLHS, and CXP).
+            It shows how to enumerate the events supported by the camera, and also how to register a callback function
+            in order to be notified when the value of a feature has changed ('Feature Value Changed' event).
+         </Description>
+         <PathToExecutable>Examples\Binaries\CameraEvents.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GenICam Camera Files Example" IsExample="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports the GenICam cameras available through the Sapera API, both connected directly
+            (GigE Vision and USB3 Vision) or connected to a Teledyne DALSA frame grabber (CameraLink, CLHS, and CXP).
+            It shows how to use the Sapera API File Access functionality to enumerate the available camera file
+            selectors. After choosing one of these, you can upload a host file to the camera and/or download from the
+            camera to a host file, depending on the access mode for the current file selector (e.g. write only). There
+            are also some rare cases where it is possible to delete file data on the camera.
+         </Description>
+         <PathToExecutable>Examples\Binaries\CameraFiles.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GenICam Camera Firmware Update Example" IsExample="true" HasNativeSampleCode="true" HasManagedSampleCode="false">
+         <Description>
+            This example supports the GenICam cameras available through the Sapera API, both connected directly
+            (GigE Vision and USB3 Vision) or connected to a Teledyne DALSA frame grabber (CameraLink, CLHS, and CXP).
+            It shows how to use the Sapera API File Access functionality to update the camera firmware from a host file
+            with the new firmware, and then how to reset the camera to apply the update.
+         </Description>
+         <PathToExecutable>Examples\Binaries\CameraFirmwareUpdate.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab Console Example" IsExample="true" IsCamera="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports GigE Vision and USB3 Vision cameras, and also Teledyne DALSA frame grabbers. It shows
+            how to continuously acquire images from these cameras (or the camera connected to the frame grabber), You
+            first need to select the acquisition device and optionally a configuration file (CCF) to load. The
+            acquisition frame rate is then computed through the Sapera API and displayed until the acquisition is
+            stopped.
+         </Description>
+         <PathToExecutable>Examples\Binaries\GrabCPP.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Metadata Example" IsExample="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="false">
+         <Description>
+            This example only supports Teledyne DALSA GigE Vision cameras which includes support for Sapera API
+            compatible metadata. It show how to enumerate the available selectors, and then to enable camera metadata
+            before acquiring a fixed number of images. It then shows how to retrieve the metadata for a single buffer,
+            and how to save metadata for all buffers to a CSV file.
+         </Description>
+         <PathToExecutable>Examples\Binaries\GigEMetadata.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="GigE Vision Camera Multicast Example" IsExample="true" IsCamera="true" HasNativeSampleCode="true" HasManagedSampleCode="false">
+         <Description>
+            This example only supports Genie Nano GigE Vision cameras from Teledyne DALSA. It shows how to use the
+            Sapera GigE Vision driver multicast functionality. Detailed instructions about the required physical setup
+            are available through a Teledyne DALSA application note. Launching the example shows how to get this
+            application note. You can then exit and restart the example when the full setup is available.
+         </Description>
+         <PathToExecutable>Examples\Binaries\GigECameraMulticast.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab CameraLink Example" IsExample="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports Teledyne DALSA frame grabbers. It shows how to acquire images from the camera
+            connected to the frame grabber (CameraLink, CLHS, or CXP). For CameraLink (GenCP) cameras, you first need
+            to use CamExpert to enable CameraLink detection and confirm that the camera is correctly detected. When
+            starting the example, you need to select the frame grabber and its configuration file (CCF), and also the
+            appropriate camera
+         </Description>
+         <PathToExecutable>Examples\Binaries\GrabCameraLink.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab Console MultiFormat" IsExample="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="false">
+         <Description>
+            This example supports Teledyne DALSA frame grabbers. It shows how to continously acquire and display images
+            in multi-format buffers (e.g., RGB Alpha planar). Since Sapera cannot display this kind of buffer as a
+            whole, you can choose during acquisition which individual buffer component to display (e.g. RGB only or
+            Alpha as a monochrome image). You can also save the individual components to a BMP file, or complete
+            buffers using the Teledyne DALSA proprietary CRC format.
+         </Description>
+         <PathToExecutable>Examples\Binaries\GrabConsoleMultiFormat.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab LUT Example" IsExample="true" IsFrameGrabber="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example supports Teledyne DALSA frame grabbers. It shows how to continously acquire and display images
+            from the camera connected to the frame grabber (CameraLink, CLHS, or CXP) while using a look-up table which
+            has been uploaded to the frame grabber. You can use one of many predefined LUT mappings from the Sapera
+            API, or load a LUT from an existing file (e.g created using CamExpert).
+         </Description>
+         <PathToExecutable>Examples\Binaries\GrabLut.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab Console 3D Example" IsExample="true" Is3DSensor="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example only supports Teledyne DALSA Z-Trak 3D profile sensors. When the Z-Trak device scan type is
+            configured as Linescan3D, it shows how to acquire an image from one of its supported formats into a Sapera
+            buffer, and then display its individual components along with relevant statistics calculated during
+            acquisition.
+         </Description>
+         <PathToExecutable>Examples\Binaries\GrabConsole3D.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Grab Console 3D Example With World Values" IsExample="true" Is3DSensor="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example only supports Teledyne DALSA Z-Trak 3D profile sensors. When the Z-Trak device scan type is
+            configured as Linescan3D, it shows how to acquire an image from one of its supported formats into a Sapera
+            buffer, and then display world values (real X, Z, and R) calculated during acquisition.
+         </Description>
+         <PathToExecutable>Examples\Binaries\GrabConsole3DWorld.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="File Load Console 3D Example" IsExample="true" Is3DSensor="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example only supports Teledyne DALSA Z-Trak 3D profile sensors. It shows how load an image file saved
+            from a Z-Trak camera into a Sapera buffer, and then display its individual components along with some
+            relevant statistics.
+         </Description>
+         <PathToExecutable>Examples\Binaries\FileLoadConsole3D.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="File Load Console Example" IsExample="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example uses no Sapera compatible acquisition devices (cameras or frame grabbers). It shows how to
+            load a file from one of the image formats supported by Sapera (e.g. TIFF or proprietary CRC) into a Sapera
+            buffer and display it. The available images are stored in the Sapera_LT\Images\Display folder.
+         </Description>
+         <PathToExecutable>Examples\Binaries\FileLoadCPP.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Color Split Example" IsExample="true" HasNativeSampleCode="true" HasManagedSampleCode="true">
+         <Description>
+            This example uses no Sapera compatible acquisition devices (cameras or frame grabbers). It shows how to
+            load a RGB image to a Sapera buffer, then split it into its three individual monochrome components. It then
+            applies a simple processing algorithm (pixel inversion), before merging them back into a new RGB buffer.
+         </Description>
+         <PathToExecutable>Examples\Binaries\ColorSplit.exe</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <!-- Documentation Part 2 (all other manuals) -->
+
+      <SaperaExplorerXmlItem Name="What's New in Sapera LT" IsDocumentation="true">
+         <Description>
+            Provides a quick look at the new features included in the currently installed version of Sapera LT.
+         </Description>
+         <PathToExecutable>Help\Html\whatsnew-sapera.html</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="User's Manual" IsDocumentation="true">
+         <Description>
+            Describes how to get started with Sapera API programming, including many code samples for both the Sapera++
+            and Sapera .NET APIs.
+         </Description>
+         <PathToExecutable>Help\SaperaUser.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera++ Programmer's Manual" IsDocumentation="true">
+         <Description>
+            Provides a complete reference for the Sapera++ API, including code snippets for the C++ language.
+         </Description>
+         <PathToExecutable>Help\Sapera++Prog.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Sapera .NET Programmer's Manual" IsDocumentation="true">
+         <Description>
+            Provides a complete reference for the Sapera .NET API, including code snippets for both the C# and VB.NET
+            languages.
+         </Description>
+         <PathToExecutable>Help\Sapera.NET.pdf</PathToExecutable>
+      </SaperaExplorerXmlItem>
+
+      <SaperaExplorerXmlItem Name="Open All Documentation" IsDocumentation="true">
+         <Description>
+            Opens the folder location containing all the Sapera documentation, including legacy manuals not listed in
+            Sapera Explorer.
+         </Description>
+         <PathToFolder>Help</PathToFolder>
+      </SaperaExplorerXmlItem>
+
+   </XmlItems>
+
+</SaperaExplorerXmlRoot>

@@ -1,0 +1,245 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GigESeqGrabDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GIGESEQGRABDEMO_DIALOG DIALOGEX 0, 0, 891, 445
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Sapera GigE-Vision Sequential Grab Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Load Sequence",IDC_FILE_LOAD,57,20,60,19
+    PUSHBUTTON      "&Save Sequence",IDC_FILE_SAVE,121,20,60,19
+    PUSHBUTTON      "&Load Current",IDC_FILE_LOAD_CURRENT,185,20,60,19
+    PUSHBUTTON      "&Save Current",IDC_FILE_SAVE_CURRENT,249,20,60,19
+    PUSHBUTTON      "&Load Acq Config",IDC_LOAD_ACQ_CONFIG,328,20,65,20
+    PUSHBUTTON      "&High Frame Rate",IDC_HIGH_FRAME_RATE,398,20,65,20
+    PUSHBUTTON      "&Buffer",IDC_BUFFER_OPTIONS,469,20,65,20
+    EDITTEXT        IDC_LIVE_FRAME_RATE,636,20,62,12,ES_CENTER | ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "&Record",IDC_RECORD,57,68,60,19
+    PUSHBUTTON      "&Play",IDC_PLAY,121,68,60,19
+    PUSHBUTTON      "&Pause",IDC_PAUSE,185,68,60,19
+    PUSHBUTTON      "&Stop",IDC_STOP,249,68,60,19
+    PUSHBUTTON      "Update",IDC_CAMERA_TIMESTAMP_UPDATE,424,68,50,20
+    PUSHBUTTON      "Reset",IDC_CAMERA_TIMESTAMP_RESET,484,68,50,20
+    CONTROL         "Slider1",IDC_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_TOP | WS_BORDER | WS_TABSTOP,49,99,839,20
+    CONTROL         "",IDC_VIEW_WND,"Static",SS_BLACKRECT,49,123,839,317
+    GROUPBOX        "Camera Timestamp",IDC_STATIC,322,57,218,38
+    EDITTEXT        IDC_ACTIVE,756,23,43,12,ES_CENTER | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+    GROUPBOX        "Record Control",IDC_STATIC,49,56,265,39
+    EDITTEXT        IDC_AVAILABLE,833,22,45,12,ES_CENTER | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+    LTEXT           "Count",IDC_STATIC,810,24,20,8
+    LTEXT           "Displayed",IDC_STATIC,721,24,32,8
+    GROUPBOX        "Recording Statistics",IDC_STATIC,548,8,160,87
+    LTEXT           "Live Frame Rate /sec :",IDC_STATIC,557,22,74,8
+    LTEXT           "Min",IDC_STATIC,563,71,12,8
+    GROUPBOX        "Time Between Frames (ms)",IDC_STATIC,555,54,147,34
+    LTEXT           "Max",IDC_STATIC,635,71,14,8
+    EDITTEXT        IDC_MIN_TIME,581,70,43,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_MAX_TIME,654,69,43,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    GROUPBOX        "General Options",IDC_STATIC,322,8,218,38
+    GROUPBOX        "File Options",IDC_STATIC,49,8,265,38
+    CONTROL         IDB_BANNER,IDC_BANNER,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,42,367,WS_EX_ACCEPTFILES | WS_EX_STATICEDGE
+    GROUPBOX        "Buffers",IDC_STATIC,715,8,172,87
+    LTEXT           "Current Buffer Timestamp",IDC_STATIC,721,43,80,8
+    EDITTEXT        IDC_TIMESTAMP_BUFFER,809,41,70,12,ES_CENTER | ES_READONLY | ES_NUMBER
+    LTEXT           "Delta Timestamp from Previous Buffer",IDC_STATIC,721,63,86,20
+    EDITTEXT        IDC_TIMESTAMP_BUFFER_DELTA,808,67,70,12,ES_CENTER | ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_TIMESTAMP_CURRENT,330,72,83,12,ES_CENTER | ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_BUFFER_FRAME_RATE,636,35,62,12,ES_CENTER | NOT WS_TABSTOP
+    LTEXT           "Buffer Frame Rate :",IDC_STATIC,558,37,62,8
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 280, 54
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Sapera Sequential Grab Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Sapera GigE-Vision Sequential Grab Demo Version 8.60",IDC_STATIC,40,10,186,8,SS_NOPREFIX
+    LTEXT           "Copyright (c) Teledyne Digital Imaging Inc. 2008-2020",IDC_STATIC,40,25,232,8
+    DEFPUSHBUTTON   "OK",IDOK,240,7,32,14,WS_GROUP
+END
+
+IDD_HIGH_FRAME_RATE DIALOGEX 0, 0, 232, 68
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "High Frame Rate Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,174,8,50,14
+    LTEXT           "Number of frames per callback ",IDC_STATIC,8,15,99,8
+    EDITTEXT        IDC_FRAMES_PER_CALLBACK,110,11,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_FRAMES_PER_CALLBACK,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,150,11,10,14
+    PUSHBUTTON      "Cancel",IDCANCEL,174,25,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GigESeqGrabDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 8,60,0,0
+ PRODUCTVERSION 8,60,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Teledyne Digital Imaging Inc."
+            VALUE "FileDescription", "Sapera GigE-Vision Sequential Grab Demo"
+            VALUE "FileVersion", "8.60"
+            VALUE "InternalName", "GigESeqGrabDemo"
+            VALUE "LegalCopyright", "Copyright (c) Teledyne Digital Imaging Inc. 2008-2020"
+            VALUE "OriginalFilename", "GigESeqGrabDemo.exe"
+            VALUE "ProductName", "Sapera LT"
+            VALUE "ProductVersion", "8.60"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BANNER              BITMAP                  "res\\DalsaBanner.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_GIGESEQGRABDEMO_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 663
+        BOTTOMMARGIN, 423
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About GigESeqGrabDemo..."
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\GigESeqGrabDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

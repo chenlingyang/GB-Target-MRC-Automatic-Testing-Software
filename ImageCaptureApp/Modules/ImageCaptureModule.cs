@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
+using ImageCaptureApp.Config;
 
 namespace ImageCaptureApp.Modules
 {
     /// <summary>
     /// 图像采集模块 - 负责从图像采集卡获取图像数据
     /// </summary>
-    public class ImageCaptureModule : IDisposable
+    public class ImageCaptureModule : IDisposable, ICaptureModule
     {
         private VideoCapture? _capture;
         private bool _isCapturing = false;
@@ -19,6 +20,11 @@ namespace ImageCaptureApp.Modules
         private Mat? _currentFrame;
         private readonly object _frameLock = new object();
         private readonly object _readLock = new object(); // 新增：用于同步 _capture.Read 访问
+        private int _requestedWidth = 1280;
+        private int _requestedHeight = 720;
+        private int _requestedFps = 30;
+
+        public string? LastError { get; private set; }
 
         /// <summary>
         /// 新帧到达事件
@@ -50,12 +56,43 @@ namespace ImageCaptureApp.Modules
         }
 
         /// <summary>
-        /// 初始化采集卡
+        /// 初始化采集模块（从配置初始化）
+        /// </summary>
+        public bool Initialize(DeviceSettings settings)
+        {
+            LastError = null;
+            if (settings == null)
+            {
+                LastError = "配置为空";
+                return false;
+            }
+
+            _requestedWidth = Math.Max(160, settings.Resolution.Width);
+            _requestedHeight = Math.Max(120, settings.Resolution.Height);
+            _requestedFps = Math.Max(1, settings.FrameRate);
+
+            if (!Initialize(settings.DeviceIndex))
+            {
+                if (string.IsNullOrWhiteSpace(LastError))
+                {
+                    LastError = $"初始化默认采集卡失败 (DeviceIndex={settings.DeviceIndex})";
+                }
+                return false;
+            }
+
+            // 统一在初始化阶段尽量把分辨率拉到配置值，避免部分设备默认落到 160x120
+            TryApplyPreferredVideoSettings();
+            return true;
+        }
+
+        /// <summary>
+        /// 初始化采集卡（默认采集：OpenCV VideoCapture + DirectShow）
         /// </summary>
         /// <param name="deviceIndex">设备索引，默认为0（第一个设备）</param>
         /// <returns>是否初始化成功</returns>
         public bool Initialize(int deviceIndex = 0)
         {
+            LastError = null;
             try
             {
                 _capture?.Dispose();
@@ -63,19 +100,21 @@ namespace ImageCaptureApp.Modules
 
                 if (!_capture.IsOpened)
                 {
+                    LastError = $"无法打开设备 (DeviceIndex={deviceIndex})";
                     return false;
                 }
 
                 // 设置默认参数
-                _capture.Set(CapProp.FrameWidth, 1280);
-                _capture.Set(CapProp.FrameHeight, 720);
-                _capture.Set(CapProp.Fps, 30);
+                _capture.Set(CapProp.FrameWidth, _requestedWidth);
+                _capture.Set(CapProp.FrameHeight, _requestedHeight);
+                _capture.Set(CapProp.Fps, _requestedFps);
 
                 return true;
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"初始化采集卡失败: {ex.Message}");
+                LastError = $"初始化采集卡失败: {ex.Message}";
+                System.Diagnostics.Debug.WriteLine(LastError);
                 return false;
             }
         }
@@ -85,10 +124,12 @@ namespace ImageCaptureApp.Modules
         /// </summary>
         public void SetResolution(int width, int height)
         {
+            _requestedWidth = Math.Max(160, width);
+            _requestedHeight = Math.Max(120, height);
             if (_capture != null && _capture.IsOpened)
             {
-                _capture.Set(CapProp.FrameWidth, width);
-                _capture.Set(CapProp.FrameHeight, height);
+                _capture.Set(CapProp.FrameWidth, _requestedWidth);
+                _capture.Set(CapProp.FrameHeight, _requestedHeight);
             }
         }
 
@@ -97,9 +138,64 @@ namespace ImageCaptureApp.Modules
         /// </summary>
         public void SetFrameRate(int fps)
         {
+            _requestedFps = Math.Max(1, fps);
             if (_capture != null && _capture.IsOpened)
             {
-                _capture.Set(CapProp.Fps, fps);
+                _capture.Set(CapProp.Fps, _requestedFps);
+            }
+        }
+
+        /// <summary>
+        /// 尽量应用用户偏好的视频参数（优先 1280x720+，避免设备默认 160x120）。
+        /// 某些摄像头/采集卡需要 MJPG 才能输出高分辨率，这里做一次兼容设置。
+        /// </summary>
+        private void TryApplyPreferredVideoSettings()
+        {
+            if (_capture == null || !_capture.IsOpened)
+            {
+                return;
+            }
+
+            try
+            {
+                // 先尝试 MJPG，可显著提高很多设备在 DShow 下可用分辨率
+                _capture.Set(CapProp.FourCC, VideoWriter.Fourcc('M', 'J', 'P', 'G'));
+            }
+            catch
+            {
+                // 某些设备不支持设置 FourCC，忽略即可
+            }
+
+            // 优先尝试配置值，然后兜底常用分辨率
+            var candidates = new (int w, int h)[]
+            {
+                (_requestedWidth, _requestedHeight),
+                (1920, 1080),
+                (1280, 720),
+                (1024, 768),
+                (800, 600),
+                (640, 480),
+            };
+
+            foreach (var (w, h) in candidates)
+            {
+                _capture.Set(CapProp.FrameWidth, w);
+                _capture.Set(CapProp.FrameHeight, h);
+                _capture.Set(CapProp.Fps, _requestedFps);
+
+                Thread.Sleep(60);
+                var (actualW, actualH) = GetResolution();
+                if (actualW >= _requestedWidth && actualH >= _requestedHeight)
+                {
+                    return;
+                }
+            }
+
+            // 仍不满足时记录信息，方便排查（可能为设备/驱动本身限制）
+            var (finalW, finalH) = GetResolution();
+            if (finalW < _requestedWidth || finalH < _requestedHeight)
+            {
+                LastError = $"当前设备实际分辨率为 {finalW}x{finalH}，低于目标 {_requestedWidth}x{_requestedHeight}（可能是设备或驱动限制）";
             }
         }
 
@@ -239,7 +335,13 @@ namespace ImageCaptureApp.Modules
         /// <param name="delayMs">采集间隔（毫秒），0表示连续采集</param>
         /// <param name="onProgress">进度回调（参数为已保存数量）</param>
         /// <returns>成功保存的数量</returns>
-        public int BatchCaptureAndSave(string saveFolder, int count, string fileNamePrefix = "capture", int delayMs = 0, Action<int>? onProgress = null)
+        public int BatchCaptureAndSave(
+            string saveFolder,
+            int count,
+            string fileNamePrefix = "capture",
+            int delayMs = 0,
+            Action<int>? onProgress = null,
+            ImageStorageModule.ImageFormat format = ImageStorageModule.ImageFormat.PNG)
         {
             if (count <= 0) return 0;
             if (!Directory.Exists(saveFolder))
@@ -255,13 +357,19 @@ namespace ImageCaptureApp.Modules
                     continue;
                 }
 
-                // 生成文件名：前缀_时间戳_序号.png
+                // 生成文件名：前缀_时间戳_序号.ext
                 string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-                string fileName = $"{fileNamePrefix}_{timestamp}_{i + 1:D4}.png";
+                string extension = format switch
+                {
+                    ImageStorageModule.ImageFormat.JPEG => ".jpg",
+                    ImageStorageModule.ImageFormat.TIFF => ".tif",
+                    ImageStorageModule.ImageFormat.RAW => ".raw",
+                    _ => ".png"
+                };
+                string fileName = $"{fileNamePrefix}_{timestamp}_{i + 1:D4}{extension}";
                 string filePath = Path.Combine(saveFolder, fileName);
 
-                // 调用存储模块保存（假设 ImageStorageModule 存在）
-                if (ImageStorageModule.SaveImage(frame, filePath))
+                if (ImageStorageModule.SaveImage(frame, filePath, format))
                 {
                     savedCount++;
                 }

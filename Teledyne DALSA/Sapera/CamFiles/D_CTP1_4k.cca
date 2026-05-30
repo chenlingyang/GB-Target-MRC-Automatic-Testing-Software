@@ -1,0 +1,89 @@
+[General]
+Company Name=Teledyne DALSA
+Model Name=CT-P1-4096W (Piranha) 
+Camera Name=Free-running
+Version=200
+
+[Signal Description]
+Channel=1
+Frame=2
+Interface=2
+Scan=2
+Signal=2
+Video=1
+Pixel Depth=8
+Video Standard=1
+Field Order=4
+Coupling=2
+Taps=4
+Tap Output=1
+Tap 1 Direction=21
+Tap 2 Direction=21
+Tap 3 Direction=22
+Tap 4 Direction=22
+Tap 5 Direction=21
+Tap 6 Direction=21
+Tap 7 Direction=21
+Tap 8 Direction=21
+Channels Order=1
+
+[Signal Timings]
+Horizontal Active=1024
+Horizontal Sync=16
+Vertical Active=0
+Vertical Sync=0
+Horizontal Front Porch=0
+Horizontal Back Porch=0
+Vertical Front Porch=0
+Vertical Back Porch=0
+Horizontal Front Invalid=0
+Horizontal Back Invalid=0
+Vertical Front Invalid=0
+Vertical Back Invalid=0
+
+[Pixel Clock]
+Pixel Clock Source=2
+Pixel Clock Frequency Internal=25000000
+Pixel Clock Frequency 1:1=25000000
+Pixel Clock Frequency External=25000000
+Pixel Clock Detection=4
+
+[Synchronization Signals]
+Synchronization Source=4
+Horizontal Sync Polarity=1
+Vertical Sync Polarity=1
+
+[Control Signals]
+Frame Integrate Method=1
+Frame Integrate Polarity=1
+Time Integrate Method=1
+Time Integrate Polarity=2
+Camera Trigger Method=1
+Camera Trigger Polarity=2
+Camera Trigger Duration=200
+Camera Trigger/Exposure Signal=1
+Camera Reset Method=0
+Camera Reset Polarity=2
+Camera Reset Duration=10
+Line Integrate Method=0
+Line Integrate Polarity=1
+Line Integrate Delay=0
+Line Trigger Method=1
+Line Trigger Polarity=2
+Line Trigger Delay=0
+Line Trigger Duration=0
+Trigger/Exposure Signal=2
+LineScan Direction=1
+LineScan Direction Polarity=2
+Camera Line Trigger Frequency Minimum=0
+Camera Line Trigger Frequency Maximum=23000
+Camera Time Integrate Duration Minimum=0
+Camera Time Integrate Duration Maximum=-1
+Time Integrate Pulse Polarity=1
+Time Integrate Pulse Delay=0
+Time Integrate Pulse Duration=0
+[Connector Description]
+HD Input=0x0
+VD Input=0x0
+Reset/Trigger Input=0x0
+

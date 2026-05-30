@@ -1,0 +1,57 @@
+[General]
+Company Name=VGA Standard
+Model Name=SVGA 800x600 @ 60Hz
+Camera Name=Separate Sync, RGB 
+[Signal Description]
+Channel=1
+Frame=2
+Interface=1
+Scan=1
+Signal=1
+Video=8
+Pixel Depth=10
+Video Standard=1
+Field Order=4
+Coupling=1
+[Signal Timings]
+Horizontal Active=800
+Horizontal Sync=68
+Vertical Active=600
+Vertical Sync=4
+Horizontal Front Porch=148
+Horizontal Back Porch=40
+Vertical Front Porch=9
+Vertical Back Porch=18
+Horizontal Front Invalid=0
+Horizontal Back Invalid=0
+Vertical Front Invalid=0
+Vertical Back Invalid=0
+[Pixel Clock]
+Pixel Clock Source=1
+Pixel Clock Frequency Internal=40000000
+Pixel Clock Frequency 1:1=40000000
+Pixel Clock Frequency External=40000000
+[Synchronization Signals]
+Synchronization Source=4
+Horizontal Sync Polarity=1
+Vertical Sync Polarity=1
+[Control Signals]
+Frame Integrate Method=0
+Frame Integrate Polarity=1
+Time Integrate Method=0
+Time Integrate Polarity=1
+Camera Trigger Method=0
+Camera Trigger Polarity=1
+Camera Trigger Duration=10
+Trigger/Exposure Signal=1
+Camera Reset Method=0
+Camera Reset Polarity=1
+Camera Reset Duration=10
+Line Integrate Method=0
+Line Integrate Polarity=1
+Line Integrate Delay=0
+Line Trigger Method=0
+Line Trigger Polarity=1
+Line Trigger Delay=0
+Line Trigger Duration=0
+

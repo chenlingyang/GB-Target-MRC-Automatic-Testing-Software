@@ -1,8 +1,11 @@
 {
   "DeviceSettings": {
+    "CaptureSource": "TeledyneDalsaSaperaLt",
     "DeviceIndex": 0,
-    "DeviceName": "默认采集卡",
-    "API": "DirectShow",
+    "DeviceName": "Xtium-CL MX4",
+    "API": "SaperaLT",
+    "SaperaDotNetDllPath": "",
+    "SaperaCcfPath": "",
     "Resolution": {
       "Width": 1280,
       "Height": 720
