@@ -1,0 +1,7 @@
+{
+  "image_name": "mrc_test.png",
+  "min_resolvable_group_id": 22,
+  "min_resolvable_c_mean": 0.10445516556501389,
+  "threshold": 0.03,
+  "valid_rule": "c_mean > threshold and is_abnormal == 0"
+}

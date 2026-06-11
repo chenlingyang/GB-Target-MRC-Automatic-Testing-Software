@@ -1,0 +1,7 @@
+{
+  "image_name": "mrc_daozhi - 2.png",
+  "min_resolvable_group_id": 21,
+  "min_resolvable_c_mean": 0.06054367870092392,
+  "threshold": 0.03,
+  "valid_rule": "c_mean > threshold and is_abnormal == 0"
+}
