@@ -42,6 +42,7 @@ if ($LASTEXITCODE -ne 0) {
 $PythonScriptDir = Join-Path $OutputDir "Python"
 New-Item -ItemType Directory -Force -Path $PythonScriptDir | Out-Null
 Copy-Item -LiteralPath (Join-Path $ScriptDir "Python\MRC_final.py") -Destination $PythonScriptDir -Force
+Copy-Item -LiteralPath (Join-Path $ScriptDir "Python\MRC_550.py") -Destination $PythonScriptDir -Force
 Copy-Item -LiteralPath (Join-Path $ScriptDir "Python\MappingTable.xlsx") -Destination $PythonScriptDir -Force
 Copy-Item -LiteralPath (Join-Path $ScriptDir "PortableReadme.zh-CN.txt") -Destination (Join-Path $OutputDir "使用说明.txt") -Force
 
