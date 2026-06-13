@@ -13,6 +13,7 @@ using Microsoft.Win32;
 using Emgu.CV;
 using ImageCaptureApp.Modules;
 using ImageCaptureApp.Config;
+using System.Threading;
 using System.Windows.Threading;
 
 namespace ImageCaptureApp
@@ -26,6 +27,9 @@ namespace ImageCaptureApp
         private bool _isMrcRealtimeEnabled = false;
         private bool _isMrcRealtimeProcessing = false;
         private DateTime _lastMrcRealtimeAt = DateTime.MinValue;
+        private CancellationTokenSource? _mrcCts;
+        private string SelectedMrcPipeline =>
+            CmbMrcPipeline.SelectedItem is ComboBoxItem item && item.Tag is string tag ? tag : "550";
         private ImageStorageModule.ImageFormat _saveFormat = ImageStorageModule.ImageFormat.PNG;
         private DispatcherTimer? _statusUpdateTimer;
         private CaptureDeviceConfig? _config;
@@ -409,76 +413,126 @@ namespace ImageCaptureApp
                 return;
             }
 
-            BtnMrcProcessFolder.IsEnabled = false;
+            _mrcCts?.Cancel();
+            _mrcCts = new CancellationTokenSource();
+            CancellationToken token = _mrcCts.Token;
+
+            BtnMrcProcessFolder.Visibility = Visibility.Collapsed;
+            BtnMrcStop.Visibility = Visibility.Visible;
             BtnMrcSelectFolder.IsEnabled = false;
             BtnMrcProcess.IsEnabled = false;
-            TxtMrcProgress.Text = $"处理中 0/{imageFiles.Length}";
+            TxtMrcProgress.Text = $"处理中（{imageFiles.Length} 张图像，批量模式）...";
             StatusInfo.Text = "MRC文件夹处理中...";
             _mrcResultRows.Clear();
             BatchMrcSummaryPanel.Visibility = Visibility.Collapsed;
             TxtBatchMrcSummary.Text = string.Empty;
             _lastDistributionPlotPath = null;
 
-            int success = 0;
-            int failed = 0;
             string outputFolder = Path.Combine(folder, "mrc_result");
-            string? firstLabeledImage = null;
-            var summaryLines = new List<string>
-            {
-                "image_name,success,min_resolvable_group_id,min_resolvable_c_mean,message,output_dir"
-            };
+            int totalImages = imageFiles.Length;
 
             try
             {
-                for (int i = 0; i < imageFiles.Length; i++)
+                // 一次 Python 调用处理全部图像（--input-dir 批量模式），实时推送进度
+                MrcProcessingModule.FolderProcessResult batchResult =
+                    await MrcProcessingModule.ProcessFolderAsync(
+                        folder, null, outputFolder, SelectedMrcPipeline, token,
+                        onProgress: (current, total, imageName) =>
+                        {
+                            Dispatcher.Invoke(() =>
+                            {
+                                TxtMrcProgress.Text = $"处理中 {current}/{total}: {imageName}";
+
+                                // 实时读取 summary.json 更新结果表
+                                string stem = Path.GetFileNameWithoutExtension(imageName);
+                                var entry = MrcProcessingModule.TryReadImageSummary(outputFolder, stem);
+                                if (entry != null)
+                                {
+                                    UpsertMrcResultRow(imageName, new MrcProcessResult
+                                    {
+                                        Success = true,
+                                        Message = "完成",
+                                        OutputDirectory = outputFolder,
+                                        LabeledImagePath = entry.LabeledImagePath,
+                                        OverviewImagePath = entry.OverviewImagePath,
+                                        ExcelPath = entry.ExcelPath,
+                                        CurvePath = entry.CurvePath,
+                                        SummaryJsonPath = entry.SummaryJsonPath,
+                                        MinResolvableGroupId = entry.MinResolvableGroupId,
+                                        MinResolvableCMean = entry.MinResolvableCMean
+                                    });
+                                }
+                                else
+                                {
+                                    // 还没生成 JSON（可能刚 [OK]），先加个处理中行
+                                    UpsertMrcResultRow(imageName, new MrcProcessResult
+                                    {
+                                        Success = false,
+                                        Message = "处理中...",
+                                        OutputDirectory = outputFolder
+                                    });
+                                }
+                            });
+                        });
+
+                if (!batchResult.Success)
                 {
-                    string imagePath = imageFiles[i];
-                    string runFolder = Path.Combine(outputFolder, Path.GetFileNameWithoutExtension(imagePath));
-                    MrcProcessResult result = await MrcProcessingModule.ProcessImageFileAsync(imagePath, null, runFolder);
-                    if (result.Success)
+                    StatusInfo.Text = batchResult.Message;
+                    TxtMrcProgress.Text = "处理失败";
+                    MessageBox.Show(batchResult.Message, "MRC批处理失败", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                int success = 0;
+                int failed = 0;
+                string? firstLabeledImage = null;
+
+                foreach (var entry in batchResult.Entries)
+                {
+                    if (entry.Success)
                     {
                         success++;
-                        if (firstLabeledImage == null && !string.IsNullOrWhiteSpace(result.LabeledImagePath))
-                        {
-                            firstLabeledImage = result.LabeledImagePath;
-                        }
+                        if (firstLabeledImage == null && !string.IsNullOrWhiteSpace(entry.LabeledImagePath) && File.Exists(entry.LabeledImagePath))
+                            firstLabeledImage = entry.LabeledImagePath;
                     }
                     else
                     {
                         failed++;
                     }
 
-                    UpsertMrcResultRow(Path.GetFileName(imagePath), result);
-
-                    summaryLines.Add(string.Join(",",
-                        Csv(Path.GetFileName(imagePath)),
-                        result.Success ? "1" : "0",
-                        result.MinResolvableGroupId?.ToString() ?? "",
-                        result.MinResolvableCMean?.ToString("F6", CultureInfo.InvariantCulture) ?? "",
-                        Csv(result.Message),
-                        Csv(result.OutputDirectory)));
-
-                    TxtMrcProgress.Text = $"处理中 {i + 1}/{imageFiles.Length} (成功{success}/失败{failed})";
+                    UpsertMrcResultRow(entry.ImageName, new MrcProcessResult
+                    {
+                        Success = entry.Success,
+                        Message = entry.Message,
+                        OutputDirectory = entry.OutputDirectory,
+                        LabeledImagePath = entry.LabeledImagePath,
+                        OverviewImagePath = entry.OverviewImagePath,
+                        ExcelPath = entry.ExcelPath,
+                        CurvePath = entry.CurvePath,
+                        SummaryJsonPath = entry.SummaryJsonPath,
+                        MinResolvableGroupId = entry.MinResolvableGroupId,
+                        MinResolvableCMean = entry.MinResolvableCMean
+                    });
                 }
 
-                if (!string.IsNullOrWhiteSpace(firstLabeledImage) && File.Exists(firstLabeledImage))
-                {
+                if (!string.IsNullOrWhiteSpace(firstLabeledImage))
                     ShowResultImage(firstLabeledImage);
-                }
 
-                await ApplyBatchDistributionSummaryAsync(outputFolder, imageFiles.Length, success, failed);
+                await ApplyBatchDistributionSummaryAsync(outputFolder, batchResult.Entries.Count, success, failed, SelectedMrcPipeline);
 
                 StatusInfo.Text = $"MRC文件夹处理完成：成功{success}，失败{failed}";
                 TxtMrcProgress.Text = $"完成 成功{success}/失败{failed}";
-                string summaryCsvPath = Path.Combine(outputFolder, "mrc_summary.csv");
-                Directory.CreateDirectory(outputFolder);
-                File.WriteAllLines(summaryCsvPath, summaryLines, Encoding.UTF8);
                 string batchConclusion = TxtBatchMrcSummary.Text;
                 MessageBox.Show(
-                    $"MRC文件夹处理完成。\n总数：{imageFiles.Length}\n成功：{success}\n失败：{failed}\n{batchConclusion}\n汇总表：{summaryCsvPath}\n输出目录：{outputFolder}",
+                    $"MRC文件夹处理完成。\n总数：{batchResult.Entries.Count}\n成功：{success}\n失败：{failed}\n{batchConclusion}\n汇总表：{batchResult.SummaryCsvPath}\n输出目录：{outputFolder}",
                     "MRC批处理完成",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
+            }
+            catch (OperationCanceledException)
+            {
+                StatusInfo.Text = "MRC处理已取消";
+                TxtMrcProgress.Text = "已取消";
             }
             catch (Exception ex)
             {
@@ -488,10 +542,27 @@ namespace ImageCaptureApp
             }
             finally
             {
-                BtnMrcProcessFolder.IsEnabled = true;
+                BtnMrcProcessFolder.Visibility = Visibility.Visible;
+                BtnMrcStop.Visibility = Visibility.Collapsed;
                 BtnMrcSelectFolder.IsEnabled = true;
                 BtnMrcProcess.IsEnabled = true;
+                _mrcCts?.Dispose();
+                _mrcCts = null;
             }
+        }
+
+        private void BtnMrcStop_Click(object sender, RoutedEventArgs e)
+        {
+            // 停止实时 MRC
+            if (_isMrcRealtimeEnabled)
+            {
+                _isMrcRealtimeEnabled = false;
+                BtnMrcProcess.Content = "MRC处理";
+                StatusInfo.Text = "MRC实时处理已停止";
+            }
+
+            // 停止批量处理
+            _mrcCts?.Cancel();
         }
 
         private void TryStartRealtimeMrcIfNeeded()
@@ -524,7 +595,7 @@ namespace ImageCaptureApp
                 {
                     using (sourceCopy)
                     {
-                        MrcProcessResult result = await MrcProcessingModule.ProcessCurrentFrameAsync(sourceCopy, null, outputRoot);
+                        MrcProcessResult result = await MrcProcessingModule.ProcessCurrentFrameAsync(sourceCopy, null, outputRoot, SelectedMrcPipeline);
                         await Dispatcher.InvokeAsync(() =>
                         {
                             _isMrcRealtimeProcessing = false;
@@ -600,7 +671,8 @@ namespace ImageCaptureApp
             string outputFolder,
             int totalProcessed,
             int successCount,
-            int failedCount)
+            int failedCount,
+            string pipeline = "1m6")
         {
             IEnumerable<int?> groupIds = _mrcResultRows
                 .Where(row => string.Equals(row.Status, "完成", StringComparison.Ordinal))
@@ -622,7 +694,7 @@ namespace ImageCaptureApp
                 .ToArray();
 
             MrcProcessingModule.BatchDistributionPlotResult plotResult =
-                await MrcProcessingModule.GenerateBatchDistributionPlotAsync(validGroupIds, outputFolder);
+                await MrcProcessingModule.GenerateBatchDistributionPlotAsync(validGroupIds, outputFolder, pipeline: pipeline);
 
             BatchMrcSummaryPanel.Visibility = Visibility.Visible;
             if (plotResult.Success && !string.IsNullOrWhiteSpace(plotResult.PlotPath) && File.Exists(plotResult.PlotPath))

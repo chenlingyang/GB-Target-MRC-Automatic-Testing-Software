@@ -83,10 +83,16 @@
 
                 <WrapPanel VerticalAlignment="Center" Margin="0,0,0,6">
                     <TextBlock Text="MRC处理：" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBlock Text="光管类型" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <ComboBox x:Name="CmbMrcPipeline" Width="100" Margin="0,0,8,0" SelectedIndex="0">
+                        <ComboBoxItem Content="550光管" Tag="550"/>
+                        <ComboBoxItem Content="1m6光管" Tag="1m6"/>
+                    </ComboBox>
                     <TextBlock Text="图像文件夹" VerticalAlignment="Center" Margin="0,0,4,0"/>
-                    <TextBox x:Name="TxtMrcFolder" Text="C:\Captures" Width="460" Margin="0,0,8,0" IsReadOnly="True"/>
+                    <TextBox x:Name="TxtMrcFolder" Text="C:\Captures" Width="380" Margin="0,0,8,0" IsReadOnly="True"/>
                     <Button x:Name="BtnMrcSelectFolder" Content="浏览..." Click="BtnMrcSelectFolder_Click" Width="70" Margin="0,0,8,0"/>
                     <Button x:Name="BtnMrcProcessFolder" Content="处理文件夹" Click="BtnMrcProcessFolder_Click" Width="90" Margin="0,0,8,0"/>
+                    <Button x:Name="BtnMrcStop" Content="停止处理" Click="BtnMrcStop_Click" Width="90" Margin="0,0,8,0" Visibility="Collapsed"/>
                     <TextBlock x:Name="TxtMrcProgress" Text="MRC就绪" VerticalAlignment="Center"/>
                 </WrapPanel>
 

@@ -1335,7 +1335,12 @@ if __name__ == "__main__":
     _ = font_manager.findfont("DejaVu Sans")
 
     parser = argparse.ArgumentParser(description="MRC final: rotate-detect + align + rectangle mapping")
-    parser.add_argument("--input", default="", help="输入图像路径（可选）")
+    parser.add_argument("--input", default="", help="输入图像路径（单张，可选）")
+    parser.add_argument(
+        "--input-dir",
+        default="",
+        help="输入图像文件夹（批量，优先级低于 --input）",
+    )
     parser.add_argument(
         "--output",
         default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "result"),
@@ -1405,6 +1410,13 @@ if __name__ == "__main__":
 
     if args.input:
         image_paths = [args.input]
+    elif args.input_dir:
+        input_dir = os.path.abspath(args.input_dir)
+        if not os.path.isdir(input_dir):
+            raise FileNotFoundError(f"输入文件夹不存在: {input_dir}")
+        image_paths = collect_images(input_dir)
+        if not image_paths:
+            raise FileNotFoundError(f"文件夹内未找到可处理图像: {input_dir}")
     else:
         zheng_candidates = [
             r"F:\研究生\项目\MRC_progress\mrc_zheng.png",

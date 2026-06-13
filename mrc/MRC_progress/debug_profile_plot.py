@@ -47,25 +47,11 @@ def plot_profile_debug(processor, image_bgr, mapped, group_ids, out_dir, stem):
         roi_gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY).astype(np.float32)
         row_idx = int(np.argmax(np.std(roi_gray, axis=1)))
 
-        # 原始单行
-        line_single = roi_gray[row_idx, :].astype(np.float32)
+        # 单行剖面（25 组统一处理）
+        line_raw = roi_gray[row_idx, :].astype(np.float32)
 
-        # 多行平均（21+）
-        if gid >= processor.PROFILE_DENSE_GROUP_MIN:
-            line_raw = processor._average_profile_rows(roi_gray, row_idx, num_rows=3)
-        else:
-            line_raw = roi_gray[row_idx, :].astype(np.float32)
-
-        # 亮区裁边前
-        line_before_trim = line_raw.copy()
-
-        if gid >= processor.PROFILE_DENSE_MID_GROUP_MIN:
-            line_raw, left, right = processor._trim_profile_line_bright_core(line_raw)
-        else:
-            left, right = 0, int(line_raw.size)
-
-        # 平滑后
-        sigma = processor._profile_smooth_sigma(gid)
+        # 高斯平滑
+        sigma = processor.PROFILE_LINE_SMOOTH_SIGMA
         line_smooth = processor._smooth_profile_line(line_raw, sigma)
 
         # 峰谷检测
@@ -77,28 +63,15 @@ def plot_profile_debug(processor, image_bgr, mapped, group_ids, out_dir, stem):
         got_n = len(peaks) + len(valleys)
 
         # --- 绘图 ---
-        fig, axes = plt.subplots(2, 1, figsize=(14, 9))
+        fig, axes = plt.subplots(1, 1, figsize=(14, 5))
         fig.suptitle(
             f"{stem}  Group {gid}  Rect1 Profile Debug  "
             f"(expected={exp_n}  detected={got_n}  {'OK' if got_n == exp_n else 'MISMATCH'})",
             fontsize=13, fontweight="bold",
         )
 
-        # ---- 上子图：原始 ROI + 多行平均后的剖面 ----
-        ax = axes[0]
-        x_single = np.arange(line_single.size)
-        ax.plot(x_single, line_single, color="#cccccc", lw=0.8, alpha=0.7, label="single row (max-var)")
-        if gid >= processor.PROFILE_DENSE_GROUP_MIN:
-            x_avg = np.arange(line_before_trim.size)
-            ax.plot(x_avg, line_before_trim, color="#1f77b4", lw=1.2, alpha=0.8, label="3-row average (before trim)")
-        ax.axhline(np.mean(line_single), color="#888888", ls=":", lw=0.8)
-        ax.set_ylabel("Gray Value")
-        ax.set_title("Step 1: Raw Profile (single row vs multi-row average)")
-        ax.legend(loc="best", fontsize=8)
-        ax.grid(True, alpha=0.25)
-
-        # ---- 下子图：平滑后 + 峰谷标注 ----
-        ax = axes[1]
+        # 平滑后剖面 + 峰谷标注
+        ax = axes
         x_line = np.arange(line_smooth.size)
         ax.plot(x_line, line_smooth, color="#333333", lw=1.0, label=f"smoothed (σ={sigma})")
 
@@ -119,17 +92,10 @@ def plot_profile_debug(processor, image_bgr, mapped, group_ids, out_dir, stem):
                 linewidths=1.0, zorder=5, label=f"valleys ({len(valleys)})",
             )
 
-        # 裁边区域着色
-        if left > 0 or right < int(line_smooth.size):
-            ax.axvspan(0, left, color="red", alpha=0.06)
-            ax.axvspan(right, int(line_smooth.size), color="red", alpha=0.06)
-            ax.text(left + 2, ax.get_ylim()[1] * 0.95, "trim←", fontsize=7, color="red", va="top")
-            ax.text(right - 2, ax.get_ylim()[1] * 0.95, "→trim", fontsize=7, color="red", va="top", ha="right")
-
         ax.set_xlabel("Column Index (px)")
         ax.set_ylabel("Gray Value")
         ax.set_title(
-            f"Step 2: Smoothed Profile + Detected Peaks/Valleys  "
+            f"Smoothed Profile + Detected Peaks/Valleys  "
             f"(sigma={sigma}, peaks={len(peaks)}, valleys={len(valleys)}, total={got_n})"
         )
         ax.legend(loc="best", fontsize=8)
